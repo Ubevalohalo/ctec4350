@@ -94,26 +94,14 @@ nav ul li #CTA {
     width: 100%;
     overflow: hidden;
     position: relative;
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 .sponsorCards {
   display: flex;
-  animation: scroll 25s linear infinite;
 }
 .sponsorCards img {
   width: 20vw;
   min-width: 200px;
   height: auto;
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 footer {
     background-color: grey;
