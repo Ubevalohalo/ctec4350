@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="styles.css">
+	<style>
+		#intro {
+			display: grid;
+			grid-template-columns: 1.5fr 1fr;
+			grid-template-rows: 1fr;
+		}
+		#intro img {
+			grid-column: 2/3;
+			grid-row: 1/2;
+			width: 100%;
+		}
+		#intro #introInfo{
+			grid-column: 1/2;
+			grid-row: 1/2;
+			margin: 2rem;
+			text-align: center;
+		}
+		 #introInfo h1 {
+			color: blue;
+		 }
+		 #introInfo ul {
+			list-style-type: none;
+			display: flex;
+			justify-content: center;
+		 }
+		 #introInfo ul li {
+			margin: 2rem;
+			background-color: blue;
+			padding: 0.5rem 1rem;
+			border-radius: 0.5rem;
+		 }
+		 #introInfo ul li  a{
+			text-decoration: none;
+			color: white;
+		 }
+		 #introInfo p {
+			text-align: left;
+		 }
+		 #allSponsors img {
+			width: 10rem;
+		 }
+/*TABLET DISPLAY*/
+		@media (min-width: 768px) and (max-width: 1024px) {
+				#intro {
+					display: block;
+				}
+				#intro img {
+					width: 70%;
+					margin: 0% 15%;
+				}
+				#intro #introInfo{
+					margin-top: 0rem;
+				}
+		}
+/*PHONE DISPLAY*/
+		@media (max-width: 767px) {
+			#intro {
+				display: block;
+			}
+			#intro img {
+				display: none;
+			}
+			#intro #introInfo{					
+				margin-top: 0rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<div id= "navLogo">
+			<!--img--> 
+		</div>
+		<div id= "navItems">
+			<ul>
+				<li>
+					<a href="">Home</a>
+				</li>
+				<li>
+					<a href="">About</a>
+				</li>
+				<li>
+					<a href="">Agenda</a>
+				</li>
+				<li>
+					<a href="" id="CTA" >Register</a>
+				</li>
+			</ul> 
+		</div>
+	</nav>
+	
+	<main>
+		<section id="intro">
+			<img src="speakerPlaceholder.jpg">
+			<div id="introInfo">
+			<h1>About</h1>
+			<p>This one-day conference serves as an engaging platform to bring together nonprofit leaders, UTA faculty, and students for an immersive exploration of the latest trends, strategies, and tools shaping fundraising & development today. Through engaging plenary sessions, hands-on workshops, and meaningful networking opportunities, participants will gain actionable insights and innovative approaches to strengthen their impact. By fostering collaboration and dialogue across sectors, this event seeks to inspire new partnerships and empower attendees with the resources and connections needed to address our community's most pressing challenges.</p>
+			<ul>
+				<li><a href="">Tickets are now on sale!</a></li>
+			</ul>
+			</div>
+
+		</section>
+		<section class="speakers">
+			<h2>Featured Speakers</h2>
+			<p>Meet our Speakers</p>
+			<section class="speakerCards">
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+			</section>
+			<a href="">View Speakers</a>
+		</section>
+		<section class="sponsors">
+			<h2>Our Sponsors</h2>
+				<div id="allSponsors">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+				</div>
+			</div>
+			
+			<a href="">View Sponsors</a>
+		</section>
+	</main>
+	<footer>
+		<section id="footerImg">
+			<img>
+		</section>
+		<section id="footerNav">
+			<ul>
+				<li>
+					<a href="">Home</a>
+				</li>
+				<li>
+					<a href="">About</a>
+				</li>
+				<li>
+					<a href="">Agenda</a>
+				</li>
+				<li>
+					<a href="">Register</a>
+				</li>
+			</ul> 
+		</section>
+		<section id="contacts">
+			<h2>Contact Us</h2>
+			<p><a href="tel:+4733378901">+47 333 78 901</a></p>
+			<p><a href="mailto:someone@example.com">Send email</a></p>
+			<h2>Social Media</h2>
+		</section>
+	</footer>
+</body>
+</html>

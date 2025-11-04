@@ -1,0 +1,177 @@
+html {
+	font-size: 150%;
+}
+p, li {
+	font-size: 75%;
+}
+nav {
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+
+}
+nav img {
+    width: 10rem;
+    margin: 1rem;
+}
+nav ul {
+    display: flex;
+    margin: 1rem;
+}
+nav ul li {
+    padding: 0.5rem;
+    list-style: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+}
+nav ul li #CTA {
+    background-color: brown;
+    border-radius: 0.75rem;
+}
+.speakers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.speakers h2 {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.speakerCards {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
+.speakerCard {
+    background-color: grey;
+    width: 25%;
+    margin: 1rem;
+    padding: 1rem;
+    color: white;
+}
+.speakerCards img {
+    width: 100%;
+    marxgin: 0% 5%;
+}
+.speakers a {
+    background-color: brown;
+    padding:0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    text-decoration: none;
+    color: white;
+}
+.sponsors {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
+.sponsorCards {
+    display: flex;
+}
+.sponsorCards img {
+    width: 15rem;
+    margin: 1rem;
+}
+.sponsors a {
+    background-color: brown;
+    padding:0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    text-decoration: none;
+    color: white;
+}
+.sponsors .slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.sponsorCards {
+  display: flex;
+  animation: scroll 25s linear infinite;
+}
+.sponsorCards img {
+  width: 20vw;
+  min-width: 200px;
+  height: auto;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+footer {
+    background-color: grey;
+    margin: 5rem 0rem 0rem 0rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr;
+    padding: 0rem 2rem;
+}
+footer #footerImg {
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer #footerImg img {
+    width: 15rem;
+}
+footer #footerNav {
+    grid-column: 2/3;
+    display: flex;
+}
+footer #footerNav ul {
+}
+footer #footerNav ul li{
+    list-style-type: none;
+    margin: 1rem;
+}
+footer #footerNav ul li a{
+    text-decoration: none;
+    color: white;
+}
+footer #contacts{
+    grid-column: 3/4;
+    color: white;
+}
+footer #contacts a {
+    text-decoration: none;
+    color: white;
+}
+.footerSocials img {
+    margin-right: 1rem ;
+}
+/*TABLET DISPLAY*/
+		@media (min-width: 768px) and (max-width: 1024px) {
+			/*adjust footer and nav*/
+		}
+/*PHONE DISPLAY*/
+		@media (max-width: 767px) {
+            /*adjust footer and nav*/
+            .speakerCards {
+                display: block;
+            }
+            .speakerCard {
+                width: 100%;
+            }
+            .sponsorCards {
+                display: flex;
+                animation: scroll 2s linear infinite;
+            }
+		}
