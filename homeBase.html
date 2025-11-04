@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTA Philanthropy - Uniting for Good</title>
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		#intro {
+			display: grid;
+			grid-template-columns: 1.5fr 1fr;
+			grid-template-rows: 1fr;
+			align-items: center;
+		}
+		#intro img {
+			grid-column: 1/2;
+			width: 100%;
+			justify-self: center;
+		}
+		#intro #introInfo{
+			grid-column: 2/3;
+			margin: 5rem;
+			text-align: center;
+		}
+		 #introInfo h2 {
+			color: blue;
+		 }
+		 #introInfo ul {
+			list-style-type: none;
+			display: flex;
+			justify-content: center;
+		 }
+		 #introInfo ul li {
+			margin: 2rem;
+		 }
+		 #introInfo ul li  a{
+			text-decoration: none;
+			padding: 1rem 2rem;
+			border-radius: 1rem;
+			color: white;
+
+		 }
+		 #aboutButton {
+			background-color: blue;
+		 }
+		 #registerButton {
+			background-color: brown;
+		 }
+		 #countdown {
+			text-align: center;
+		 }
+		 #faqs {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+		}
+		 #faqs h2{
+			color: blue;
+		 }
+		#faqsContainer {
+			margin: 2rem auto;
+			width: 50%;
+		}
+		#faqsContainer details {
+			border: solid 1px black;
+		}
+		#faqsContainer summary {
+			cursor: pointer;
+			font-weight: 600;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			list-style: none;
+		}
+		#faqsContainer summary::after {
+			content: "▶";
+			transition: transform 0.3s ease;
+			font-size: 1rem;
+			color: #666;
+		}
+		#faqsContainer details[open] summary::after {
+			transform: rotate(90deg);
+			color: #000;
+		}
+		#faqsContainer p {
+			margin-top: 0.5rem;
+			color: #555;
+			line-height: 1.4;
+		}
+		#faqs a {
+			background-color: blue;
+			text-decoration: none;
+			padding: 0.5rem 1.5rem;
+			border-radius: 0.75rem;
+			color: white;
+			width: fit-content;
+			margin: auto;
+		}
+/*TABLET DISPLAY*/
+		@media (min-width: 768px) and (max-width: 1024px) {
+				#intro {
+					display: block;
+				}
+				#intro img {
+					width: 70%;
+					margin: 0% 15%;
+				}
+				#intro #introInfo{
+					margin-top: 0rem;
+				}
+		}
+/*PHONE DISPLAY*/
+		@media (max-width: 767px) {
+			#intro {
+				display: block;
+			}
+			#intro img {
+				display: none;
+			}
+			#intro #introInfo{					
+				margin-top: 0rem;
+			}
+		}
+	</style>
+</head>
+<body>
+<!--notes:
+	- nav and footer need to be automated with javascript
+	- nav will be hamburger menu later
+	- images are all placeholders
+	- add javascript features
+	- colors are all placeholders too
+-->
+	<nav>
+		<div id= "navLogo">
+			<img src="placeholder1.jpg">
+		</div>
+		<div id= "navItems">
+			<ul>
+				<li>
+					<a href="">Home</a>
+				</li>
+				<li>
+					<a href="">About</a>
+				</li>
+				<li>
+					<a href="">Agenda</a>
+				</li>
+				<li>
+					<a href="" id="CTA" >Register</a>
+				</li>
+			</ul> 
+		</div>
+	</nav>
+	
+	<main>
+		<section id="intro">
+			<img src="speakerPlaceholder.jpg">
+			<div id="introInfo">
+				<h1>Uniting for Good</h1>
+				<p>The Power of Partnership in</p>
+				<h2>Philanthropy</h2>
+				<p>Wednesday, April 9, 2025 • 8:30 AM - 6:30 PM • UTA</p>
+				<p>Arlington Campus, Central Library</p>
+				<ul>
+					<li><a href="" id="aboutButton">About</a></li>
+					<li><a href="" id="registerButton">Register</a></li>
+				</ul>
+			</div>
+		</section>
+		<section id="countdown">
+			<h2>COUNTDOWN</h2><!--put innerHTML js here to do the countdown timer-->
+			<p>Until the Event</p>
+		</section>
+		<section class="speakers">
+			<h2>Featured Speakers</h2>
+			<p>Meet our Speakers</p>
+			<section class="speakerCards">
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Speaker Name</h3>
+					<h4>Speaker Title</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+			</section>
+			<a href="">View Speakers</a>
+		</section>
+		<section class="sponsors">
+			<h2>Our Sponsors</h2>
+			<div class="slider">
+				<div class="sponsorCards">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+				</div>
+			</div>
+			
+			<a href="">View Sponsors</a>
+		</section>
+		<section id="faqs">
+			<h2>Frequently Asked Questions</h2>
+			<div id="faqsContainer">
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+			</div>
+
+			<a href="">Learn More</a>
+		</section>
+										<section id=""></section>
+	</main>
+	<footer>
+		<section id="footerImg">
+			<img src="placeholder1.jpg">
+		</section>
+		<section id="footerNav">
+			<ul>
+				<li>
+					<a href="">Home</a>
+				</li>
+				<li>
+					<a href="">About</a>
+				</li>
+				<li>
+					<a href="">Agenda</a>
+				</li>
+				<li>
+					<a href="">Register</a>
+				</li>
+			</ul> 
+		</section>
+		<section id="contacts">
+			<h2>Contact Us</h2>
+			<p><a href="tel:+4733378901">+47 333 78 901</a></p>
+			<p><a href="mailto:someone@example.com">someEmail@gmail.com</a></p>
+			<h2>Social Media</h2>
+			<div class="footerSocials">
+				<a href=""><img src="icon.png"></a>
+				<a href=""><img src="icon.png"></a>
+				<a href=""><img src="icon.png"></a>
+				<a href=""><img src="icon.png"></a>
+			</div>
+			
+		</section>
+	</footer>
+</body>
+</html>
