@@ -5,7 +5,7 @@ p, li {
 	font-size: 75%;
 }
 nav {
-    background-color: grey;
+    background-color: #0064B1;
     display: flex;
     justify-content: space-between;
 
@@ -28,7 +28,7 @@ nav ul li a {
     padding: 0.5rem;
 }
 nav ul li #CTA {
-    background-color: brown;
+    background-color: #F58025;
     border-radius: 0.75rem;
 }
 .speakers {
@@ -50,7 +50,7 @@ nav ul li #CTA {
     justify-content: center;
 }
 .speakerCard {
-    background-color: grey;
+    background-color: #0064B1;
     width: 25%;
     margin: 1rem;
     padding: 1rem;
@@ -58,10 +58,10 @@ nav ul li #CTA {
 }
 .speakerCards img {
     width: 100%;
-    marxgin: 0% 5%;
+    margin: 0% 5%;
 }
 .speakers a {
-    background-color: brown;
+    background-color: #F58025;
     padding:0.5rem 1rem;
     border-radius: 0.5rem;
     margin: 1rem;
@@ -83,7 +83,7 @@ nav ul li #CTA {
     margin: 1rem;
 }
 .sponsors a {
-    background-color: brown;
+    background-color: #F58025;
     padding:0.5rem 1rem;
     border-radius: 0.5rem;
     margin: 1rem;
@@ -104,7 +104,7 @@ nav ul li #CTA {
   height: auto;
 }
 footer {
-    background-color: grey;
+    background-color: #0064B1;
     margin: 5rem 0rem 0rem 0rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 2fr;
