@@ -7,107 +7,93 @@
     <link rel="stylesheet" href="styles.css">
     <style>
 		#intro {
-			display: grid;
-			grid-template-columns: 1.5fr 1fr;
-			grid-template-rows: 1fr;
-			align-items: center;
-		}
-		#intro img {
-			grid-column: 1/2;
-			width: 100%;
-			justify-self: center;
-		}
-		#intro #introInfo{
-			grid-column: 2/3;
-			margin: 5rem;
-			text-align: center;
-			
-		}
-		#introInfo h1 {
-			text-transform: uppercase;
-		}
-		#introInfo h2 {
-			color: #0064B1;
-			font-weight: 1000;
-			text-transform: uppercase;
-		}
-		#introInfo p {
-			color: #666;
-		}
-		 #introInfo ul {
-			list-style-type: none;
-			display: flex;
-			justify-content: center;
-		 }
-		 #introInfo ul li {
-			margin: 2rem;
-		 }
-		 #introInfo ul li a{
-			text-decoration: none;
-			padding: 0.5rem 1rem;
-			border-radius: 0.5rem;
-			color: white;
-		 }
-		 #aboutButton {
-			background-color: #0064B1;
-			border-radius: 0.3rem;
-			font-size: 24px;
-		 }
-		 #registerButton {
-			background-color: #F58025;
-			font-size: 24px;
-		 }
-		 #countdown {
-			text-align: center;
-		 }
-		 #faqs {
-			text-align: center;
-			display: flex;
-			flex-direction: column;
-		}
-		 #faqs h2{
-			color: #0064B1;
-		 }
-		#faqsContainer {
-			margin: 2rem auto;
-			width: 50%;
-		}
-		#faqsContainer details {
-			border: solid 1px black;
-		}
-		#faqsContainer summary {
-			cursor: pointer;
-			font-weight: 600;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			list-style: none;
-		}
-		#faqsContainer summary::after {
-			content: "▶";
-			transition: transform 0.3s ease;
-			font-size: 1rem;
-			color: #666;
-		}
-		#faqsContainer details[open] summary::after {
-			transform: rotate(90deg);
-			color: #000;
-		}
-		#faqsContainer p {
-			margin-top: 0.5rem;
-			color: #555;
-			line-height: 1.4;
-		}
-		#faqs a {
-			background-color: #0064B1;
-			text-decoration: none;
-			padding: 0.5rem 1.5rem;
-			border-radius: 0.75rem;
-			color: white;
-			width: fit-content;
-			margin: auto;
-		}
-    
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	grid-template-rows: 1fr;
+	align-items: center;
+}
+
+#intro img {
+	grid-column: 1/2;
+	width: 100%;
+	justify-self: center;
+}
+
+#intro #introInfo {
+	grid-column: 2/3;
+	margin: 5rem;
+	text-align: center;
+}
+
+#introInfo h1 {
+	text-transform: uppercase;
+	color: #0064B1;
+}
+
+#introInfo h2 {
+	color: #F58025;
+	font-weight: 1000;
+	text-transform: uppercase;
+}
+
+#introInfo p {
+	color: #666;
+}
+
+#introInfo ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: center;
+}
+
+#introInfo ul li {
+	margin: 2rem;
+}
+
+#introInfo ul li a {
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	color: white;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+/* Buttons */
+#aboutButton {
+	background-color: #0064B1;
+	border-radius: 0.3rem;
+}
+
+#registerButton {
+	background-color: #F58025;
+}
+
+#galleryButton {
+	background-color: #0064B1;
+}
+
+#countdown {
+	text-align: center;
+}
+
+#highlights, #gallery {
+	text-align: center;
+	padding: 3rem 1rem;
+}
+
+.highlightCard img {
+	width: 200px;
+	border-radius: 0.5rem;
+	margin: 1rem;
+}
+
+/*footer {
+	text-align: center;
+	padding: 1rem;
+	background: #f2f2f2;
+}*/
+
 /*TABLET DISPLAY*/
 		@media (min-width: 768px) and (max-width: 1024px) {
 				#intro {
@@ -149,13 +135,18 @@
 	</style>
 </head>
 <body>
-        <!-- HERO CONTENT -->
-        <h1>Thank You for being apart of UTA Philanthropy!</h1>
-        <p id="eventDetails">
-            We’re grateful for everyone who joined us on April 9, 2025 your support made an incredible impact.
-        </p>
-        <a href="gallery.html" id="registerNow">View Event Highlights</a>
-    </header>
+      <section id="intro">
+    <img src="postEventImage.jpg" alt="UTA Philanthropy 2025">
+    <div id="introInfo">
+        <h1>Thank You for Being a Part of UTA Philanthropy!</h1>
+        <p>We’re grateful for everyone who joined us on April 9, 2025 — your support made an incredible impact.</p>
+        <h2>Continuing the Impact</h2>
+        <ul>
+            <li><a href="gallery.html" id="galleryButton">View Highlights</a></li>
+            <li><a href="impact.html" id="registerButton">See Our Impact</a></li>
+        </ul>
+    </div>
+</section>
 
     <section id="highlights">
         <h2>Event Highlights</h2>
@@ -169,6 +160,11 @@
             <p>Workshop: Design Thinking for Community Change</p>
         </div>
         <a href="gallery.html">See the Full Gallery</a>
+    </section>
+	  <section id="gallery">
+        <h2>Photo Gallery</h2>
+        <p>Relive the best moments of UTA Philanthropy 2025.</p>
+        <a href="gallery.html" id="registerNow">Explore Gallery</a>
     </section>
 										<section id=""></section>
 	</main>

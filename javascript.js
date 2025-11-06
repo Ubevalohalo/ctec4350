@@ -24,7 +24,7 @@ function createNavBar() {
             const navBarHTML = `
                 <nav>
                     <div id= "navLogo">
-                        <img src="placeholder1.jpg">
+                        <img src="PhilanthropyLogo.jpeg">
                     </div>
                     <div id= "navItems">
                         <ul>
@@ -51,7 +51,7 @@ function createFooter() {
             const footerHTML = `
                 <footer>
                     <section id="footerImg">
-                        <img src="placeholder1.jpg">
+                        <img src="PhilanthropyLogo.jpeg">
                     </section>
                     <section id="footerNav">
                         <ul>
