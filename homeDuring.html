@@ -1,85 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>UTA Philanthropy Summit | Live Updates</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTA Philanthropy - Live Event Updates</title>
+	<link rel="stylesheet" href="styles.css">
 	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			background-color: #f8f9fb;
+    	body { 
+			font-family: 
+			Arial; margin: 0; 
 		}
-		header {
-			background: #0064B1;
-			color: white;
-			padding: 1rem;
+    	#intro { 
+			display: grid; 
+			grid-template-columns: 
+			1.5fr 1fr; align-items: 
+			center; 
+		}
+    	#intro img { 
+			width: 100%; 
+		}
+   	 	#introInfo {
+			 margin: 5rem; 
+			 text-align: 
+			 center; 
+			}
+    	h2 { 
+			color: #0064B1; 
+		}
+    	#liveUpdates { 
+			text-align: center; 
+			padding: 2rem; 
+			background-color: #F0F8FF; 
+		}
+   	 	#announcements { 
+			background-color: #F58025; 
+			color: white; 
+			padding: 1rem; 
+			text-align: center; 
+			font-weight: bold; 
+		}
+    	#socialFeed { 
+			text-align: center; 
+			padding: 2rem; 
+		}
+    	#socialFeed img { 
+			width: 150px; 
+			margin: 1rem; 
+			border-radius: 0.5rem; 
+		}
+
+		 #aboutButton {
+			background-color: #0064B1;
+			border-radius: 0.3rem;
+			font-size: 24px;
+		 }
+		 #registerButton {
+			background-color: #F58025;
+			font-size: 24px;
+		 }
+		 #countdown {
 			text-align: center;
-		}
-		#announcement {
-			background: #F58025;
-			color: white;
+		 }
+		 #faqs {
 			text-align: center;
-			padding: 0.75rem;
-			font-weight: bold;
-		}
-		#nowHappening {
-			text-align: center;
-			padding: 2rem;
-			background: white;
-			margin: 2rem;
-			border-radius: 1rem;
-			box-shadow: 0 0 10px rgba(0,0,0,0.1);
-		}
-		#quickNav {
 			display: flex;
-			justify-content: center;
-			gap: 1rem;
-			flex-wrap: wrap;
-			padding: 2rem;
+			flex-direction: column;
 		}
-		#quickNav a {
-			background: #0064B1;
-			color: white;
-			padding: 0.75rem 1.5rem;
-			border-radius: 0.5rem;
+		 #faqs h2{
+			color: #0064B1;
+		 }
+		#faqsContainer {
+			margin: 2rem auto;
+			width: 50%;
+		}
+		#faqsContainer details {
+			border: solid 1px black;
+		}
+		#faqsContainer summary {
+			cursor: pointer;
+			font-weight: 600;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			list-style: none;
+		}
+		#faqsContainer summary::after {
+			content: "▶";
+			transition: transform 0.3s ease;
+			font-size: 1rem;
+			color: #666;
+		}
+		#faqsContainer details[open] summary::after {
+			transform: rotate(90deg);
+			color: #000;
+		}
+		#faqsContainer p {
+			margin-top: 0.5rem;
+			color: #555;
+			line-height: 1.4;
+		}
+		#faqs a {
+			background-color: #0064B1;
 			text-decoration: none;
+			padding: 0.5rem 1.5rem;
+			border-radius: 0.75rem;
+			color: white;
+			width: fit-content;
+			margin: auto;
 		}
-		#socialFeed {
-			text-align: center;
-			padding: 2rem;
-			background-color: #fff;
+/*TABLET DISPLAY*/
+		@media (min-width: 768px) and (max-width: 1024px) {
+				#intro {
+					display: block;
+				}
+				#intro img {
+					width: 70%;
+					margin: 0% 15%;
+				}
+				#intro #introInfo{
+					margin-top: 0rem;
+				}
+		}
+/*PHONE DISPLAY*/
+		@media (max-width: 767px) {
+			#intro {
+				display: block;
+			}
+			#intro img {
+				display: none;
+			}
+			#intro #introInfo{					
+				margin-top: 0rem;
+			}
+			#introInfo ul li a{
+				size: 80%;
+			}
 		}
 	</style>
 </head>
 <body>
-	<header>
-		<h1>UTA Philanthropy Summit 2025</h1>
-	</header>
+<!--notes:
+	- nav and footer need to be automated with javascript
+	- nav will be hamburger menu later
+	- images are all placeholders
+	- add javascript features
+	- colors are all placeholders too
+-->
+	 <header>
+        <!-- LOGO SECTION -->
+        <div class="logo-container">
+            <img src="PhilanthropyLogo.jpeg" alt="UTA Philanthropy Logo">
+            <span class="logo-text">UTA Philanthropy </span>
+        </div>
 
-	<div id="announcement">Next Session: “Design Thinking for Impact” starts in 10 minutes!</div>
+	<main>
+        <section id="intro">
+            <img src="liveEvent.jpg" alt="Live Event">
+            <div id="introInfo">
+                <h1>Now Happening!</h1>
+                <h2>Uniting for Good: Philanthropy in Action</h2>
+                <p>April 9, 2025 • Central Library, UTA</p>
+                <p><strong>Currently: Speaker Dr. Charla Markham Shaw</strong></p>
+                <ul>
+                    <li><a href="#" style="background:#0064B1; color:white; padding:1rem; border-radius:0.5rem;">View Full Schedule</a></li>
+                    <li><a href="#" style="background:#F58025; color:white; padding:1rem; border-radius:0.5rem;">Room Map</a></li>
+                </ul>
+            </div>
+        </section>
 
-	<section id="nowHappening">
-		<h2>Now Happening</h2>
-		<p><strong>Speaker:</strong> Dr. Charla Markham Shaw</p>
-		<p><strong>Topic:</strong> Building Communication Bridges in Communities</p>
-		<p><strong>Time Remaining:</strong> 25 minutes</p>
-	</section>
+        <section id="announcements">
+             Next up: Workshop at 10:30 AM
+        </section>
 
-	<section id="quickNav">
-		<a href="#">View Full Schedule</a>
-		<a href="#">Room Map</a>
-		<a href="#">Virtual Platform</a>
-		<a href="#">Sponsor Booths</a>
-	</section>
+        <section id="liveUpdates">
+            <h2>Live Updates</h2>
+            <p>Stay tuned for announcements and session changes throughout the day.</p>
+        </section>
 
-	<section id="socialFeed">
-		<h2>Live Social Feed</h2>
-		<p>See what attendees are sharing under <strong>#UTAPhilanthropyLive</strong></p>
-		<div class="posts">
-			<p>📸 “Great insights from Dr. Shaw!” – @MavsVolunteer</p>
-			<p>🎤 “Incredible panel on innovation!” – @UTACommDept</p>
-		</div>
-	</section>
+        <section id="socialFeed">
+            <h2>Social Feed</h2>
+            <p>Join the conversation! Use <strong>#UTAPhilanthropy2025</strong> to share your photos.</p>
+            <img src="social1.jpg" alt="Attendees photo">
+            <img src="social2.jpg" alt="Workshop photo">
+            <img src="social3.jpg" alt="Panel discussion">
+        </section>
+		<section class="speakers">
+			<h2>Featured Speakers</h2>
+			<p>Meet our Speakers</p>
+			<section class="speakerCards">
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Dr. Charla Markham Shaw</h3>
+					<h4>Prof., Communication Dept., UTA</h4>
+					<p>Expert in health communication and identity research.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Chris Cobler</h3>
+					<h4>CEO, Fort Worth Report</h4>
+					<p>Award-winning journalist and media leader.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Suzanne Smith</h3>
+					<h4>Social Entrepreneur & Consultant</h4>
+					<p>Passionate about social impact and ethical leadership.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Dr. Timothy Ponce</h3>
+					<h4>Asst. Prof., Technical Communication, UTA</h4>
+					<p>Specializes in design thinking and technical writing.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Jennifer Lanter</h3>
+					<h4>Strategic Communication Specialist</h4>
+					<p>Focus on branding, crisis communication, and leadership.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Amanda Jordan</h3>
+					<h4>Lecturer, Social Media & Marketing, UTA</h4>
+					<p>Digital marketing and social media strategist.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Jeff Salavarria</h3>
+					<h4>SVP, Frost Public Finance</h4>
+					<p>Expert in nonprofit and government finance.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Ward Sullivan</h3>
+					<h4>Senior Director of Gift Planning, UTA</h4>
+					<p>Specialist in philanthropic giving and nonprofit planning.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Mindia Whittier</h3>
+					<h4>Marketing & Communications, UTA</h4>
+					<p>Focus on branding, advocacy, and community engagement.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Shomial Ahmad</h3>
+					<h4>Higher Education Reporter</h4>
+					<p>Reports on higher education trends and impact.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Paige McCoy Smith</h3>
+					<h4>VP Communications, Gladney Center</h4>
+					<p>Expert in communications and adoption advocacy.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Carolyn Mentesana</h3>
+					<h4>Exec. Director, Arlington Tomorrow Foundation</h4>
+					<p>Leads philanthropy initiatives for Arlington community.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Wende Burton</h3>
+					<h4>Philanthropy Consultant</h4>
+					<p>Experienced in grantmaking and disaster philanthropy.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Justin Henry</h3>
+					<h4>Senior Director of Development, Texas Rangers Foundation</h4>
+					<p>Specializes in development and fundraising strategies.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Dr. Whitnee Boyd</h3>
+					<h4>Director, Community Impact, North Texas Community Foundation</h4>
+					<p>Focus on health equity and community partnerships.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Isadora Paul</h3>
+					<h4>Philanthropy Student, UTA</h4>
+					<p>Dedicated to community engagement and advocacy.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Becky Gerro</h3>
+					<h4>Scout Leader & Community Advocate</h4>
+					<p>Empowers youth and supports inclusive outdoor programs.</p>
+				</div>
+			</section>
+			<a href="">View Speakers</a>
+		</section>
+		</section>
+		<section class="sponsors">
+			<h2>Our Sponsors</h2>
+			<div class="slider" id="sponsorSlider">
+				<div class="sponsorCards" id="sponsorCards">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+				</div>
+			</div>
+			
+			<a href="">View Sponsors</a>
+		</section>
+		<section id="faqs">
+			<h2>Frequently Asked Questions</h2>
+			<div id="faqsContainer">
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+			</div>
+
+			<a href="">Learn More</a>
+		</section>
+										<section id=""></section>
+	</main>
+	<script src="javascript.js"></script>
 </body>
 </html>
