@@ -6,49 +6,48 @@
     <title>UTA Philanthropy - Live Event Updates</title>
 	<link rel="stylesheet" href="styles.css">
 	<style>
-    	body { 
-			font-family: 
-			Arial; margin: 0; 
+		#intro {
+			display: grid;
+			grid-template-columns: 1.5fr 1fr;
+			grid-template-rows: 1fr;
+			align-items: center;
 		}
-    	#intro { 
-			display: grid; 
-			grid-template-columns: 
-			1.5fr 1fr; align-items: 
-			center; 
+		#intro img {
+			grid-column: 1/2;
+			width: 100%;
+			justify-self: center;
 		}
-    	#intro img { 
-			width: 100%; 
+		#intro #introInfo{
+			grid-column: 2/3;
+			margin: 5rem;
+			text-align: center;
+			
 		}
-   	 	#introInfo {
-			 margin: 5rem; 
-			 text-align: 
-			 center; 
-			}
-    	h2 { 
-			color: #0064B1; 
+		#introInfo h1 {
+			text-transform: uppercase;
 		}
-    	#liveUpdates { 
-			text-align: center; 
-			padding: 2rem; 
-			background-color: #F0F8FF; 
+		#introInfo h2 {
+			color: #0064B1;
+			font-weight: 1000;
+			text-transform: uppercase;
 		}
-   	 	#announcements { 
-			background-color: #F58025; 
-			color: white; 
-			padding: 1rem; 
-			text-align: center; 
-			font-weight: bold; 
+		#introInfo p {
+			color: #666;
 		}
-    	#socialFeed { 
-			text-align: center; 
-			padding: 2rem; 
-		}
-    	#socialFeed img { 
-			width: 150px; 
-			margin: 1rem; 
-			border-radius: 0.5rem; 
-		}
-
+		 #introInfo ul {
+			list-style-type: none;
+			display: flex;
+			justify-content: center;
+		 }
+		 #introInfo ul li {
+			margin: 2rem;
+		 }
+		 #introInfo ul li a{
+			text-decoration: none;
+			padding: 0.5rem 1rem;
+			border-radius: 0.5rem;
+			color: white;
+		 }
 		 #aboutButton {
 			background-color: #0064B1;
 			border-radius: 0.3rem;
@@ -206,90 +205,7 @@
 					<h4>Social Entrepreneur & Consultant</h4>
 					<p>Passionate about social impact and ethical leadership.</p>
 				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Dr. Timothy Ponce</h3>
-					<h4>Asst. Prof., Technical Communication, UTA</h4>
-					<p>Specializes in design thinking and technical writing.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Jennifer Lanter</h3>
-					<h4>Strategic Communication Specialist</h4>
-					<p>Focus on branding, crisis communication, and leadership.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Amanda Jordan</h3>
-					<h4>Lecturer, Social Media & Marketing, UTA</h4>
-					<p>Digital marketing and social media strategist.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Jeff Salavarria</h3>
-					<h4>SVP, Frost Public Finance</h4>
-					<p>Expert in nonprofit and government finance.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Ward Sullivan</h3>
-					<h4>Senior Director of Gift Planning, UTA</h4>
-					<p>Specialist in philanthropic giving and nonprofit planning.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Mindia Whittier</h3>
-					<h4>Marketing & Communications, UTA</h4>
-					<p>Focus on branding, advocacy, and community engagement.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Shomial Ahmad</h3>
-					<h4>Higher Education Reporter</h4>
-					<p>Reports on higher education trends and impact.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Paige McCoy Smith</h3>
-					<h4>VP Communications, Gladney Center</h4>
-					<p>Expert in communications and adoption advocacy.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Carolyn Mentesana</h3>
-					<h4>Exec. Director, Arlington Tomorrow Foundation</h4>
-					<p>Leads philanthropy initiatives for Arlington community.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Wende Burton</h3>
-					<h4>Philanthropy Consultant</h4>
-					<p>Experienced in grantmaking and disaster philanthropy.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Justin Henry</h3>
-					<h4>Senior Director of Development, Texas Rangers Foundation</h4>
-					<p>Specializes in development and fundraising strategies.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Dr. Whitnee Boyd</h3>
-					<h4>Director, Community Impact, North Texas Community Foundation</h4>
-					<p>Focus on health equity and community partnerships.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Isadora Paul</h3>
-					<h4>Philanthropy Student, UTA</h4>
-					<p>Dedicated to community engagement and advocacy.</p>
-				</div>
-				<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg">
-					<h3>Becky Gerro</h3>
-					<h4>Scout Leader & Community Advocate</h4>
-					<p>Empowers youth and supports inclusive outdoor programs.</p>
-				</div>
+				
 			</section>
 			<a href="">View Speakers</a>
 		</section>
