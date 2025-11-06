@@ -1,74 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>UTA Philanthropy Summit | Thank You!</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			background-color: #f8f9fb;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTA Philanthropy Recap - Continuing the Impact</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background: url('postEventBackground.jpg') center/cover no-repeat;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        header > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* LOGO styling */
+        .logo-container {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-container img {
+            width: 70px;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        @media (max-width: 767px) {
+            .logo-container img {
+                width: 50px;
+            }
+            .logo-text {
+                font-size: 1rem;
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        #eventDetails {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #registerNow {
+            background-color: #F58025;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        #highlights, #impact, #gallery {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .highlightCard img {
+            width: 200px;
+            border-radius: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #f2f2f2;
+        }
+    
+/*TABLET DISPLAY*/
+		@media (min-width: 768px) and (max-width: 1024px) {
+				#intro {
+					display: block;
+				}
+				#intro img {
+					width: 70%;
+					margin: 0% 15%;
+				}
+				#intro #introInfo{
+					margin-top: 0rem;
+				}
 		}
-		header {
-			background-color: #0064B1;
-			color: white;
-			padding: 2rem;
-			text-align: center;
-		}
-		#thankYou {
-			text-align: center;
-			padding: 4rem 2rem;
-			background-color: white;
-		}
-		#thankYou h1 {
-			color: #0064B1;
-			font-size: 2.5rem;
-		}
-		#thankYou p {
-			font-size: 1.2rem;
-			margin-top: 1rem;
-		}
-		#gallery {
-			text-align: center;
-			padding: 2rem;
-			background-color: #fff;
-		}
-		#gallery img {
-			width: 200px;
-			margin: 0.5rem;
-			border-radius: 0.75rem;
-		}
-		#feedback, #newsletter {
-			text-align: center;
-			padding: 3rem;
-			background: #f0f0f0;
-		}
-		#feedback a, #newsletter a {
-			display: inline-block;
-			background: #F58025;
-			color: white;
-			padding: 1rem 2rem;
-			border-radius: 0.5rem;
-			text-decoration: none;
-			font-weight: bold;
-		}
-		#sponsors {
-			text-align: center;
-			padding: 3rem;
-			background-color: white;
-		}
-		#sponsors img {
-			width: 120px;
-			margin: 0.5rem;
+/*PHONE DISPLAY*/
+		@media (max-width: 767px) {
+			#intro {
+				display: block;
+			}
+			#intro img {
+				display: none;
+			}
+			#intro #introInfo{					
+				margin-top: 0rem;
+			}
+			#introInfo ul li a{
+				size: 80%;
+			}
 		}
 	</style>
 </head>
 <body>
-	<header>
-		<h1>Thank You for Attending!</h1>
-		<p>UTA Philanthropy Summit 2025 was a success because of you.</p>
-	</header>
+<!--notes:
+	- nav and footer need to be automated with javascript
+	- nav will be hamburger menu later
+	- images are all placeholders
+	- add javascript features
+	- colors are all placeholders too
+-->
+	</style>
+</head>
+<body>
+    <header>
+        <!-- LOGO SECTION -->
+        <div class="logo-container">
+            <img src="PhilanthropyLogo.jpeg" alt="UTA Philanthropy Logo">
+            <span class="logo-text">UTA Philanthropy</span>
+        </div>
+
+        <!-- HERO CONTENT -->
+        <h1>Thank You for being apart of UTA Philanthropy!</h1>
+        <p id="eventDetails">
+            We’re grateful for everyone who joined us on April 9, 2025 your support made an incredible impact.
+        </p>
+        <a href="gallery.html" id="registerNow">View Event Highlights</a>
+    </header>
 
 	<section id="thankYou">
 		<h1>We Did It Together!</h1>
@@ -105,7 +190,5 @@
 		<p>Sign up for updates about future UTA Philanthropy events.</p>
 		<a href="#">Join Our Newsletter</a>
 	</section>
-		<script src="javascript.js"></script>
-
 </body>
 </html>
