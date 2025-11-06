@@ -6,98 +6,107 @@
     <title>UTA Philanthropy Recap - Continuing the Impact</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-
-        header {
-            background: url('postEventBackground.jpg') center/cover no-repeat;
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-        }
-
-        header > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* LOGO styling */
-        .logo-container {
-            position: absolute;
-            top: 1.5rem;
-            left: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo-container img {
-            width: 70px;
-            height: auto;
-            border-radius: 0.5rem;
-        }
-
-        .logo-text {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        @media (max-width: 767px) {
-            .logo-container img {
-                width: 50px;
-            }
-            .logo-text {
-                font-size: 1rem;
-            }
-        }
-
-        h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        #eventDetails {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-
-        #registerNow {
-            background-color: #F58025;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 0.5rem;
-            font-weight: bold;
-            font-size: 1.25rem;
-        }
-
-        #highlights, #impact, #gallery {
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-
-        .highlightCard img {
-            width: 200px;
-            border-radius: 0.5rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: #f2f2f2;
-        }
+		#intro {
+			display: grid;
+			grid-template-columns: 1.5fr 1fr;
+			grid-template-rows: 1fr;
+			align-items: center;
+		}
+		#intro img {
+			grid-column: 1/2;
+			width: 100%;
+			justify-self: center;
+		}
+		#intro #introInfo{
+			grid-column: 2/3;
+			margin: 5rem;
+			text-align: center;
+			
+		}
+		#introInfo h1 {
+			text-transform: uppercase;
+		}
+		#introInfo h2 {
+			color: #0064B1;
+			font-weight: 1000;
+			text-transform: uppercase;
+		}
+		#introInfo p {
+			color: #666;
+		}
+		 #introInfo ul {
+			list-style-type: none;
+			display: flex;
+			justify-content: center;
+		 }
+		 #introInfo ul li {
+			margin: 2rem;
+		 }
+		 #introInfo ul li a{
+			text-decoration: none;
+			padding: 0.5rem 1rem;
+			border-radius: 0.5rem;
+			color: white;
+		 }
+		 #aboutButton {
+			background-color: #0064B1;
+			border-radius: 0.3rem;
+			font-size: 24px;
+		 }
+		 #registerButton {
+			background-color: #F58025;
+			font-size: 24px;
+		 }
+		 #countdown {
+			text-align: center;
+		 }
+		 #faqs {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+		}
+		 #faqs h2{
+			color: #0064B1;
+		 }
+		#faqsContainer {
+			margin: 2rem auto;
+			width: 50%;
+		}
+		#faqsContainer details {
+			border: solid 1px black;
+		}
+		#faqsContainer summary {
+			cursor: pointer;
+			font-weight: 600;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			list-style: none;
+		}
+		#faqsContainer summary::after {
+			content: "▶";
+			transition: transform 0.3s ease;
+			font-size: 1rem;
+			color: #666;
+		}
+		#faqsContainer details[open] summary::after {
+			transform: rotate(90deg);
+			color: #000;
+		}
+		#faqsContainer p {
+			margin-top: 0.5rem;
+			color: #555;
+			line-height: 1.4;
+		}
+		#faqs a {
+			background-color: #0064B1;
+			text-decoration: none;
+			padding: 0.5rem 1.5rem;
+			border-radius: 0.75rem;
+			color: white;
+			width: fit-content;
+			margin: auto;
+		}
     
 /*TABLET DISPLAY*/
 		@media (min-width: 768px) and (max-width: 1024px) {
@@ -168,7 +177,7 @@
         </div>
         <a href="gallery.html">See the Full Gallery</a>
     </section>
-	<section id=""></section>
+										<section id=""></section>
 	</main>
 	<script src="javascript.js"></script>
 </body>
