@@ -1,114 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>UTA Philanthropy Summit 2025 | Uniting for Good</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTA Philanthropy - Uniting for Good</title>
 	<link rel="stylesheet" href="styles.css">
 	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			background: url('campus_background.jpg') center/cover no-repeat;
-			color: #222;
+		#intro {
+			display: grid;
+			grid-template-columns: 1.5fr 1fr;
+			grid-template-rows: 1fr;
+			align-items: center;
 		}
-		header {
+		#intro img {
+			grid-column: 1/2;
+			width: 100%;
+			justify-self: center;
+		}
+		#intro #introInfo{
+			grid-column: 2/3;
+			margin: 5rem;
 			text-align: center;
-			padding: 2rem 0;
-			background: rgba(255, 255, 255, 0.8);
+			
 		}
-		#hero {
-			text-align: center;
-			padding: 5rem 2rem;
-			background-color: rgba(255, 255, 255, 0.85);
-		}
-		#hero h1 {
-			font-size: 2.5rem;
+		#introInfo h1 {
 			text-transform: uppercase;
+		}
+		#introInfo h2 {
 			color: #0064B1;
+			font-weight: 1000;
+			text-transform: uppercase;
 		}
-		#hero h3 {
-			font-weight: 500;
-			margin: 1rem 0;
+		#introInfo p {
+			color: #666;
 		}
-		#hero .register-btn {
-			background-color: #F58025;
-			color: white;
-			padding: 1rem 2rem;
-			border-radius: 0.5rem;
+		 #introInfo ul {
+			list-style-type: none;
+			display: flex;
+			justify-content: center;
+		 }
+		 #introInfo ul li {
+			margin: 2rem;
+		 }
+		 #introInfo ul li a{
 			text-decoration: none;
-			font-weight: bold;
-			font-size: 1.2rem;
+			padding: 0.5rem 1rem;
+			border-radius: 0.5rem;
+			color: white;
+		 }
+		 #aboutButton {
+			background-color: #0064B1;
+			border-radius: 0.3rem;
+			font-size: 24px;
+		 }
+		 #registerButton {
+			background-color: #F58025;
+			font-size: 24px;
+		 }
+		 #countdown {
+			text-align: center;
+		 }
+		 #faqs {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
 		}
-		#countdown {
-			margin-top: 2rem;
-			font-size: 1.5rem;
+		 #faqs h2{
 			color: #0064B1;
+		 }
+		#faqsContainer {
+			margin: 2rem auto;
+			width: 50%;
 		}
-		#speakers, #agenda, #sponsors {
-			text-align: center;
-			padding: 4rem 2rem;
-			background-color: #fff;
+		#faqsContainer details {
+			border: solid 1px black;
 		}
-		#speakers img, .sponsorCards img {
-			width: 150px;
-			height: 150px;
-			object-fit: cover;
-			border-radius: 50%;
+		#faqsContainer summary {
+			cursor: pointer;
+			font-weight: 600;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			list-style: none;
 		}
-		#social {
-			text-align: center;
-			padding: 2rem;
-			background: #f0f0f0;
+		#faqsContainer summary::after {
+			content: "▶";
+			transition: transform 0.3s ease;
+			font-size: 1rem;
+			color: #666;
+		}
+		#faqsContainer details[open] summary::after {
+			transform: rotate(90deg);
+			color: #000;
+		}
+		#faqsContainer p {
+			margin-top: 0.5rem;
+			color: #555;
+			line-height: 1.4;
+		}
+		#faqs a {
+			background-color: #0064B1;
+			text-decoration: none;
+			padding: 0.5rem 1.5rem;
+			border-radius: 0.75rem;
+			color: white;
+			width: fit-content;
+			margin: auto;
+		}
+/*TABLET DISPLAY*/
+		@media (min-width: 768px) and (max-width: 1024px) {
+				#intro {
+					display: block;
+				}
+				#intro img {
+					width: 70%;
+					margin: 0% 15%;
+				}
+				#intro #introInfo{
+					margin-top: 0rem;
+				}
+		}
+/*PHONE DISPLAY*/
+		@media (max-width: 767px) {
+			#intro {
+				display: block;
+			}
+			#intro img {
+				display: none;
+			}
+			#intro #introInfo{					
+				margin-top: 0rem;
+			}
+			#introInfo ul li a{
+				size: 80%;
+			}
 		}
 	</style>
 </head>
 <body>
-	<header>
-		<h2>UTA Philanthropy Summit 2025</h2>
-		<p>April 9, 2025 • 8:30 AM - 6:30 PM • UTA Central Library</p>
-	</header>
+<!--notes:
+	- nav and footer need to be automated with javascript
+	- nav will be hamburger menu later
+	- images are all placeholders
+	- add javascript features
+	- colors are all placeholders too
+-->
+	 <header>
+        <!-- LOGO SECTION -->
+        <div class="logo-container">
+            <img src="PhilanthropyLogo.jpeg" alt="UTA Philanthropy Logo">
+            <span class="logo-text">UTA Philanthropy </span>
+        </div>
 
-	<section id="hero">
-		<h1>Uniting for Good</h1>
-		<h3>The Power of Partnership in Philanthropy</h3>
-		<a href="#" class="register-btn">Register Now</a>
-		<div id="countdown">Countdown: 154 days left!</div>
-	</section>
-
-	<section id="speakers">
-		<h2>Featured Speakers</h2>
-		<p>Leaders in communication, innovation, and philanthropy.</p>
-		<div class="speakerCards">
-			<img src="speakerPlaceholder.jpg" alt="Speaker">
-			<img src="speakerPlaceholder.jpg" alt="Speaker">
-			<img src="speakerPlaceholder.jpg" alt="Speaker">
-		</div>
-	</section>
-
-	<section id="agenda">
-		<h2>Agenda Highlights</h2>
-		<ul>
-			<li> Morning Keynote: “The Future of Philanthropy”</li>
-			<li> Networking Lunch & Sponsor Expo</li>
-			<li> Workshop: “Design Thinking for Social Impact”</li>
-		</ul>
-	</section>
-
-	<section id="sponsors">
-		<h2>Our Sponsors</h2>
-		<div class="sponsorCards">
+	<main>
+		<section id="intro">
 			<img src="speakerPlaceholder.jpg">
-			<img src="speakerPlaceholder.jpg">
-			<img src="speakerPlaceholder.jpg">
-		</div>
-	</section>
+			<div id="introInfo">
+				<h1>Uniting for Good</h1>
+				<p>The Power of Partnership in</p>
+				<h2>Philanthropy</h2>
+				<p>Wednesday, April 9, 2025 • 8:30 AM - 6:30 PM • UTA</p>
+				<p>Arlington Campus, Central Library</p>
+				<ul>
+					<li><a href="" id="aboutButton">About</a></li>
+					<li><a href="" id="registerButton">Register</a></li>
+				</ul>
+			</div>
+		</section>
+		<section id="countdown">
+			<h2>COUNTDOWN</h2><!--put innerHTML js here to do the countdown timer-->
+			<p>Until the Event</p>
+		</section>
+		<section class="speakers">
+			<h2>Featured Speakers</h2>
+			<p>Meet our Speakers</p>
+			<section class="speakerCards">
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Dr. Charla Markham Shaw</h3>
+					<h4>Prof., Communication Dept., UTA</h4>
+					<p>Expert in health communication and identity research.</p>
+				</div>
+				<div class="speakerCard">
+					<img src="speakerPlaceholder.jpg">
+					<h3>Chris Cobler</h3>
+					<h4>CEO, Fort Worth Report</h4>
+					<p>Award-winning journalist and media leader.</p>
+				</div>
+				
+			</section>
+			<a href="">View Speakers</a>
+		</section>
+		</section>
+		<section class="sponsors">
+			<h2>Our Sponsors</h2>
+			<div class="slider" id="sponsorSlider">
+				<div class="sponsorCards" id="sponsorCards">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+					<img src="speakerPlaceholder.jpg" class="slideshow">
+				</div>
+			</div>
+			
+			<a href="">View Sponsors</a>
+		</section>
+		<section id="faqs">
+			<h2>Frequently Asked Questions</h2>
+			<div id="faqsContainer">
+				<details>
+					<summary>How do I register?</summary>
+					<p>Click “Register Now” at the top of this page.</p>
+				</details>
+				<details>
+					<summary>Where is the event located?</summary>
+					<p>Central Library, UTA Campus, Arlington, TX. Sixth floor</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+				<details>
+					<summary>Question</summary>
+					<p>Answer</p>
+				</details>
+			</div>
 
-	<section id="social">
-		<h2>Spread the Word!</h2>
-		<p>Share your excitement using <strong>#UTAPhilanthropy2025</strong></p>
-	</section>
-
+			<a href="">Learn More</a>
+		</section>
+										<section id=""></section>
+	</main>
 	<script src="javascript.js"></script>
 </body>
 </html>
