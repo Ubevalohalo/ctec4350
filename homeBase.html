@@ -21,10 +21,19 @@
 			grid-column: 2/3;
 			margin: 5rem;
 			text-align: center;
+			
 		}
-		 #introInfo h2 {
+		#introInfo h1 {
+			text-transform: uppercase;
+		}
+		#introInfo h2 {
 			color: #0064B1;
-		 }
+			font-weight: 1000;
+			text-transform: uppercase;
+		}
+		#introInfo p {
+			color: #666;
+		}
 		 #introInfo ul {
 			list-style-type: none;
 			display: flex;
@@ -33,18 +42,20 @@
 		 #introInfo ul li {
 			margin: 2rem;
 		 }
-		 #introInfo ul li  a{
+		 #introInfo ul li a{
 			text-decoration: none;
-			padding: 1rem 2rem;
-			border-radius: 1rem;
+			padding: 0.5rem 1rem;
+			border-radius: 0.5rem;
 			color: white;
-
 		 }
 		 #aboutButton {
 			background-color: #0064B1;
+			border-radius: 0.3rem;
+			font-size: 24px;
 		 }
 		 #registerButton {
 			background-color: #F58025;
+			font-size: 24px;
 		 }
 		 #countdown {
 			text-align: center;
@@ -119,6 +130,9 @@
 			}
 			#intro #introInfo{					
 				margin-top: 0rem;
+			}
+			#introInfo ul li a{
+				size: 80%;
 			}
 		}
 	</style>

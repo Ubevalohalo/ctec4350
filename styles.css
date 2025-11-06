@@ -25,11 +25,11 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
-    padding: 0.5rem;
+    padding: 0.4rem;
 }
 nav ul li #CTA {
     background-color: #F58025;
-    border-radius: 0.75rem;
+    border-radius: 0.3rem;
 }
 .speakers {
     display: flex;
@@ -55,10 +55,20 @@ nav ul li #CTA {
     margin: 1rem;
     padding: 1rem;
     color: white;
+    border-radius: 0.5rem;
 }
 .speakerCards img {
     width: 100%;
-    margin: 0% 5%;
+    margin: auto;
+}
+.speakers h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+.speakers h4{
+    text-align: center;
+    font-weight: lighter;
+    font-size: 20px;
 }
 .speakers a {
     background-color: #F58025;
