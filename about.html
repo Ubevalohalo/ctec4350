@@ -39,6 +39,80 @@
 			text-decoration: none;
 			/*needs to be centered*/
 		}
+		#pastConferences {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+		}
+		#pastConferences div img {
+			width: 70%;
+			clidp-path: circle(50% at center);
+			border-radius: 50%;
+		}
+		#pastConferences #conference1Text {
+			grid-row: 1/2;
+			grid-column: 1/2;
+		}
+		#pastConferences #attendees1 {
+			grid-row: 1/2;
+			grid-column: 2/3;
+		}
+		#pastConferences #conference2Text {
+			grid-row: 2/3;
+			grid-column: 2/3;
+		}
+		#pastConferences #conference2Text, #pastConferences #conference1Text {
+			margin: 3rem;
+		}
+		#pastConferences #attendees1 {
+			grid-row: 2/3;
+			grid-column: 1/2;
+		}
+		 #attendees1, #attendees2 {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+			justify-items: center;
+		}
+		#pastComments {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 4fr;
+			margin-top: 5rem;
+		}
+		#pastComments .speakerComments img{
+			width: 100%;
+			border-radius: 80%;
+		}
+		#pastComments .speakerComments {
+			margin: 1rem;
+			padding: 1rem;
+		}
+		#pastComments .speakerComments h3{
+			text-align: center;
+		}
+		#pastComments h2 {
+			text-align: center;
+			grid-column: 1/4;
+			grid-row: 1/2;
+		}
+
+
+		#comment1{
+			grid-column: 1/2;
+			grid-row: 2/3;
+		}
+		#comment2{
+			grid-column: 2/3;
+			grid-row: 2/3;
+		}
+		#comment3{
+			grid-column: 3/4;
+			grid-row: 2/3;
+		}
+
 		 #allSponsors img {
 			width: 10rem;
 		 }
@@ -74,10 +148,46 @@
 				</div>
 			</div>
 		</section>
-		<div id="textInfo"><!--PETER WILL NEED TO CHANGE THIS SECTION: REVISE WRITING AND BREAK IT UP BY TOPIC AND FOR EASE OF READING-->
+		<section id="textInfo"><!--PETER WILL NEED TO CHANGE THIS SECTION: REVISE WRITING AND BREAK IT UP BY TOPIC AND FOR EASE OF READING-->
 			<p>This one-day conference serves as an engaging platform to bring together nonprofit leaders, UTA faculty, and students for an immersive exploration of the latest trends, strategies, and tools shaping fundraising & development today. Through engaging plenary sessions, hands-on workshops, and meaningful networking opportunities, participants will gain actionable insights and innovative approaches to strengthen their impact. By fostering collaboration and dialogue across sectors, this event seeks to inspire new partnerships and empower attendees with the resources and connections needed to address our community's most pressing challenges.</p>
 			<a href="register.html" id="ctaRegister">Tickets are now on sale!</a>
-		</div>
+		</section>
+		<section id="pastConferences">
+				<p id="conference1Text">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
+				<div id="attendees1">
+					<img src="speakerPlaceholder.jpg">
+					<p>XXX Attendees</p>
+				</div>
+				<p id="conference2Text">Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
+				<div id="attendees2">
+					<img src="speakerPlaceholder.jpg">
+					<p>XXX Attendees</p>
+				</div>
+		</section>
+		<section id="pastComments">
+			<h2>What Past Attendees Say</h2>
+			<div class="speakerComments" id="comment1">
+				<img src="speakerPlaceholder.jpg">
+				<h3>First Last</h3>
+				<p>“ Lorem ipsum dolor sit amet consectetur. Fringilla amet suspendisse morbi nibh. Aenean tristique placerat massa viverra vitae phasellus etiam nunc massa. Sit eget mi elementum neque. Nunc laoreet lorem bibendum quam tristique vitae non ultrices.“</p>
+			</div>
+			<div class="speakerComments" id="comment2">
+				<img src="speakerPlaceholder.jpg">
+				<h3>First Last</h3>
+				<p>“ Lorem ipsum dolor sit amet consectetur. Fringilla amet suspendisse morbi nibh. Aenean tristique placerat massa viverra vitae phasellus etiam nunc massa. Sit eget mi elementum neque. Nunc laoreet lorem bibendum quam tristique vitae non ultrices.“</p>
+			</div>
+			<div class="speakerComments" id="comment3">
+				<img src="speakerPlaceholder.jpg">
+				<h3>First Last</h3>
+				<p>“ Lorem ipsum dolor sit amet consectetur. Fringilla amet suspendisse morbi nibh. Aenean tristique placerat massa viverra vitae phasellus etiam nunc massa. Sit eget mi elementum neque. Nunc laoreet lorem bibendum quam tristique vitae non ultrices.“</p>
+			</div>
+		</section>
+
+
+
+
+
+
 		<section class="sponsors">
 			<h2>Our Sponsors</h2>
 				<div id="allSponsors">
