@@ -6,175 +6,78 @@
     <title>About</title>
     <link rel="stylesheet" href="styles.css">
 	<style>
-		#intro {
-
+		#introSections {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr;
+			margin-top: 2rem;
 		}
-		
-		#intro img {
-
-			width: 100%;
+		#network{
+			grid-column: 1/2;
+			grid-row: 1/2;
 		}
-		#intro #introInfo{
-
-			margin: 2rem;
+		#learn{
+			grid-column: 2/3;
+			grid-row: 1/2;
+		}
+		#explore{
+			grid-column: 3/4;
+			grid-row: 1/2;
+		}
+		#engage{
+			grid-column: 4/5;
+			grid-row: 1/2;
+		}
+		.introSection{
+			margin: 1rem;
 			text-align: center;
 		}
-		 #introInfo h1 {
-			color: #0064B1;
-		 }
-		 #introInfo ul {
-			list-style-type: none;
-			display: flex;
-			justify-content: center;
-		 }
-		 #introInfo ul li {
-			margin: 2rem;
-			background-color: #0064B1;
-			padding: 0.5rem 1rem;
-			border-radius: 0.5rem;
-		 }
-		 #introInfo ul li  a{
+		.introSection img {
+			width: 95%;
+		}
+		#ctaRegister {
 			text-decoration: none;
-			color: white;
-		 }
-		 #introInfo p {
-			text-align: left;
-		 }
+			/*needs to be centered*/
+		}
 		 #allSponsors img {
 			width: 10rem;
 		 }
 /*TABLET DISPLAY*/
 		@media (min-width: 768px) and (max-width: 1024px) {
-				#intro {
-					display: block;
-				}
-				#intro img {
-					width: 70%;
-					margin: 0% 15%;
-				}
-				#intro #introInfo{
-					margin-top: 0rem;
-				}
+
 		}
 /*PHONE DISPLAY*/
 		@media (max-width: 767px) {
-			#intro {
-				display: block;
-			}
-			#intro img {
-				display: none;
-			}
-			#intro #introInfo{					
-				margin-top: 0rem;
-			}
+
 		}
 	</style>
 </head>
 <body>
 	<main>
 		<section id="intro">
-			<img src="speakerPlaceholder.jpg">
-			<div id="introInfo">
-			<h1>About</h1>
-			<p>This one-day conference serves as an engaging platform to bring together nonprofit leaders, UTA faculty, and students for an immersive exploration of the latest trends, strategies, and tools shaping fundraising & development today. Through engaging plenary sessions, hands-on workshops, and meaningful networking opportunities, participants will gain actionable insights and innovative approaches to strengthen their impact. By fostering collaboration and dialogue across sectors, this event seeks to inspire new partnerships and empower attendees with the resources and connections needed to address our community's most pressing challenges.</p>
-			<ul>
-				<li><a href="">Tickets are now on sale!</a></li>
-			</ul>
+			<div id="introSections">
+				<div id="network" class="introSection">
+					<img src="speakerPlaceholder.jpg">
+					<h2>Network</h2>
+				</div>
+				<div id="learn" class="introSection">
+					<img src="speakerPlaceholder.jpg">
+					<h2>Learn</h2>
+				</div>
+				<div id="explore" class="introSection">
+					<img src="speakerPlaceholder.jpg">
+					<h2>Explore</h2>
+				</div>
+				<div id="engage" class="introSection">
+					<img src="speakerPlaceholder.jpg">
+					<h2>Engage</h2>
+				</div>
 			</div>
-
 		</section>
-			<section class="speakers">
-				<h2>Featured Speakers</h2>
-				<p>Meet our distinguished speakers and guests</p>
-				<section class="speakerCards">
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Dr. Charla Markham Shaw">
-					<h3>Dr. Charla Markham Shaw</h3>
-					<p>Professor and Chairperson in the Communication Department at UTA, specializing in narrative, self-conception, and health communication. Holds a Ph.D. from Louisiana State University.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Chris Cobler">
-					<h3>Chris Cobler</h3>
-					<p>Founding Publisher and CEO of the Fort Worth Report. Former Nieman Fellow at Harvard and past President of the Freedom of Information Foundation of Texas.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Suzanne Smith">
-					<h3>Suzanne Smith</h3>
-					<p>Founder of Social Impact Architects, teaching social entrepreneurship and ethical leadership at Pepperdine, SMU, and UTA. Recognized as a Next Generation Social Entrepreneur by SEA.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Dr. Timothy Ponce">
-					<h3>Dr. Timothy Ponce</h3>
-					<p>Assistant Professor at UTA specializing in Technical Communication, Design Thinking, and Design Justice. Coordinates UTA’s Technical Writing Program.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Jennifer Lanter">
-					<h3>Jennifer Lanter</h3>
-					<p>Expert in strategic communication, crisis management, branding, marketing, and education program development.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Amanda Jordan">
-					<h3>Amanda Jordan</h3>
-					<p>Lecturer at UTA specializing in social media, advertising, and digital marketing. Holds a Master’s in Communication from UTA.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Jeff Salavarria">
-					<h3>Jeff Salavarria</h3>
-					<p>Senior VP at Frost Public Finance Division in Fort Worth with 20 years of municipal finance experience. BBA in Finance from UNT.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Ward Sullivan">
-					<h3>Ward Sullivan</h3>
-					<p>Senior Director of Gift Planning at UTA with a background in nonprofit giving and law. Holds degrees in Anthropology and Law.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Mindia Whittier">
-					<h3>Mindia Whittier</h3>
-					<p>Senior Lecturer at UTA and co-author on brand trust. Award-winning marketing and communication professional passionate about advocacy.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Shomial Ahmad">
-					<h3>Shomial Ahmad</h3>
-					<p>Higher Education Reporter at the Fort Worth Report focusing on the impact of education on the local economy and students.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Paige McCoy Smith">
-					<h3>Paige McCoy Smith</h3>
-					<p>VP of Communications at the Gladney Center for Adoption and former anchor at Good Morning Texas.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Carolyn Mentesana">
-					<h3>Carolyn Mentesana</h3>
-					<p>Executive Director of the Arlington Tomorrow Foundation with 30+ years in philanthropy and communications leadership.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Wende Burton">
-					<h3>Wende Burton</h3>
-					<p>Philanthropy consultant and former Chief Philanthropy Officer at Communities Foundation of Texas. Co-launched North Texas Cares initiative.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Justin Henry">
-					<h3>Justin Henry</h3>
-					<p>Senior Director of Development for the Texas Rangers Baseball Foundation. Holds an MBA from Baylor University.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Dr. Whitnee Boyd">
-					<h3>Dr. Whitnee Boyd</h3>
-					<p>Director of Community Impact at North Texas Community Foundation, focusing on health equity and regional impact efforts.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Isadora Paul">
-					<h3>Isadora Paul</h3>
-					<p>Philanthropy major at UTA recognized with the Second-Year Outstanding Leader Award. Focuses on advocacy and equity in public service.</p>
-					</div>
-					<div class="speakerCard">
-					<img src="speakerPlaceholder.jpg" alt="Becky Gerro">
-					<h3>Becky Gerro</h3>
-					<p>Scout Master and environmental educator at River Legacy, dedicated to youth empowerment and community leadership.</p>
-					</div>
-				</section>
-				</section>
-		</section>
+		<div id="textInfo"><!--PETER WILL NEED TO CHANGE THIS SECTION: REVISE WRITING AND BREAK IT UP BY TOPIC AND FOR EASE OF READING-->
+			<p>This one-day conference serves as an engaging platform to bring together nonprofit leaders, UTA faculty, and students for an immersive exploration of the latest trends, strategies, and tools shaping fundraising & development today. Through engaging plenary sessions, hands-on workshops, and meaningful networking opportunities, participants will gain actionable insights and innovative approaches to strengthen their impact. By fostering collaboration and dialogue across sectors, this event seeks to inspire new partnerships and empower attendees with the resources and connections needed to address our community's most pressing challenges.</p>
+			<a href="register.html" id="ctaRegister">Tickets are now on sale!</a>
+		</div>
 		<section class="sponsors">
 			<h2>Our Sponsors</h2>
 				<div id="allSponsors">
