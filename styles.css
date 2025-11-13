@@ -4,6 +4,34 @@ html {
 p, li {
 	font-size: 75%;
 }
+/*landing/hero*/
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  min-width: 100%;
+}
+#intro {
+    position: relative; /* Essential for positioning child elements */
+    width: 100%; /* Or a specific width */
+    height: auto; /* Or a specific height */
+    overflow: hidden; /* To prevent text from spilling if it's outside the video area */
+    text-align: center;
+}
+
+#intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the container without distortion */
+}
+
+#introInfo {
+    position: absolute; 
+    top: 40%; 
+    left: 42.5%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    z-index: 1;
+    background-color: white;/*i just put this here so we can se the text but adjust as needed*/ 
+}
 nav {
     background-color: #0064B1;
     display: flex;
@@ -11,7 +39,7 @@ nav {
 
 }
 nav img {
-    width: 15%;
+    width: 5%;/*THIS IS A PLACEHOLDER VALUE FOR WHEN WE REPLACE IT WITH THE UPDATED LOGO. I just wanted the nav to not be huge*/
     margin: 0.5rem;
 }
 nav ul {
@@ -51,7 +79,7 @@ nav ul li #CTA {
 }
 .speakerCard {
     background-color: #0064B1;
-    width: 25%;
+    width: 30%;
     margin: 1rem;
     padding: 1rem;
     color: white;

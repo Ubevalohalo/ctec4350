@@ -1,7 +1,7 @@
 
 function animation() {
-    const track = document.querySelector('.sponsorCards');
-    const slider = document.querySelector('.slider');
+    const track = document.querySelector();
+    const slider = document.querySelector();
 
     // Duplicate images for seamless loop
     track.innerHTML += track.innerHTML;
