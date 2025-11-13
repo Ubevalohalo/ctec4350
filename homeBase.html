@@ -122,9 +122,17 @@
 			grid-column: 2/3;
 			grid-row: 2/3;
 		}
-		.sponsorCards img{
-			margin: auto;
+		.sponsors {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
+		.sponsors img {
+			width: 40%;
+			margin: 2rem;
+		}
+
+		/*
 		 #faqs {
 			text-align: center;
 			display: flex;
@@ -172,6 +180,7 @@
 			width: fit-content;
 			margin: auto;
 		}
+			*/
 /*TABLET DISPLAY*/
 		@media (min-width: 768px) and (max-width: 1024px) {
 
@@ -259,11 +268,7 @@
 		</section>
 		<section class="sponsors">
 			<h2>Sponsored By</h2>
-			<div class="slider" id="sponsorSlider">
-				<div class="sponsorCards" >
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-				</div>
-			</div>
+			<img src="speakerPlaceholder.jpg">
 			<a href="sponsors.html">View All</a>
 		</section>
 	<!--

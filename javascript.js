@@ -29,16 +29,16 @@ function createNavBar() {
                     <div id= "navItems">
                         <ul>
                             <li>
-                                <a href="">Home</a>
+                                <a href="homeBase.html">Home</a>
                             </li>
                             <li>
-                                <a href="">About</a>
+                                <a href="about.html">About</a>
                             </li>
                             <li>
-                                <a href="">Agenda</a>
+                                <a href="agenda.html">Agenda</a>
                             </li>
                             <li>
-                                <a href="" id="CTA" >Register</a>
+                                <a href="register.html" id="CTA" >Register</a>
                             </li>
                         </ul> 
                     </div>
@@ -56,7 +56,7 @@ function createFooter() {
                     <section id="footerNav">
                         <ul>
                             <li>
-                                <a href="">Home</a>
+                                <a href="homeBase.html">Home</a>
                             </li>
                             <li>
                                 <a href="about.html">About</a>

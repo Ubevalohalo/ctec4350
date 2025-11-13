@@ -82,41 +82,6 @@ main {
     text-decoration: none;
     color: white;
 }
-.sponsors {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: center;
-}
-.sponsorCards {
-    display: flex;
-}
-.sponsorCards img {
-    width: 15rem;
-    margin: 1rem;
-}
-.sponsors a {
-    background-color: #F58025;
-    padding:0.5rem 1rem;
-    border-radius: 0.5rem;
-    margin: 1rem;
-    text-decoration: none;
-    color: white;
-}
-.sponsors .slider {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.sponsorCards {
-  display: flex;
-}
-.sponsorCards img {
-  width: 20vw;
-  min-width: 200px;
-  height: auto;
-}
 footer {
     background-color: #0064B1;
     margin: 5rem 0rem 0rem 0rem;

@@ -113,8 +113,50 @@
 			grid-row: 2/3;
 		}
 
-		 #allSponsors img {
-			width: 10rem;
+
+
+
+		#titleText {
+			text-align: center;
+		}
+		#titleText h2, #titleText p {
+			margin-top: 0.5rem;
+		}
+
+
+
+
+
+
+
+
+		#sponsorTable {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 3fr 1fr;
+			width: 40%;
+			margin: auto;
+		}
+		 #sponsorTable img {
+			width: 90%;
+			padding: 5%;
+
+		 }
+		 #mainSponsor {
+			grid-column: 1/4;
+			grid-row: 1/2;
+		 }
+		 #sponsor1{
+			grid-column: 1/2;
+			grid-row: 2/3;
+		 }
+		 #sponsor2{
+			grid-column: 2/3;
+			grid-row: 2/3;
+		 }
+		 #sponsor3{
+			grid-column: 3/4;
+			grid-row: 2/3;
 		 }
 /*TABLET DISPLAY*/
 		@media (min-width: 768px) and (max-width: 1024px) {
@@ -182,28 +224,17 @@
 				<p>“ Lorem ipsum dolor sit amet consectetur. Fringilla amet suspendisse morbi nibh. Aenean tristique placerat massa viverra vitae phasellus etiam nunc massa. Sit eget mi elementum neque. Nunc laoreet lorem bibendum quam tristique vitae non ultrices.“</p>
 			</div>
 		</section>
-
-
-
-
-
-
 		<section class="sponsors">
-			<h2>Our Sponsors</h2>
-				<div id="allSponsors">
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-					<img src="speakerPlaceholder.jpg" class="slideshow">
-				</div>
+			<div id="titleText">
+				<h2>Sponsors</h2>
+				<p>Meet Our Sponsors</p>
 			</div>
-			
-			<a href="">View Sponsors</a>
+			<div id="sponsorTable">
+				<img src="speakerPlaceholder.jpg" id="mainSponsor">
+				<img src="speakerPlaceholder.jpg" id="sponsor1">
+				<img src="speakerPlaceholder.jpg" id="sponsor2">
+				<img src="speakerPlaceholder.jpg" id="sponsor3">
+			</div>
 		</section>
 	</main>
 	<script src="javascript.js"></script>
