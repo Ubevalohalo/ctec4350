@@ -6,190 +6,342 @@
     <title>UTA Philanthropy - Uniting for Good</title>
 	<link rel="stylesheet" href="styles.css">
 	<style>
-		/*landing/hero*/
-		/* Style the video: 100% width and height to cover the entire window */
-		#myVideo {
+	/*landing/hero*/
+	/* Style the video: 100% width and height to cover the entire window */
+	#myVideo {
 		min-width: 100%;
-		}
-		#intro {
-			position: relative; /* Essential for positioning child elements */
-			width: 100%; /* Or a specific width */
-			height: auto; /* Or a specific height */
-			overflow: hidden; /* To prevent text from spilling if it's outside the video area */
-			text-align: center;
+	}
+	#intro {
+		position: relative; /* Essential for positioning child elements */
+		width: 100%; /* Or a specific width */
+		height: 100vh; /* Or a specific height */
+		overflow: hidden; /* To prevent text from spilling if it's outside the video area */
+		text-align: center;
+	}
+
+	#intro video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; /* Ensures the video covers the container without distortion */
+		opacity: 50%;
+	}
+
+	#introInfo {
+		position: absolute; 
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%); 
+		text-align: center;
+		z-index: 1;
+		margin: 0; /* Remove large margin for mobile */
+		width: auto;
+		max-width: 90%;
+	}
+
+	#intro img {
+		grid-column: 1/2;
+		width: 100%;
+		justify-self: center;
+		border-radius: 0.5rem;
+	}
+
+	#intro #introInfo{
+		grid-column: 2/3;
+		margin: 0; /* remove for mobile */
+		text-align: center;
+	}
+
+	#introInfo h1 {
+		text-transform: uppercase;
+		font-size: 3rem;
+	}
+
+	#introInfo h2 {
+		color: #0064B1;
+		font-weight: 1000;
+		text-transform: uppercase;
+	}
+
+	#introInfo p {
+		color: #666;
+	}
+
+	#introInfo ul {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		padding: 0;
+		margin-top: 1.5rem;
+		list-style: none;
+		flex-wrap: wrap;
+	}
+
+	#introInfo ul li {
+		margin: 0.5rem 1rem;
+	}
+
+	#introInfo ul li a{
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		font-size: 1rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		color: white;
+	}
+
+	#aboutButton {
+		background-color: #0064B1;
+		border-radius: 0.3rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	#registerButton {
+		background-color: #C45517;
+		border-radius: 0.3rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	.viewAllBtns {
+		background-color: #C45517;
+		padding:0.5rem 1rem;
+		margin: 1rem;
+		text-decoration: none;
+		color: white;
+		border-radius: 0.3rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	#countdown {
+		text-align: center;
+		background-color: grey;
+		padding: 2rem;
+		width: fit-content;
+		margin: 2rem auto;
+	}
+
+	#countdown p {
+		font-size: 150%;
+	}
+
+	#whyJoin {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+		grid-template-rows: auto auto; /* 2 rows */
+		gap: 1rem;
+	}
+
+	#label{
+		grid-column: 1/2;
+		grid-row: 1/2;
+		text-align: center;
+	}
+
+	#label p{
+		font-size: 34px;
+	}
+
+	#whyJoin ul li a,
+	#learnMoreButton {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		font-size: 1rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		color: white;
+	}
+
+	#learnMoreButton {
+		background-color: #C45517;
+		border-radius: 0.3rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+
+	#whyJoin h2{
+		color: #C45517;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	#reasons {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto;
+		gap: 1rem;
+	}
+
+	#reasons > div {
+		border: 5px solid #F58025;
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+	}
+
+	#networking { grid-column: 2 / 3; grid-row: 1 / 2; }
+	#learn      { grid-column: 3 / 4; grid-row: 1 / 2; }
+	#explore    { grid-column: 2 / 3; grid-row: 2 / 3; }
+	#engage     { grid-column: 3 / 4; grid-row: 2 / 3; }
+
+	#networking, #learn, #explore, #engage {
+		transition: transform 0.3s ease, background-color 0.3s ease; 
+		cursor: pointer;
+		text-align: center;
+	}
+
+	#networking:hover, #learn:hover, #explore:hover, #engage:hover {
+		transform: scale(1.05); /* slightly expand */
+		background-color: rgba(245, 128, 37, 0.1);
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+	}
+
+	#whyJoin > div:not(#label) {
+		border: 5px solid #F58025;
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+	}
+
+	/* Second row reason boxes */
+	#explore {
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
+	}
+
+	#engage {
+		grid-column: 3 / 4;
+		grid-row: 2 / 3;
+	}
+
+	.sponsors {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.sponsors h2{
+		text-transform: uppercase;
+		color: #C45517;
+		font-weight: 700;
+	}
+
+	.sponsors img {
+		width: 40%;
+		margin: 2rem;
+		border-radius: 0.5rem;
+	}
+
+	/*TABLET DISPLAY*/
+	@media (min-width: 768px) and (max-width: 1024px) {
+		#introInfo {
+			max-width: 80%;
+			margin: 0 auto;
 		}
 
-		#intro video {
+		#whyJoin {
+			display: grid;
+			grid-template-columns: 1fr 1fr; /* 2 columns for boxes */
+			grid-template-rows: auto auto auto; /* label + 2 rows for boxes */
+			gap: 1rem;
+		}
+
+		#label {
+			grid-column: 1 / -1; /* span full width */
+			grid-row: 1;
+			text-align: center;
+			padding: 1rem;
+		}
+
+		#networking { grid-column: 1 / 2; grid-row: 2; }
+		#learn      { grid-column: 2 / 3; grid-row: 2; }
+		#explore    { grid-column: 1 / 2; grid-row: 3; }
+		#engage     { grid-column: 2 / 3; grid-row: 3; }
+	}
+
+	@media (max-width: 767px) {
+		/* HERO SECTION */
+		#intro {
+			position: relative;
+			height: 50vh; /* shorter hero */
+			overflow: hidden;
+			padding: 0;
+		}
+
+		#myVideo {
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
-			height: 100%;
-			object-fit: cover; /* Ensures the video covers the container without distortion */
+			height: 100%; /* fill container */
+			object-fit: cover;
+			z-index: 0;
 		}
 
 		#introInfo {
-			position: absolute; 
-			top: 40%; 
-			left: 42.5%; 
-			transform: translate(-50%, -50%); 
+			position: absolute; /* keep text centered */
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 			text-align: center;
+			width: 90%;
 			z-index: 1;
-			background-color: white;/*i just put this here so we can se the text but adjust as needed*/ 
+			margin: 0;
 		}
-		#intro img {
-			grid-column: 1/2;
+
+		#introInfo h1 { font-size: 1.6rem; }
+		#introInfo h2 { font-size: 1.2rem; }
+		#introInfo p  { font-size: 0.9rem; }
+
+		#introInfo ul {
+			flex-direction: column;
+			gap: 0.5rem;
+			margin-top: 1rem;
+			padding: 0;
+		}
+
+		#introInfo ul li a {
 			width: 100%;
-			justify-self: center;
-		}
-		#intro #introInfo{
-			grid-column: 2/3;
-			margin: 5rem;
+			display: block;
+			font-size: 0.95rem;
 			text-align: center;
-			
 		}
-		#introInfo h1 {
-			text-transform: uppercase;
+
+		/* WHY JOIN BOXES */
+		#whyJoin {
+			display: grid;
+			grid-template-columns: 1fr; /* single column */
+			grid-template-rows: repeat(5, auto); /* label + 4 boxes */
+			gap: 1rem;
+			padding: 0 1rem;
 		}
-		#introInfo h2 {
-			color: #0064B1;
-			font-weight: 1000;
-			text-transform: uppercase;
-		}
-		#introInfo p {
-			color: #666;
-		}
-		 #introInfo ul {
-			list-style-type: none;
-			display: flex;
-			justify-content: center;
-		 }
-		 #introInfo ul li {
-			margin: 2rem;
-		 }
-		 #introInfo ul li a{
-			text-decoration: none;
-			padding: 0.5rem 1rem;
-			border-radius: 0.5rem;
-			color: white;
-		 }
-		 #aboutButton {
-			background-color: #0064B1;
-			border-radius: 0.3rem;
-			font-size: 24px;
-		 }
-		 #registerButton {
-			background-color: #F58025;
-			font-size: 24px;
-		 }
-		 #countdown {
+
+		#whyJoin > div {
+			grid-column: 1 / -1;
 			text-align: center;
-			background-color: grey;
-			padding: 2rem;
-			width: fit-content;
-			margin: auto;
-			margin-top: 2rem;
-		 }
-		 #countdown p {
-			font-size: 150%;
-		 }
-		 #whyJoin{
+			padding: 1rem;
+		}
+
+		/* SPEAKER CARDS ONE COLUMN */
+		.speakerCards {
 			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr;
-		 }
-		 #label{
-			grid-column: 1/2;
-			grid-row: 1/2;
-		 }
-		 #reasons {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr 1fr;
-			grid-column: 2/3;
-			grid-row: 1/2;
-		 }
-		#networking{
-			grid-column: 1/2;
-			grid-row: 1/2;
+			grid-template-columns: 1fr; /* single column */
+			gap: 1rem;
+			padding: 0 1rem;
 		}
-		#learn{
-			grid-column: 2/3;
-			grid-row: 1/2;
+
+		.speakerCard {
+			margin: 0 auto; /* center card */
 		}
-		#explore{
-			grid-column: 1/2;
-			grid-row: 2/3;
-		}
-		#engage{
-			grid-column: 2/3;
-			grid-row: 2/3;
-		}
-		.sponsors {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
+
+		/* SPONSORS */
 		.sponsors img {
-			width: 40%;
-			margin: 2rem;
+			width: 70%;
 		}
+	}
 
-		/*
-		 #faqs {
-			text-align: center;
-			display: flex;
-			flex-direction: column;
-		}
-		 #faqs h2{
-			color: #0064B1;
-		 }
-		#faqsContainer {
-			margin: 2rem auto;
-			width: 50%;
-		}
-		#faqsContainer details {
-			border: solid 1px black;
-		}
-		#faqsContainer summary {
-			cursor: pointer;
-			font-weight: 600;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			list-style: none;
-		}
-		#faqsContainer summary::after {
-			content: "▶";
-			transition: transform 0.3s ease;
-			font-size: 1rem;
-			color: #666;
-		}
-		#faqsContainer details[open] summary::after {
-			transform: rotate(90deg);
-			color: #000;
-		}
-		#faqsContainer p {
-			margin-top: 0.5rem;
-			color: #555;
-			line-height: 1.4;
-		}
-		#faqs a {
-			background-color: #0064B1;
-			text-decoration: none;
-			padding: 0.5rem 1.5rem;
-			border-radius: 0.75rem;
-			color: white;
-			width: fit-content;
-			margin: auto;
-		}
-			*/
-/*TABLET DISPLAY*/
-		@media (min-width: 768px) and (max-width: 1024px) {
-
-		}
-/*PHONE DISPLAY*/
-		@media (max-width: 767px) {
-
-		}
 	</style>
+
+
 </head>
 <body>
 <!--notes:
@@ -213,8 +365,8 @@
 				<p>Wednesday, April 9, 2025 • 8:30 AM - 6:30 PM • UTA</p>
 				<p>Arlington Campus, Central Library</p>
 				<ul>
-					<li><a href="about.html" id="aboutButton">About</a></li>
-					<li><a href="register.html" id="registerButton">Register</a></li>
+					<li><a href="about.html" id="aboutButton">ABOUT</a></li>
+					<li><a href="register.html" id="registerButton">REGISTER</a></li>
 				</ul>
 			</div>
 		</section>
@@ -224,27 +376,29 @@
 		</section>
 		<section id="whyJoin">
 			<div id="label">
-				<h2>Why you should join the conference</h2>
-				<p>Only 75 tickets...Get your tickets today!</p>
-				<a href="register.html">LEARN MORE</a>
+				<h2>Why join the conference?</h2>
+				<p>Limited to <b>75</b> tickets... <br>Get your tickets today!</p>
+				<a href="register.html" id="learnMoreButton">LEARN MORE</a>
 			</div>
-			<div id="reasons">
-				<div id="networking">
-					<h3>NETWORKING</h3>
-					<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
-				</div>
-				<div id="learn">
-					<h3>LEARN</h3>
-					<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
-				</div>
-				<div id="explore">
-					<h3>EXPLORE</h3>
-					<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
-				</div>
-				<div id="engage">
-					<h3>ENGAGE</h3>
-					<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
-				</div>
+
+			<div id="networking">
+				<h3>NETWORKING</h3>
+				<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
+			</div>
+
+			<div id="learn">
+				<h3>LEARN</h3>
+				<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
+			</div>
+
+			<div id="explore">
+				<h3>EXPLORE</h3>
+				<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
+			</div>
+
+			<div id="engage">
+				<h3>ENGAGE</h3>
+				<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
 			</div>
 		</section>
 		<section class="speakers">
@@ -263,13 +417,12 @@
 					<p>Award-winning journalist and media leader.</p>
 				</div>
 			</section>
-			<a href="speakers.html">View All</a>
-		</section>
+			<a href="speakers.html" class="viewAllBtns">View All</a>
 		</section>
 		<section class="sponsors">
-			<h2>Sponsored By</h2>
+			<h2>Our Sponsors</h2>
 			<img src="speakerPlaceholder.jpg">
-			<a href="sponsors.html">View All</a>
+			<a href="sponsors.html" class="viewAllBtns" >View All</a>
 		</section>
 	<!--
 		<section id="faqs">

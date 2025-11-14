@@ -1,8 +1,12 @@
 html {
 	font-size: 200%;
+    font-family: 'Arial', sans-serif;
+}
+h2{
+    font-weight: 700;
 }
 p, li {
-	font-size: 75%;
+	font-size: 85%;
 }
 nav {
     background-color: #0064B1;
@@ -28,7 +32,7 @@ nav ul li a {
     padding: 0.4rem;
 }
 nav ul li #CTA {
-    background-color: #F58025;
+    background-color: #C45517;
     border-radius: 0.3rem;
 }
 main {
@@ -45,25 +49,41 @@ main {
     width: 100%;
     margin: auto;
     text-align: center;
+    text-transform: uppercase;
+    color: #0064B1;
+    font-weight: 700;
 }
 .speakerCards {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     margin: auto;
+    gap: 2rem;
     justify-content: center;
 }
 .speakerCard {
-    background-color: #0064B1;
+    background-color: rgba(0, 100, 177, 0.8);
     width: 30%;
     margin: 1rem;
     padding: 1rem;
     color: white;
     border-radius: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+/* Hover effect */
+.speakerCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 100, 177, 1);
+    cursor: pointer;
 }
 .speakerCards img {
     width: 100%;
     margin: auto;
+    border-radius: 0.5rem;
 }
 .speakers h3{
     text-align: center;
@@ -72,15 +92,17 @@ main {
 .speakers h4{
     text-align: center;
     font-weight: lighter;
-    font-size: 20px;
+    font-size: 32px;
 }
 .speakers a {
-    background-color: #F58025;
-    padding:0.5rem 1rem;
-    border-radius: 0.5rem;
-    margin: 1rem;
-    text-decoration: none;
-    color: white;
+    background-color: #0064B1;
+	padding:0.5rem 1rem;
+	margin: 1rem;
+	text-decoration: none;
+	color: white;
+	border-radius: 0.3rem;
+	font-size: 1.5rem;
+	font-weight: 700;
 }
 footer {
     background-color: #0064B1;
@@ -139,13 +161,23 @@ footer #contacts a {
 		@media (max-width: 767px) {
             /*adjust footer and nav*/
             .speakerCards {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                margin: 1rem auto;
+                width: 100%;
             }
             .speakerCard {
-                width: 100%;
+                width: 90%;       /* slightly less than full width for breathing room */
+                max-width: 400px; /* optional: prevents stretching on larger phones */
+                margin: 0 auto;   /* center the card */
+                padding: 2rem;    /* increase padding for better appearance */
+                font-size: 1rem;
             }
             .sponsorCards {
                 display: flex;
+                gap: 1rem;
+                flex-direction: column;
                 animation: scroll 2s linear infinite;
             }
             footer {
