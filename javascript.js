@@ -1,4 +1,4 @@
-
+/*
 function animation() {
     const track = document.querySelector();
     const slider = document.querySelector();
@@ -18,7 +18,7 @@ function animation() {
 
     animate();
 };
-
+*/
 //navigation
 function createNavBar() {
             const navBarHTML = `
@@ -31,8 +31,14 @@ function createNavBar() {
                             <li>
                                 <a href="homeBase.html">Home</a>
                             </li>
-                            <li>
-                                <a href="about.html">About</a>
+                            <li class="dropdown">
+                                <a href="about.html" class="dropbtn">About
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="speakers.html">Speakers</a>
+                                    <a href="sponsors.html">Sponsors</a>
+                                </div>
                             </li>
                             <li>
                                 <a href="agenda.html">Agenda</a>
@@ -58,8 +64,14 @@ function createFooter() {
                             <li>
                                 <a href="homeBase.html">Home</a>
                             </li>
-                            <li>
-                                <a href="about.html">About</a>
+                            <li class="dropdown">
+                                <a href="about.html" class="dropbtn">About
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="speakers.html">Speakers</a>
+                                    <a href="sponsors.html">Sponsors</a>
+                                </div>
                             </li>
                             <li>
                                 <a href="agenda.html">Agenda</a>

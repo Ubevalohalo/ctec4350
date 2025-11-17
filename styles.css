@@ -35,6 +35,85 @@ nav ul li #CTA {
     background-color: #C45517;
     border-radius: 0.3rem;
 }
+/*THIS IS FOR THE DROPDOWN----------------------------*/
+        /* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  margin: 0; /* Important for vertical align on mobile phones */
+    padding: 0.4rem;
+    text-decoration: none;
+    padding: 0.4rem;
+    list-style: none;
+    align-self: self-start;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red; /*DO WE WANT THIS TO BE COLORED ON HOVER??? FOR ANH THX*/
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  m1in-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  pa1dding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Normal footer nav spacing */
+footer #footerNav ul li {
+    list-style-type: none;
+    margin: 1rem;
+}
+
+/* Make dropdown behave like a normal li without double spacing */
+footer #footerNav .dropdown {
+    margin: 1rem;   /* same as li */
+    display: block;
+    padding: 0;
+}
+
+footer #footerNav .dropdown .dropbtn {
+    padding: 0;
+    margin: 0;
+}
+/*END DROPDOWN----------------------------*/
+
+
+
+
+
+
+
 main {
     width: 90%;
     margin: auto;
