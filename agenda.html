@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+	<link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            width: 90%;
+        }
+        #agendaTimeline h2 {
+            text-align: center;
+        }
+        .oneEventContainer {
+
+        }
+        .timeslot {
+            background-color: grey;
+            border-radius: 1rem; /*change*/
+            width: fit-content;
+        }
+        .timeslot p {
+            padding: 0.5rem;
+            color: white;
+        }
+        .individualEvent {
+            border: 4px solid grey;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-around;
+        }
+        .individualEvent img {
+            width: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="intro">
+            <div id="text">
+                <h1>UT Arlington 2026 Philanthropy Conference Schedule</h1>
+                <p>Wednesday, April 9, 2025 · 8:30 AM – 6:30 PM · UTA Arlington Campus, Central Library</p>
+            </div>
+            <div id="image">
+                <img src="speakerPlaceholder.jpg">
+            </div>
+        </section>
+        <section id="agendaTimeline">
+            <h2>The Agenda (if this looks bad feel free to delete)</h2>
+            <div class="oneEventContainer">
+                <div class="timeslot">
+                    <p>Placeholder time</p>
+                </div>
+                <div class="individualEvent">
+                    <img src="speakerPlaceholder.jpg">
+                    <div class="eventText">
+                        <h3>This Event</h3>
+                        <p>Event Information</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="javascript.js"></script>
+
+</body>
+</html>
