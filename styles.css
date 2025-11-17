@@ -1,5 +1,5 @@
 html {
-	font-size: 200%;
+	font-size: 150%;
     font-family: 'Arial', sans-serif;
 }
 h2{
@@ -111,6 +111,7 @@ footer {
     grid-template-columns: 1fr 1fr 1fr 2fr;
     grid-template-rows: 1fr;
     padding: 0rem 2rem;
+    font-size: 75%;
 }
 footer #footerImg {
     grid-column: 1/2;
