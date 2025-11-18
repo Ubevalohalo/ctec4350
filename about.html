@@ -52,14 +52,18 @@
 			display: block;
 			margin: 0 auto;
 			text-align: center;
+			align-items: center;
+			align-items: center;
 		}
 		.introSection img {
 			width: 95%;
 		}
+		#textInfo{
+			align-items: center;
+		}
 		#textInfo ul li {
 			list-style: none;
 		}
-
 		#textInfo ul li a {
 			display: inline-block;
 			padding: 0.5rem 1rem;
@@ -72,6 +76,7 @@
 
 		#ctaRegister {
 			display: inline-block;
+    		margin: 1rem auto 0 auto; /* top margin, auto horizontal */
 			background-color: #C45517;
 			color: white;
 			border-radius: 0.3rem;
@@ -269,13 +274,6 @@
 			margin-top: 0.5rem;
 		}
 
-
-
-
-
-
-
-
 		#sponsorTable {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
@@ -310,10 +308,35 @@
 		}
 /*PHONE DISPLAY*/
 		@media (max-width: 767px) {
-			 #pastConferences {
-				grid-template-columns: 1fr; /* stack boxes on mobile */
+			#introSections {
+				display: grid !important;
+				grid-template-columns: 1fr 1fr;  /* 2 columns */
+				grid-template-rows: auto auto;   /* 2 rows */
+				gap: 1rem;
+				justify-items: center;
+				padding: 1rem;
+			}
+
+			/* Remove desktop grid positioning */
+			#network, #learn, #explore, #engage {
+				grid-column: auto !important;
+				grid-row: auto !important;
+				text-align: center;
+			}
+
+			.introSection {
+				width: 90%;
+				max-width: 150px; /* uniform size for all items */
+				text-align: center;
+			}
+
+			.introSection img {
+				width: 100%;
+				height: auto;
+				display: block;
 			}
 		}
+
 	</style>
 </head>
 <body>
