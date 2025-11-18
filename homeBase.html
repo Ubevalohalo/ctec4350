@@ -79,6 +79,7 @@
 
 	#introInfo ul li {
 		margin: 0.5rem 1rem;
+		
 	}
 
 	#introInfo ul li a{
@@ -129,7 +130,7 @@
 
 	#whyJoin {
 		display: grid;
-		grid-template-columns: 280px 1fr 1fr; /* left label + 2 columns of boxes */
+		grid-template-columns: 1fr 1fr 1fr; /* left label + 2 columns of boxes */
 		gap: 1.5rem;
 		padding: 2rem; /* restores margins */
 		box-sizing: border-box;
@@ -180,7 +181,7 @@
 	#learnMoreButton {
 		background-color: #C45517;
 		border-radius: 0.3rem;
-		font-size: 1.5rem;
+		font-size: 0.95em;
 		font-weight: 700;
 	}
 
@@ -189,7 +190,9 @@
 		text-transform: uppercase;
 		font-weight: 700;
 	}
-
+	#whyJoin p{
+		font-size: 1rem;
+	}
 	#reasons {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -241,6 +244,9 @@
 		width: 40%;
 		margin: 2rem;
 		border-radius: 0.5rem;
+	}
+	.sponsors ul li a{
+		font-size: 1rem;
 	}
 
 	/*TABLET DISPLAY*/
@@ -315,7 +321,7 @@
 
 		#introInfo ul li a {
 			display: block;
-			font-size: 0.95rem;
+			font-size: 0.75rem;
 			text-align: center;
 			width: fit-content;
 		}
@@ -326,13 +332,23 @@
 			gap: 1rem;                  /* space between each row */
 			padding: 1rem;
 		}
-
+		#whyJoin h2{
+			font-size: 1.25rem;
+		}
+		#whyJoin p{
+			font-size: 0.75rem;
+		}
 		#whyJoin > div {
 			grid-column: 1 / -1;        /* full width */
 			min-height: auto;            /* auto height based on content */
 			padding: 1.5rem;             /* consistent padding */
 			box-sizing: border-box;      /* include padding in width */
 			text-align: center;
+			font-size: 90%;
+		}
+		#whyJoin ul li a,
+		#learnMoreButton{
+			font-size: 0.75rem;
 		}
 		#label { grid-column: 1; grid-row: 1; }
 		#networking { grid-column: 1; grid-row: 2; }
@@ -342,7 +358,6 @@
 		#label {
 			padding-bottom: 1rem;
 		}
-
 		/* SPEAKER CARDS ONE COLUMN */
 		.speakerCards {
 			display: grid;

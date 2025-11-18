@@ -6,9 +6,29 @@
     <title>Agenda</title>
 	<link rel="stylesheet" href="styles.css">
     <style>
+        body{
+            background-color: rgba(0, 100, 177, 0.1);
+        }
         main {
-            width: 100;
-            background-color: rgba(0, 100, 177, 0.1); /* 0.3 = 30% opacity */
+            width: 100%;
+            /*background-color: rgba(0, 100, 177, 0.1); /* 0.3 = 30% opacity */
+        }
+        #introInfo{
+            padding: 20px auto;
+        }
+        #introInfo h1 {
+            text-transform: uppercase;
+            font-size: 1.5rem;
+        }
+
+        #introInfo h2 {
+            color: #0064B1;
+            font-weight: 1000;
+            text-transform: uppercase;
+        }
+
+        #introInfo p {
+            color: #666;
         }
         #intro {
             display: flex;
@@ -24,7 +44,12 @@
             text-align: center;
         }
         #text h1{
-            font-size: 2rem;
+            text-transform: uppercase;
+            font-size: 3rem;
+            color: #0064B1
+        }
+        #text p{
+            color: rgb(71, 71, 71);
         }
 
         #image {
@@ -51,6 +76,9 @@
         .timeslot p {
             padding: 0.5rem;
             color: white;
+        }
+        .oneEventContainer{
+            padding:0%;
         }
         .individualEvent {
             border: 4px solid rgba(0, 100, 177, 0.8);
@@ -88,6 +116,10 @@
             #text h1{
               font-size: 1.5rem;  
             }
+            .individualEvent img {
+                width: 50%;
+                height: auto;
+        }
 		}
 /*PHONE DISPLAY*/
 		@media (max-width: 767px) {
@@ -98,8 +130,8 @@
                 margin-left: 1rem;
             }
             .individualEvent {
-                flex-direction: column;       /* Stack vertically */
-                margin: 1rem 1rem;            /* Less side margin */
+                flex-direction: column;
+                margin: 1rem 1rem;
                 text-align: left;
                 padding: 1.2rem;
             }
