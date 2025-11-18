@@ -22,7 +22,41 @@
             border-radius: 1rem;
             width: 20%;
             margin: 2%;
-        }
+        }  .registration {
+        padding: 60px 0;
+        background: #f7f7f7;
+        font-family: Arial, sans-serif;
+    }
+    .registration .container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .registration input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    .registration .btn {
+        width: 100%;
+        padding: 14px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 17px;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+    .registration .btn:hover {
+        background: #0056b3;
+    }
 	</style>
 </head>
 <body>
@@ -57,10 +91,20 @@
             </div>
             
         </section>
-        <section id="registerForm">
-            <h1>Register Now</h1>
-            <!--PETER PUT FORM HERE :) -->
-        </section>
+        <section class="registration">
+    <div class="container">
+        <h2>Conference Registration</h2>
+        <p>Fill out the form below to secure your spot.</p>
+
+        <form>
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+</section>
     </main>
 	<script src="javascript.js"></script>
 </body>
