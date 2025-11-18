@@ -22,8 +22,78 @@
             border-radius: 1rem;
             width: 20%;
             margin: 2%;
-        }
-	</style>
+        }    .registration {
+        padding: 60px 0;
+        background: #f7f7f7;
+        font-family: Arial, sans-serif;
+    }
+
+    .registration .container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .field {
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .registration input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    /* Error message (hidden by default) */
+    .error {
+        display: none;
+        color: #b30000;
+        font-size: 14px;
+        margin-top: 5px;
+        padding-left: 2px;
+    }
+
+    /* Show error when field invalid after user interaction */
+    input:invalid:focus + .error,
+    input:invalid.submitted + .error {
+        display: block;
+    }
+
+    .registration .btn {
+        width: 100%;
+        padding: 14px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 17px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .registration .btn:hover {
+        background: #0056b3;
+    }
+</style>
+<script>
+    // Show errors on submit if fields are empty
+    document.querySelector("form").addEventListener("submit", function(e) {
+        const inputs = this.querySelectorAll("input");
+
+        inputs.forEach(input => {
+            if (!input.checkValidity()) {
+                input.classList.add("submitted");
+                e.preventDefault(); // stop form if errors exist
+            }
+        });
+    });
+</script>
 </head>
 <body>
 	<main>
@@ -57,10 +127,36 @@
             </div>
             
         </section>
-        <section id="registerForm">
-            <h1>Register Now</h1>
-            <!--PETER PUT FORM HERE :) -->
-        </section>
+       <section class="registration">
+    <div class="container">
+        <h2>Conference Registration</h2>
+        <p>Fill out the form below to secure your spot.</p>
+
+        <form novalidate>
+            <div class="field">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <span class="error">Please enter your first name.</span>
+            </div>
+
+            <div class="field">
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <span class="error">Please enter your last name.</span>
+            </div>
+
+            <div class="field">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <span class="error">Please enter a valid email address.</span>
+            </div>
+
+            <div class="field">
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <span class="error">Please enter a phone number.</span>
+            </div>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+</section>
     </main>
 	<script src="javascript.js"></script>
 </body>
