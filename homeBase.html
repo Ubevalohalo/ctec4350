@@ -129,16 +129,39 @@
 
 	#whyJoin {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
-		grid-template-rows: auto auto; /* 2 rows */
-		gap: 1rem;
+		grid-template-columns: 280px 1fr 1fr; /* left label + 2 columns of boxes */
+		gap: 1.5rem;
+		padding: 2rem; /* restores margins */
+		box-sizing: border-box;
 	}
 
-	#label{
-		grid-column: 1/2;
-		grid-row: 1/2;
+	/* Left label area */
+	#label {
+		grid-column: 1;
+		grid-row: 1 / span 2; /* span both rows */
 		text-align: center;
+		padding: 1rem;
 	}
+
+	#whyJoin > div:not(#label) {
+		border: 5px solid #F58025;
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		min-height: 160px;
+		text-align: center;
+		transition: transform 0.3s ease, background-color 0.3s ease;
+	}
+
+	/* Hover */
+	#whyJoin > div:not(#label):hover {
+		transform: scale(1.05);
+		background-color: rgba(245, 128, 37, 0.1);
+		box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+	}
+	#networking { grid-column: 2; grid-row: 1; }
+	#learn      { grid-column: 3; grid-row: 1; }
+	#explore    { grid-column: 2; grid-row: 2; }
+	#engage     { grid-column: 3; grid-row: 2; }
 
 	#label p{
 		font-size: 34px;
@@ -180,11 +203,6 @@
 		padding: 1.5rem;
 	}
 
-	#networking { grid-column: 2 / 3; grid-row: 1 / 2; }
-	#learn      { grid-column: 3 / 4; grid-row: 1 / 2; }
-	#explore    { grid-column: 2 / 3; grid-row: 2 / 3; }
-	#engage     { grid-column: 3 / 4; grid-row: 2 / 3; }
-
 	#networking, #learn, #explore, #engage {
 		transition: transform 0.3s ease, background-color 0.3s ease; 
 		cursor: pointer;
@@ -196,13 +214,6 @@
 		background-color: rgba(245, 128, 37, 0.1);
 		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 	}
-
-	#whyJoin > div:not(#label) {
-		border: 5px solid #F58025;
-		border-radius: 0.75rem;
-		padding: 1.5rem;
-	}
-
 	/* Second row reason boxes */
 	#explore {
 		grid-column: 2 / 3;
@@ -240,28 +251,26 @@
 		}
 
 		#whyJoin {
-			display: grid;
-			grid-template-columns: 1fr 1fr; /* 2 columns for boxes */
-			grid-template-rows: auto auto auto; /* label + 2 rows for boxes */
-			gap: 1rem;
-		}
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto auto auto;
+				padding: 1.5rem;
+			}
 
-		#label {
-			grid-column: 1 / -1; /* span full width */
-			grid-row: 1;
-			text-align: center;
-			padding: 1rem;
-		}
+			#label {
+				grid-column: 1 / -1;
+				grid-row: 1;
+			}
 
-		#networking { grid-column: 1 / 2; grid-row: 2; }
-		#learn      { grid-column: 2 / 3; grid-row: 2; }
-		#explore    { grid-column: 1 / 2; grid-row: 3; }
-		#engage     { grid-column: 2 / 3; grid-row: 3; }
+			#networking { grid-column: 1; grid-row: 2; }
+			#learn      { grid-column: 2; grid-row: 2; }
+			#explore    { grid-column: 1; grid-row: 3; }
+			#engage     { grid-column: 2; grid-row: 3; }
 	}
 
 	@media (max-width: 767px) {
 		/* HERO SECTION */
 		#intro {
+			margin-top: 50px;
 			position: relative;
 			height: 50vh; /* shorter hero */
 			overflow: hidden;
@@ -287,9 +296,11 @@
 			width: 90%;
 			z-index: 1;
 			margin: 0;
+			padding: 15px; /* Add this line */
 		}
 
-		#introInfo h1 { font-size: 1.6rem; }
+
+		#introInfo h1 { font-size: 2rem; padding-top: 20px;}
 		#introInfo h2 { font-size: 1.2rem; }
 		#introInfo p  { font-size: 0.9rem; }
 
@@ -298,28 +309,38 @@
 			gap: 0.5rem;
 			margin-top: 1rem;
 			padding: 0;
+			align-items: center;
+			padding-bottom: 20px ;
 		}
 
 		#introInfo ul li a {
-			width: 100%;
 			display: block;
 			font-size: 0.95rem;
 			text-align: center;
+			width: fit-content;
 		}
-
-		/* WHY JOIN BOXES */
-		#whyJoin {
+		 #whyJoin {
 			display: grid;
 			grid-template-columns: 1fr; /* single column */
-			grid-template-rows: repeat(5, auto); /* label + 4 boxes */
-			gap: 1rem;
-			padding: 0 1rem;
+			grid-template-rows: auto;   /* rows adjust to content */
+			gap: 1rem;                  /* space between each row */
+			padding: 1rem;
 		}
 
 		#whyJoin > div {
-			grid-column: 1 / -1;
+			grid-column: 1 / -1;        /* full width */
+			min-height: auto;            /* auto height based on content */
+			padding: 1.5rem;             /* consistent padding */
+			box-sizing: border-box;      /* include padding in width */
 			text-align: center;
-			padding: 1rem;
+		}
+		#label { grid-column: 1; grid-row: 1; }
+		#networking { grid-column: 1; grid-row: 2; }
+		#learn      { grid-column: 1; grid-row: 3; }
+		#explore    { grid-column: 1; grid-row: 4; }
+		#engage     { grid-column: 1; grid-row: 5; }
+		#label {
+			padding-bottom: 1rem;
 		}
 
 		/* SPEAKER CARDS ONE COLUMN */
