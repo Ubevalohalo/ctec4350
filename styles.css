@@ -317,3 +317,125 @@ footer #contacts a {
 
             }
 		}
+
+
+
+
+
+        * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+nav, nav * , footer, footer * {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+
+
+
+/* Base nav styles (unchanged) */
+/* your existing nav CSS goes here */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- hamburger button ---------- */
+#hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 9999;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* bars */
+#hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: black;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+/* X animation */
+#hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+#hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+#hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ---------- mobile nav panel ---------- */
+@media (max-width: 768px) {
+  nav { position: relative; z-index: 9000; }
+
+  /* show hamburger */
+  #hamburger { display: flex; }
+
+  /* off-canvas panel fully hidden (no pointer events) */
+  #navItems {
+    position: fixed;
+    top: 0;
+    right: -320px;         /* fully off screen */
+    height: 100vh;
+    width: 260px;
+    padding: 60px 20px;    /* leave room for logo/hamburger */
+    background: #0064B1;
+    box-shadow: -8px 0 24px rgba(0,0,0,0.12);
+    transition: right 0.35s ease;
+    pointer-events: none;  /* prevent clicks when closed */
+  }
+
+  /* open state */
+  #navItems.open {
+    right: 0;
+    pointer-events: auto;
+  }
+
+  /* prevent page from scrolling when menu open */
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  /* stack items vertically */
+  #navItems ul {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* dropdowns behave like accordions on mobile */
+  .dropdown .dropdown-content {
+    display: none;
+    padding-left: 12px;
+  }
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+}
