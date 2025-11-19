@@ -46,7 +46,7 @@ function createNavBar() {
                     </li>
 
                     <li><a href="agenda.html">Agenda</a></li>
-                    <li><a href="register.html" id="CTA">Register</a></li>
+                    <li><a href="register.html" class="CTA">Register</a></li>
                 </ul>
             </div>
         </nav>
@@ -72,7 +72,7 @@ function createFooter() {
                         </div>
                     </li>
                     <li><a href="agenda.html">Agenda</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="register.html" class="CTA">Register</a></li>
                 </ul>
             </section>
             <section id="contacts">

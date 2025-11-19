@@ -8,56 +8,58 @@ h2{
 p, li {
 	font-size: 85%;
 }
-nav {
+nav,  #footerNav {
     background-color: #0064B1;
     display: flex;
     justify-content: space-between;
 
 }
-nav img {
+nav img ,  #footerNav img{
     margin: 0.5rem;
     width: 3rem;
 }
-nav ul {
+nav ul ,  #footerNav ul {
     display: flex;
     margin: 1rem;
 }
-nav ul li {
+nav ul li ,  #footerNav  ul li{
     padding: 0.5rem;
     list-style: none;
 }
-nav ul li a {
+nav ul li a ,  #footerNav ul li a{
     text-decoration: none;
     color: white;
     padding: 0.4rem;
     text-transform: uppercase;
     font-weight: 600;
 }
-nav ul li a:hover {
+nav ul li a:hover ,  #footerNav ul li a:hover{
     background-color: white;
     padding: 0.4rem;
     color: #0064B1;
     text-transform: uppercase;
 }
-nav ul li a:active {
+nav ul li a:active ,  #footerNav  ul li a:active{
     padding: 0.4rem;
     background-color:  rgba(245, 128, 37, 0.1);
 }
-nav ul li #CTA {
+nav ul li .CTA  ,  #footerNav ul li .CTA {
     background-color: #C45517;
     border-radius: 0.3rem;
     color: white;
 }
-nav ul li #CTA:hover {
+nav ul li .CTA:hover ,  #footerNav ul li .CTA:hover{
     text-decoration: underline;
     border-radius: 0.3rem;
 }
-nav ul li #CTA:active {
+nav ul li .CTA:active ,  #footerNav ul li .CTA:active{
     text-decoration: underline;
     border-radius: 0.3rem;
     transform: scale(1.03);
     color: #0064B1;
 }
+
+
 /*THIS IS FOR THE DROPDOWN----------------------------*/
         /* The dropdown container */
 .dropdown {
@@ -439,3 +441,21 @@ nav, nav * , footer, footer * {
     display: block;
   }
 }
+
+footer #footerNav .dropdown .dropbtn {
+    padding: 0.4rem; /* match other footer links */
+    margin: 0;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
