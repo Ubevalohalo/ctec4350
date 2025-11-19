@@ -6,19 +6,58 @@
     <title>About</title>
     <link rel="stylesheet" href="styles.css">
 	<style>
-		#introSections {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-			grid-template-rows: 1fr;
-			margin-top: 2rem;
+		#introTitle{
+			display: flex;
+			flex-direction: column; /* stack content */
+			justify-content: center;
+			align-items: center;
 			text-align: center;
-			justify-items: center;
+			background-color: rgba(0, 100, 177, 0.1);
+			border-radius: 0.5rem;
+			padding: 2rem;
+			margin: 1.5rem auto; 
+			width: 90%;
 		}
+		#introTitle h1 {
+			text-transform: uppercase;
+			font-size: 2rem;
+			font-weight: 800;
+		}
+
+		#introTitle h2 {
+			color: #0064B1;
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 2rem;
+		}
+
+		#introTitle p {
+			color: #3f3f3f;
+			font-size: 1.25rem;
+		}
+		#introTitle h1,
+		#introTitle h2,
+		#introTitle p {
+			margin: 0.5rem 0; /* reduce the gap between elements */
+		}
+
+
+		#introSections {
+   		display: grid;
+		grid-template-columns: repeat(4, 1fr); /* 4 columns */
+		grid-template-rows: auto; /* let height fit content */
+		gap: 1rem; /* space between cells */
+		justify-items: center; /* horizontal centering of each cell */
+		align-items: center;   /* vertical centering of each cell */
+		margin-top: 2rem;
+		padding: 0 1rem;
+	}
 
 		#network{
 			grid-column: 1/2;
 			grid-row: 1/2;
 			text-align: center;
+			gap: 0 0.5rem;
 		}
 		#learn{
 			grid-column: 2/3;
@@ -41,9 +80,10 @@
 		#engage h2 {
 			color: #C45517;
 			text-transform: uppercase;
-			font-size: 1.2rem;
-			font-weight: 700;
+			font-size: 1.5rem;
+			font-weight: 800;
 			text-shadow: 2px 2px 4px rgba(153, 153, 153, 0.5);
+		
 		}
 		.introSection{
 			width: 100%;
@@ -53,28 +93,44 @@
 			margin: 0 auto;
 			text-align: center;
 			align-items: center;
-			align-items: center;
 		}
 		.introSection img {
-			width: 95%;
+			width: 100%;
 			border-radius: 0.5rem;
 		}
 		#textInfo{
-			align-items: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;   /* center items inside */
+			gap: 1rem;
+			width: 80%;
+			margin: 0 auto;        /* center the container itself */
+			
+		}
+		#textInfo p{
+			color: #3f3f3f;
+			font-size: 1.25rem;
 		}
 		#textInfo ul li {
 			list-style: none;
 		}
 		#textInfo ul li a {
-			display: inline-block;
-			padding: 0.5rem 1rem;
-			font-size: 1rem;
-			border-radius: 0.5rem;
-			text-decoration: none;
-			color: white;
 			background-color: #C45517;
+			border-radius: 0.3rem;
+			font-size: 1rem;
+			font-weight: 700;
+			transition: all 0.2s ease;
 		}
-
+		#textInfo a:hover {
+			border: 3px solid #C45517;
+			color: #C45517;
+			background-color: white;
+		}
+		#textInfo a:active{
+			border: 3px solid #C45517;
+			color: #C45517;
+			background-color: #F58025;
+		}
 		#ctaRegister {
 			display: inline-block;
     		margin: 1rem auto 0 auto; /* top margin, auto horizontal */
@@ -93,7 +149,7 @@
 			overflow: hidden;
 			width: 100%;
 			margin: 2rem auto;
-			height: 300px;
+			height: 500px;
 			display: flex;
 			color: white;
 			text-align: center;
@@ -120,7 +176,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color:  rgba(0, 100, 177, 0.8);
+			background-color:  rgba(0, 100, 177, 0.7);
 			z-index: 2;
 		}
 
@@ -140,6 +196,9 @@
 			align-items: center;
 			justify-content: center;
 			padding: 1rem;
+			font-size: 1rem;
+		}
+		.conferenceText p{
 			font-size: 1rem;
 		}
 
@@ -166,13 +225,21 @@
 			align-items: center;
 			justify-content: center;
 			font-weight: bold;
-			font-size: 0.9rem;
+			font-size: 1.25rem;
 			padding: 1rem 1rem;
 			max-width: 250px;
 			max-height: 200px;
+			width:max-content;
+			height: 100px;
+			margin-top: 0.5rem;
 		}
-
-
+		#pastComments{
+			margin-top: 0.5rem;
+		}
+		#pastComments h2{
+			font-size: 2rem;
+			font-weight: 800;
+		}
 		#pastConferences div img {
 			width: 70%;
 			clip-path: circle(50% at center);
@@ -191,7 +258,7 @@
 			grid-column: 2/3;
 		}
 		#pastConferences #conference2Text, #pastConferences #conference1Text {
-			margin: 3rem;
+			margin: 1rem;
 		}
 		#pastConferences #attendees1 {
 			grid-row: 2/3;
@@ -207,6 +274,7 @@
 		}
 		#pastComments {
 			display: flex;
+			padding: 3rem 1rem;
 			justify-content: center;
 			gap: 1rem;
 			flex-wrap: wrap;
@@ -220,6 +288,7 @@
 		}
 
 		#pastComments .speakerComments {
+			margin-top: 0.5rem;
 			border-color: rgba(0, 100, 177);
 			color: white;
 			border-radius: 0.5rem;
@@ -232,12 +301,36 @@
 			text-align: center;
 			box-shadow: black;
 		}
+		#pastComments h2 {
+			text-align: center;
+			color: #0064B1;
+			font-weight: 900;
+			text-transform: uppercase;
+			margin-bottom: 2rem;
+		}
+		#pastComments .commentsContainer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem;
+	}
 		#pastComments .speakerComments img{
 			width: 100%;
+			border-radius: 0.5rem;
 		}
 		#pastComments .speakerComments {
-			margin: 1rem;
-			padding: 1rem 0;
+			border: 3px solid #0064B1;
+			color: white;
+			border-radius: 0.5rem;
+			padding: 1.5rem;
+			text-align: center;
+			width: 300px; /* fixed width for consistency */
+			flex: 1 1 300px; /* allow some flexibility */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
 		}
 		#pastComments .speakerComments h3{
 			text-align: center;
@@ -253,7 +346,6 @@
 		#pastComments #comment1,
 		#pastComments #comment2,
 		#pastComments #comment3 {
-			background-color: rgba(0, 100, 177, 0.8);
 			width: 40%;
 			margin: 1rem;
 			padding: 1rem;
@@ -263,7 +355,7 @@
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
-			transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+			gap: 0.25rem;
 			cursor: pointer;
 		}
 		#comment1{
@@ -278,8 +370,15 @@
 			grid-column: 3/4;
 			grid-row: 2/3;
 		}
-
-
+		#comment1 h3, #comment2 h3, #comment3 h3{
+			color: #0064B1;
+			font-size: 1.25rem;
+		}
+		#comment1 p, #comment2 p, #comment3 p{
+			color: #3f3f3f;
+			font-size: 0.75rem;
+			margin-top: 0.1rem;
+		}
 
 
 		#titleText {
