@@ -6,15 +6,23 @@
     <title>Agenda</title>
 	<link rel="stylesheet" href="styles.css">
     <style>
-        body{
-            background-color: rgba(0, 100, 177, 0.1);
-        }
         main {
             width: 100%;
             /*background-color: rgba(0, 100, 177, 0.1); /* 0.3 = 30% opacity */
         }
         #intro{
             padding: 3rem;
+        }
+        #intro #text h1{
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+        #intro #text p{
+            font-size: 1rem;
+            color: #3f3f3f;
+        }
+        #intro img{
+            border-radius: 0.5rem;
         }
         #introInfo{
             padding: 20px auto;
@@ -31,7 +39,7 @@
         }
 
         #introInfo p {
-            color: #666;
+            color: #3f3f3f;
         }
         #intro {
             display: flex;
@@ -39,6 +47,11 @@
             justify-content: space-between;
             gap: 2rem;
             flex-wrap: wrap;
+        }
+        #agendaTimeline h2{
+			text-transform: uppercase;
+			font-size: 2rem;
+			font-weight: 800;
         }
 
         #text {
@@ -69,14 +82,16 @@
 
         #agendaTimeline h2 {
             text-align: center;
+            color: #0064B1;
         }
         .timeslot {
             background-color: #0064B1;
-            border-radius: 1rem;
+            border-radius: 0.3rem 0.3rem 0 0;
             width: fit-content;
-            margin:  0 0 0 5rem;
+            margin: 0 0 0 5rem;
         }
         .timeslot p {
+            margin: 0;
             padding: 0.5rem;
             color: white;
         }
@@ -84,18 +99,29 @@
             padding:0;
             margin: 0;
         }
+        .twoEventsRow {
+            display: flex;
+            gap: 1.5rem; /* space between the two boxes */
+            flex-wrap: wrap; /* makes it responsive on smaller screens */
+        }
+
+        .twoEventsRow .individualEvent {
+            flex: 1 1 48%; /* half-width for two boxes */
+            margin: 0;      /* remove the left/right margins */
+        }
+
         .individualEvent {
             background-color: rgba(0, 100, 177, 0.1);
             border: 4px solid rgba(0, 100, 177, 0.8);
-            border-radius: 0.5rem;
+            border-radius: 0 0.5rem 0.5rem 0.5rem;
             padding: 1rem;
-            margin: 0rem 5rem 1.5rem 5rem;
+            margin: 0 5rem 1.5rem 5rem;
             display: flex;
             gap: 1.2rem;
             align-items: center;
             transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                background-color 0.3s ease;
+                        box-shadow 0.3s ease,
+                        background-color 0.3s ease;
         }
 
         .individualEvent img {
@@ -162,7 +188,7 @@
             </div>
         </section>
         <section id="agendaTimeline">
-            <h2>The Agenda (if this looks bad feel free to delete)</h2>
+            <h2>The Agenda</h2>
             <div class="oneEventContainer">
                 <div class="timeslot">
                     <p>Placeholder time</p>
@@ -213,15 +239,47 @@
             </div>
             <div class="oneEventContainer">
                 <div class="timeslot">
-                    <p>Placeholder time</p>
+                    <p>10:00 AM</p>
                 </div>
-                <div class="individualEvent">
-                    <img src="speakerPlaceholder.jpg">
-                    <div class="eventText">
-                        <h3>This Event</h3>
-                        <p>Event Information</p>
+                <div class="twoEventsRow">
+                    <div class="individualEvent">
+                        <img src="speakerPlaceholder.jpg">
+                        <div class="eventText">
+                            <h3>Event A</h3>
+                            <p>Info about Event A</p>
+                        </div>
+                    </div>
+                    <div class="individualEvent">
+                        <img src="speakerPlaceholder.jpg">
+                        <div class="eventText">
+                            <h3>Event B</h3>
+                            <p>Info about Event B</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="oneEventContainer">
+                <div class="timeslot">
+                    <p>10:00 AM</p>
+                </div>
+                <div class="twoEventsRow">
+                    <div class="individualEvent">
+                        <img src="speakerPlaceholder.jpg">
+                        <div class="eventText">
+                            <h3>Event A</h3>
+                            <p>Info about Event A</p>
+                        </div>
+                    </div>
+                    <div class="individualEvent">
+                        <img src="speakerPlaceholder.jpg">
+                        <div class="eventText">
+                            <h3>Event B</h3>
+                            <p>Info about Event B</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             </div>
             <div class="oneEventContainer">
                 <div class="timeslot">
