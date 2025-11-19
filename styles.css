@@ -41,7 +41,7 @@ nav ul li a:hover {
 }
 nav ul li a:active {
     padding: 0.4rem;
-    background-color: rgba(0, 100, 177, 0.1);
+    background-color:  rgba(245, 128, 37, 0.1);
 }
 nav ul li #CTA {
     background-color: #C45517;
