@@ -120,7 +120,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color:  rgba(0, 100, 177, 0.7);
+			background-color:  rgba(0, 100, 177, 0.8);
 			z-index: 2;
 		}
 
@@ -167,7 +167,9 @@
 			justify-content: center;
 			font-weight: bold;
 			font-size: 0.9rem;
-			padding: 1rem auto;
+			padding: 1rem 1rem;
+			max-width: 250px;
+			max-height: 200px;
 		}
 
 
@@ -320,7 +322,37 @@
 		 }
 /*TABLET DISPLAY*/
 		@media (min-width: 768px) and (max-width: 1024px) {
+			 .conferenceBox {
+				flex-direction: column; /* Stack content vertically */
+				height: auto;           /* Allow height to adjust */
+			}
 
+			.conferenceContent {
+				flex-direction: column; /* Stack text and attendees */
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+				height: auto;
+			}
+
+			.conferenceText {
+				font-size: 0.95rem;
+				text-align: center;
+				padding: 1rem;
+			}
+
+			.attendeesGrid {
+				grid-template-columns: 1fr 1fr; /* Keep 2x2 grid */
+				grid-template-rows: auto auto;
+				gap: 1rem;
+				padding: 1rem;
+			}
+
+			.attendeeBox {
+				width: 90px;
+				height: 60px;
+        font-size: 0.85rem;
+    }
 		}
 /*PHONE DISPLAY*/
 		@media (max-width: 767px) {
@@ -350,6 +382,26 @@
 				width: 100%;
 				height: auto;
 				display: block;
+			}
+			
+			.conferenceText {
+				font-size: 0.9rem;
+				padding: 0.5rem 1rem;
+				text-align: center;
+			}
+
+			.attendeesGrid {
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto auto;
+				gap: 0.5rem;
+				padding: 0.5rem;
+			}
+
+			.attendeeBox {
+				width: 80px;
+				height: 50px;
+				font-size: 0.8rem;
+				padding: 0.5rem;
 			}
 		}
 
@@ -388,10 +440,10 @@
 					<p>This one-day conference brings together nonprofit leaders, UTA faculty, and students for an immersive exploration of fundraising trends, strategies, and tools.</p>
 				</div>
 				<div class="attendeesGrid">
-					<div class="attendeeBox">XXX Attendees</div>
-					<div class="attendeeBox">XXX Attendees</div>
-					<div class="attendeeBox">XXX Attendees</div>
-					<div class="attendeeBox">XXX Attendees</div>
+					<div class="attendeeBox">number of speakers</div>
+					<div class="attendeeBox">No. of workshops</div>
+					<div class="attendeeBox">No. of speaks</div>
+					<div class="attendeeBox">No. of connections/attendeess</div>
 				</div>
 			</div>
 		</div>
