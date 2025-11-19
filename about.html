@@ -6,19 +6,58 @@
     <title>About</title>
     <link rel="stylesheet" href="styles.css">
 	<style>
-		#introSections {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-			grid-template-rows: 1fr;
-			margin-top: 2rem;
+		#introTitle{
+			display: flex;
+			flex-direction: column; /* stack content */
+			justify-content: center;
+			align-items: center;
 			text-align: center;
-			justify-items: center;
+			background-color: rgba(0, 100, 177, 0.1);
+			border-radius: 0.5rem;
+			padding: 2rem;
+			margin: 1.5rem auto; 
+			width: 90%;
 		}
+		#introTitle h1 {
+			text-transform: uppercase;
+			font-size: 2rem;
+			font-weight: 800;
+		}
+
+		#introTitle h2 {
+			color: #0064B1;
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 2rem;
+		}
+
+		#introTitle p {
+			color: #3f3f3f;
+			font-size: 1.25rem;
+		}
+		#introTitle h1,
+		#introTitle h2,
+		#introTitle p {
+			margin: 0.5rem 0; /* reduce the gap between elements */
+		}
+
+
+		#introSections {
+   		display: grid;
+		grid-template-columns: repeat(4, 1fr); /* 4 columns */
+		grid-template-rows: auto; /* let height fit content */
+		gap: 1rem; /* space between cells */
+		justify-items: center; /* horizontal centering of each cell */
+		align-items: center;   /* vertical centering of each cell */
+		margin-top: 2rem;
+		padding: 0 1rem;
+	}
 
 		#network{
 			grid-column: 1/2;
 			grid-row: 1/2;
 			text-align: center;
+			gap: 0 0.5rem;
 		}
 		#learn{
 			grid-column: 2/3;
@@ -41,9 +80,10 @@
 		#engage h2 {
 			color: #C45517;
 			text-transform: uppercase;
-			font-size: 1.2rem;
-			font-weight: 700;
+			font-size: 1.5rem;
+			font-weight: 800;
 			text-shadow: 2px 2px 4px rgba(153, 153, 153, 0.5);
+		
 		}
 		.introSection{
 			width: 100%;
@@ -53,27 +93,44 @@
 			margin: 0 auto;
 			text-align: center;
 			align-items: center;
-			align-items: center;
 		}
 		.introSection img {
-			width: 95%;
+			width: 100%;
+			border-radius: 0.5rem;
 		}
 		#textInfo{
-			align-items: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;   /* center items inside */
+			gap: 1rem;
+			width: 80%;
+			margin: 0 auto;        /* center the container itself */
+			
+		}
+		#textInfo p{
+			color: #3f3f3f;
+			font-size: 1.25rem;
 		}
 		#textInfo ul li {
 			list-style: none;
 		}
 		#textInfo ul li a {
-			display: inline-block;
-			padding: 0.5rem 1rem;
-			font-size: 1rem;
-			border-radius: 0.5rem;
-			text-decoration: none;
-			color: white;
 			background-color: #C45517;
+			border-radius: 0.3rem;
+			font-size: 1rem;
+			font-weight: 700;
+			transition: all 0.2s ease;
 		}
-
+		#textInfo a:hover {
+			border: 3px solid #C45517;
+			color: #C45517;
+			background-color: white;
+		}
+		#textInfo a:active{
+			border: 3px solid #C45517;
+			color: #C45517;
+			background-color: #F58025;
+		}
 		#ctaRegister {
 			display: inline-block;
     		margin: 1rem auto 0 auto; /* top margin, auto horizontal */
@@ -86,59 +143,103 @@
 			text-decoration: none;
 		}
 
-		#pastConferences {
-			margin: 2rem;
-			display: flex;
-			gap: 1rem;
-			justify-content: center;
-			flex-wrap: wrap; 
-		}
-
 		.conferenceBox {
-			flex: 1 1 45%;
-			border: 5px solid #F58025;
+			position: relative;
 			border-radius: 0.75rem;
-			padding: 1rem;
-			display: flex;
-			align-items: center;
-			max-height: 250px;
 			overflow: hidden;
-			background-color: #fff;
-		}
-
-		.conferenceContent {
-			 display: flex;
-			flex-direction: row; 
-			align-items: center; 
-			gap: 1rem;
-		}
-
-		.attendees img {
-			width: 60%;       /* bigger circle */
-			max-width: 180px; /* optional max size */
-			height: auto;
-			border-radius: 50%;
-			object-fit: cover;
-			margin-top: 0.5rem;
-		}
-		.conferenceBox {
-			transition: transform 0.3s ease, background-color 0.3s ease; 
-			cursor: pointer;
+			width: 100%;
+			margin: 2rem auto;
+			height: 500px;
+			display: flex;
+			color: white;
 			text-align: center;
 		}
 
-		.conferenceBox:hover {
-			transform: scale(1.05); /* slightly expand */
-			background-color: rgba(245, 128, 37, 0.1);
-			box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+		/* Background image */
+		.conferenceBox::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('speakerPlaceholder.jpg') center/cover no-repeat;
+			opacity: 0.3; 
+			z-index: 1;
 		}
 
+		/* Blue overlay */
+		.conferenceBox::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color:  rgba(0, 100, 177, 0.7);
+			z-index: 2;
+		}
 
-		.attendees p {
+		/* Content container */
+		.conferenceContent {
+			position: relative;
+			z-index: 3;
+			display: flex;
+			width: 100%;
+			height: 100%;
+		}
+
+		/* Left text side */
+		.conferenceText {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1rem;
+			font-size: 1rem;
+		}
+		.conferenceText p{
+			font-size: 1rem;
+		}
+
+		/* Right attendees side (grid of boxes) */
+		.attendeesGrid {
+			flex: 1;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			gap: 0.5rem;
+			padding: 1rem;
+			align-items: center;
+			justify-items: center;
+			padding: 1rem auto;
+		}
+
+		.attendeeBox {
+			background-color: rgba(255, 255, 255, 0.2);
+			border: 1px solid rgba(255,255,255,0.5);
+			border-radius: 0.5rem;
+			width: 100px;
+			height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+			font-size: 1.25rem;
+			padding: 1rem 1rem;
+			max-width: 250px;
+			max-height: 200px;
+			width:max-content;
+			height: 100px;
 			margin-top: 0.5rem;
-			font-size: 0.9rem;
 		}
-
+		#pastComments{
+			margin-top: 0.5rem;
+		}
+		#pastComments h2{
+			font-size: 2rem;
+			font-weight: 800;
+		}
 		#pastConferences div img {
 			width: 70%;
 			clip-path: circle(50% at center);
@@ -157,7 +258,7 @@
 			grid-column: 2/3;
 		}
 		#pastConferences #conference2Text, #pastConferences #conference1Text {
-			margin: 3rem;
+			margin: 1rem;
 		}
 		#pastConferences #attendees1 {
 			grid-row: 2/3;
@@ -173,6 +274,7 @@
 		}
 		#pastComments {
 			display: flex;
+			padding: 3rem 1rem;
 			justify-content: center;
 			gap: 1rem;
 			flex-wrap: wrap;
@@ -186,34 +288,49 @@
 		}
 
 		#pastComments .speakerComments {
-			background-color: rgba(0, 100, 177, 0.8);
+			margin-top: 0.5rem;
+			border-color: rgba(0, 100, 177);
 			color: white;
 			border-radius: 0.5rem;
 			padding: 1rem;
-			flex: 1 1 28%;      /* grow/shrink, base width */
-			min-width: 250px;   /* keeps text readable */
-			max-width: 350px;   /* prevents boxes from being too wide */
+			flex: 1 1 28%;
+			min-width: 250px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
-			transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-			cursor: pointer;
+			box-shadow: black;
 		}
-		/* Hover effect */
-		#pastComments .speakerComments:hover {
-			transform: scale(1.05);
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-			background-color: rgba(0, 100, 177, 1);
+		#pastComments h2 {
+			text-align: center;
+			color: #0064B1;
+			font-weight: 900;
+			text-transform: uppercase;
+			margin-bottom: 2rem;
 		}
-
+		#pastComments .commentsContainer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem;
+	}
 		#pastComments .speakerComments img{
 			width: 100%;
-			border-radius: 80%;
+			border-radius: 0.5rem;
 		}
 		#pastComments .speakerComments {
-			margin: 1rem;
-			padding: 1rem;
+			border: 3px solid #0064B1;
+			color: white;
+			border-radius: 0.5rem;
+			padding: 1.5rem;
+			text-align: center;
+			width: 300px; /* fixed width for consistency */
+			flex: 1 1 300px; /* allow some flexibility */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
 		}
 		#pastComments .speakerComments h3{
 			text-align: center;
@@ -229,7 +346,6 @@
 		#pastComments #comment1,
 		#pastComments #comment2,
 		#pastComments #comment3 {
-			background-color: rgba(0, 100, 177, 0.8);
 			width: 40%;
 			margin: 1rem;
 			padding: 1rem;
@@ -239,17 +355,8 @@
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
-			transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+			gap: 0.25rem;
 			cursor: pointer;
-		}
-
-		/* Hover effect for each comment box */
-		#pastComments #comment1:hover,
-		#pastComments #comment2:hover,
-		#pastComments #comment3:hover {
-			transform: scale(1.05);
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-			background-color: rgba(0, 100, 177, 1);
 		}
 		#comment1{
 			grid-column: 1/2;
@@ -263,32 +370,46 @@
 			grid-column: 3/4;
 			grid-row: 2/3;
 		}
-
-
+		#comment1 h3, #comment2 h3, #comment3 h3{
+			color: #0064B1;
+			font-size: 1.25rem;
+		}
+		#comment1 p, #comment2 p, #comment3 p{
+			color: #3f3f3f;
+			font-size: 0.75rem;
+			margin-top: 0.1rem;
+		}
 
 
 		#titleText {
 			text-align: center;
 		}
-		#titleText h2, #titleText p {
-			margin-top: 0.5rem;
+		#titleText h2{
+			font-size: 2rem;
+			font-weight: 800;
+			color: #C45517;
+			text-transform: uppercase;	
 		}
-
+		#titleText p{
+			color: #3f3f3f;
+			font-size: 1.25rem;
+		}
 		#sponsorTable {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
 			grid-template-rows: 3fr 1fr;
-			width: 40%;
+			width: 60%;
+			height: fit-content;
 			margin: auto;
 		}
 		 #sponsorTable img {
 			width: 90%;
 			padding: 5%;
-
 		 }
 		 #mainSponsor {
 			grid-column: 1/4;
 			grid-row: 1/2;
+			padding: auto 10px;
 		 }
 		 #sponsor1{
 			grid-column: 1/2;
@@ -304,20 +425,16 @@
 		 }
 /*TABLET DISPLAY*/
 		@media (min-width: 768px) and (max-width: 1024px) {
-
-		}
-/*PHONE DISPLAY*/
-		@media (max-width: 767px) {
 			#introSections {
 				display: grid !important;
-				grid-template-columns: 1fr 1fr;  /* 2 columns */
-				grid-template-rows: auto auto;   /* 2 rows */
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: auto auto;
 				gap: 1rem;
 				justify-items: center;
 				padding: 1rem;
 			}
 
-			/* Remove desktop grid positioning */
+			/* Remove grid positioning for individual sections */
 			#network, #learn, #explore, #engage {
 				grid-column: auto !important;
 				grid-row: auto !important;
@@ -325,15 +442,234 @@
 			}
 
 			.introSection {
-				width: 90%;
-				max-width: 150px; /* uniform size for all items */
-				text-align: center;
+				display: grid !important;
+				grid-template-columns: 1fr; /* phone default, 2fr for tablet */
+				gap: 1rem;
+				justify-items: center;  /* horizontal centering */
+				align-items: center;    /* vertical centering */
+				width: 100%;
+				margin: 0 auto;
+				padding: 0.5rem;
 			}
 
 			.introSection img {
 				width: 100%;
 				height: auto;
 				display: block;
+				border-radius: 0.5rem;
+			}
+			
+			 .conferenceBox {
+				flex-direction: column;
+				height: auto;
+			}
+
+			.conferenceContent {
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+				height: auto;
+			}
+
+			.conferenceText {
+				font-size: 0.95rem;
+				text-align: center;
+				padding: 1rem;
+			}
+
+			.attendeesGrid {
+				grid-template-columns: 1fr 1fr; /* Keep 2x2 grid */
+				grid-template-rows: auto auto;
+				gap: 1.5rem;
+				padding: 1rem;
+			}
+
+			.attendeeBox {
+				width: 60%;
+				height: 60px;
+				font-size: 0.85rem;
+			}
+			#sponsorTable {
+				display: flex;
+				flex-wrap: wrap;       /* allow wrapping if needed */
+				justify-content: center;
+				align-items: center;
+				gap: 1rem;           /* spacing between sponsors */
+				width: 90%;
+				margin: 2rem auto;
+			}
+			#textTitle h2{
+				font-size: 0.75rem;
+				text-align: center;
+			}
+			#mainSponsor {
+				flex: 1 1 80%;
+				max-width: 450px;
+			}
+
+			/* Smaller sponsors in a row below main sponsor */
+			#sponsor1, #sponsor2, #sponsor3 {
+				flex: 1 1 80%;
+				max-width: 300px;
+			}
+
+			/* wrap smaller sponsors to next line if screen is narrow */
+			#sponsor1, #sponsor2, #sponsor3 {
+				display: inline-block;
+				margin: 0 0.5rem;
+			}
+
+			#sponsorTable img {
+				flex: 1 1 40%;
+				max-width: 400px;
+				height: auto;
+				border-radius: 0.5rem;
+			}
+		}
+/*PHONE DISPLAY*/
+		@media (max-width: 767px) {
+			body, main {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+			#introSections {
+				display: grid !important;
+				grid-template-columns: 1fr;
+				grid-template-rows: auto auto auto auto;
+				gap: 0.5rem;
+				justify-items: center;
+				padding: 0.5rem;
+			}
+			#introTitle{
+				width: 80%;
+			}
+			#introTitle h1 {
+				font-size: 100%;
+			}
+
+			#introTitle h2 {
+				font-size: 90%;
+			}
+
+			#introTitle p {
+				font-size: 100%;
+			}
+
+			#network, #learn, #explore, #engage {
+				grid-column: auto !important;
+				grid-row: auto !important;
+				text-align: center;
+			}
+			#network h3, #learn h3, #explore h3, #engage h3{
+				font-size: 1.25rem;
+			}
+			#textInfo p{
+				font-size: 0.75rem;
+			}
+			#ctaRegister {
+				font-size: 0.75rem;
+				text-align: center;
+				margin: 0 auto;
+			}
+			.introSection {
+				width: 95%;
+				max-width: none;
+				text-align: center;
+			}
+
+			.introSection img {
+				width: 100%; 
+				height: auto;
+				display: block;
+				border-radius: 0.5rem;
+			}
+
+			.conferenceText {
+				font-size: 0.9rem;
+				padding: 0.5rem 1rem;
+				text-align: center;
+			}
+
+			.attendeesGrid {
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto auto;
+				gap: 0.5rem;
+				padding: 0.5rem;
+			}
+			.conferenceBox {
+				flex-direction: column;
+				height: auto;
+				padding: 1rem;
+			}
+
+			.conferenceContent {
+				flex-direction: column;
+				gap: 1rem;
+				width: 100%;
+			}
+			#pastComments h2{
+				font-size: 1.25rem;
+			}
+
+			.conferenceText {
+				width: 90%;
+				text-align: center;
+				font-size: 0.9rem;
+				margin: 0 auto;
+				padding: 0.5rem 0;
+			}
+
+			.attendeesGrid {
+				grid-template-columns: 1fr;
+				gap: 0.5rem;
+				width: 90%;
+				margin: 0 auto;
+			}
+
+			.attendeeBox {
+				width: 80%;
+				max-width: 150px;
+				height: auto;
+				font-size: 0.8rem;
+				padding: 0.5rem;
+			}
+			#sponsorTable {
+				display: flex;
+				flex-wrap: wrap;       /* allow wrapping if needed */
+				justify-content: center;
+				align-items: center;
+				gap: 1rem;           /* spacing between sponsors */
+				width: 90%;
+				margin: 2rem auto;
+			}
+			.sponsors #titleText p{
+				font-size: 0.75rem;
+			}
+			#mainSponsor {
+				flex: 1 1 80%;
+				max-width: 450px;
+			}
+
+			/* Smaller sponsors in a row below main sponsor */
+			#sponsor1, #sponsor2, #sponsor3 {
+				flex: 1 1 80%;
+				max-width: 300px;
+			}
+
+			/* wrap smaller sponsors to next line if screen is narrow */
+			#sponsor1, #sponsor2, #sponsor3 {
+				display: inline-block;
+				margin: 0 0.5rem;
+			}
+
+			#sponsorTable img {
+				flex: 1 1 40%;
+				max-width: 400px;
+				height: auto;
+				border-radius: 0.5rem;
 			}
 		}
 
@@ -342,6 +678,12 @@
 <body>
 	<main>
 		<section id="intro">
+			<section id = "introTitle">
+				<h1>Uniting for Good</h1>
+				<p>The Power of Partnership in</p>
+				<h2>Philanthropy</h2>
+			</section>
+			
 			<div id="introSections">
 				<div id="network" class="introSection">
 					<img src="speakerPlaceholder.jpg">
@@ -367,24 +709,19 @@
 		</section>
 		<section id="pastConferences">
 			<div class="conferenceBox">
-				<div class="conferenceContent">
-					<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
-					<div class="attendees">
-						<img src="speakerPlaceholder.jpg" alt="Attendees">
-						<p>XXX Attendees</p>
-					</div>
+			<div class="conferenceContent">
+				<div class="conferenceText">
+					<p>This one-day conference brings together nonprofit leaders, UTA faculty, and students for an immersive exploration of fundraising trends, strategies, and tools.</p>
+				</div>
+				<div class="attendeesGrid">
+					<div class="attendeeBox">number of speakers</div>
+					<div class="attendeeBox">No. of workshops</div>
+					<div class="attendeeBox">No. of speaks</div>
+					<div class="attendeeBox">No. of connections/attendeess</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="conferenceBox">
-				<div class="conferenceContent">
-					<p>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur.</p>
-					<div class="attendees">
-						<img src="speakerPlaceholder.jpg" alt="Attendees">
-						<p>XXX Attendees</p>
-					</div>
-				</div>
-			</div>
 		</section>
 			<section id="pastComments">
 				<h2>What Past Attendees Say</h2>
