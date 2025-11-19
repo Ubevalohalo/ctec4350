@@ -134,10 +134,6 @@ footer #footerNav .dropdown .dropbtn {
 
 
 
-
-
-
-
 main {
     width: 90%;
     margin: auto;
@@ -146,7 +142,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 .speakers h2 {
     width: 100%;
@@ -154,7 +150,8 @@ main {
     text-align: center;
     text-transform: uppercase;
     color: #0064B1;
-    font-weight: 700;
+    font-size: 2rem;
+	font-weight: 800;
 }
 .speakerCards {
     display: flex;
@@ -165,7 +162,7 @@ main {
     justify-content: center;
 }
 .speakerCard {
-    background-color: rgba(0, 100, 177, 0.8);
+    background-color: #0064B1;
     width: 30%;
     margin: 1rem;
     padding: 1rem;
@@ -192,22 +189,36 @@ main {
 .speakers h3{
     text-align: center;
     text-transform: uppercase;
+    font-size: 1.25rem;
 }
 .speakers h4{
     text-align: center;
     font-weight: lighter;
-    font-size: 32px;
+    font-size: 1rem;
 }
 .speakers a {
     background-color: #0064B1;
-	padding:0.5rem 1rem;
-	margin: 1rem;
-	text-decoration: none;
-	color: white;
-	border-radius: 0.3rem;
-	font-size: 1rem;
-	font-weight: 700;
+    border-radius: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 3px solid transparent; /* keeps size consistent on hover */
+    color: white;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
 }
+
+.speakers a:hover {
+    border: 3px solid #0064B1;
+    color: #0064B1;
+    background-color: white;
+}
+
+.speakers a:active {
+    border: 3px solid #00529C;
+    color: #00529C;
+    background-color: rgba(0, 100, 177, 0.5);
+}
+
 footer {
     background-color: #0064B1;
     margin: 5rem 0rem 0rem 0rem;
@@ -268,16 +279,29 @@ footer #contacts a {
             .speakerCards {
                 display: flex;
                 flex-direction: column;
-                gap: 1.5rem;
-                margin: 1rem auto;
-                width: 100%;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                padding: 0 1rem;
             }
+
             .speakerCard {
-                width: 90%;       /* slightly less than full width for breathing room */
-                max-width: 400px; /* optional: prevents stretching on larger phones */
-                margin: 0 auto;   /* center the card */
-                padding: 2rem;    /* increase padding for better appearance */
+                width: 90%;
+                max-width: 400px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .speakers h2{
+                font-size: 1.25rem;
+            }
+            .speakerCard h3{
+                font-size: 1.25rem;
+            }
+            .speakerCard h4{
                 font-size: 1rem;
+            }
+            .speakerCard p{
+                font-size: 0.75rem;
             }
             .sponsorCards {
                 display: flex;

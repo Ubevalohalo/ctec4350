@@ -9,21 +9,24 @@
 	/*landing/hero*/
 	/*comment*/
 	/* Style the video: 100% width and height to cover the entire window */
+	
 	#myVideo {
 		min-width: 100%;
 	}
 	#intro {
-		padding: 0.5rem auto;
-		position: relative; /* Essential for positioning child elements */
-		width: 100%; /* Or a specific width */
-		height: 100vh; /* Or a specific height */
-		overflow: hidden; /* To prevent text from spilling if it's outside the video area */
-		text-align: center;
+		  	position: relative;
+			width: 100%;
+			height: auto; /* let the video define height */
+			overflow: hidden;
+			text-align: center;
+			margin-bottom: 1rem;
+			justify-content: center;
+			align-items: center;
 	}
 
 	#intro video {
 		width: 100%;
-		height: 100%;
+		height: 800px;
 		object-fit: cover; /* Ensures the video covers the container without distortion */
 		opacity: 50%;
 	}
@@ -36,6 +39,7 @@
 		z-index: 1;
 		display: none;
 		*/
+		position: static; 
 		text-align: center;
 		margin: 0;
 		width: auto;
@@ -67,7 +71,8 @@
 	}
 
 	#introInfo p {
-		color: #666;
+		color: #3f3f3f;
+		font-size: 1.25rem;
 	}
 
 	#introInfo ul {
@@ -92,20 +97,43 @@
 		border-radius: 0.5rem;
 		text-decoration: none;
 		color: white;
+		padding: 0.5rem;
 	}
 
 	#aboutButton {
 		background-color: #0064B1;
 		border-radius: 0.3rem;
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: 700;
+		transition: all 0.2s ease;
+	}
+	#aboutButton:hover {
+		border: 3px solid #0064B1;;
+		color: #0064B1;
+		background-color: white;
+	}
+	#aboutButton:active {
+		border: 3px solid #0064B1;;
+		color: #0064B1;
+		background-color: rgba(0, 100, 177, 0.5);
 	}
 
 	#registerButton {
 		background-color: #C45517;
 		border-radius: 0.3rem;
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: 700;
+		transition: all 0.2s ease;
+	}
+	#registerButton:hover {
+		border: 3px solid #C45517;
+		color: #C45517;
+		background-color: white;
+	}
+	#registerButton:active{
+		border: 3px solid #C45517;
+		color: #C45517;
+		background-color: #F58025;
 	}
 
 	.viewAllBtns {
@@ -133,10 +161,12 @@
 
 	#whyJoin {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr; /* left label + 2 columns of boxes */
+		grid-template-columns: 1fr 1fr 1fr;
 		gap: 1.5rem;
 		padding: 2rem;
-		box-sizing: border-box;
+	}
+	#whyJoin h2{
+		font-weight: 700;
 	}
 
 	/* Left label area */
@@ -174,24 +204,32 @@
 	#whyJoin ul li a,
 	#learnMoreButton {
 		display: inline-block;
-		padding: 0.5rem 1rem;
-		font-size: 1rem;
-		border-radius: 0.5rem;
-		text-decoration: none;
-		color: white;
-	}
-
-	#learnMoreButton {
 		background-color: #C45517;
 		border-radius: 0.3rem;
-		font-size: 0.95em;
+		font-size: 1rem;
 		font-weight: 700;
+		transition: all 0.2s ease;
+		text-decoration: none;
+		color: white;
+		padding: 0.5rem;
+	}
+
+	#learnMoreButton:hover {
+		border: 3px solid #C45517;
+		color: #C45517;
+		background-color: white;
+	}
+	#learnMoreButton:active{
+		border: 3px solid #C45517;
+		color: #C45517;
+		background-color: #F58025;
 	}
 
 	#whyJoin h2{
+		font-size: 2rem;
+		font-weight: 800;
 		color: #C45517;
-		text-transform: uppercase;
-		font-weight: 700;
+		text-transform: uppercase;	
 	}
 	#whyJoin p{
 		font-size: 1rem;
@@ -236,148 +274,232 @@
 		flex-direction: column;
 		align-items: center;
 	}
-
+	#networking h3, #learn h3 , #explore h3, #engage h3{
+		font-size: 1.25rem;
+	}
+	#networking p, #learn p , #explore p, #engage {
+		font-size: 1rem;
+	}
 	.sponsors h2{
 		text-transform: uppercase;
 		color: #C45517;
-		font-weight: 700;
+		font-size: 2rem;
+		font-weight: 800;
 	}
 
 	.sponsors img {
 		width: 40%;
-		margin: 2rem;
+		height: 40%;
+		margin: 1rem;
 		border-radius: 0.5rem;
 	}
-	.sponsors ul li a{
+	.sponsors a {
+    background-color: #C45517;
+		border-radius: 0.3rem;
 		font-size: 1rem;
+		font-weight: 700;
+		transition: all 0.2s ease;
+		color: white;
+		padding: 0.5rem 1rem;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.sponsors a:hover {
+		border: 3px solid #C45517;
+		color: #C45517;
+		background-color: white;
+	}
+
+	.sponsors a:active{
+		border: 3px solid #C45517;
+		color: #C45517;
+		background-color: #F58025;
 	}
 
 	/*TABLET DISPLAY*/
 	@media (min-width: 768px) and (max-width: 1024px) {
+		  #intro {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
 		#introInfo {
 			max-width: 80%;
 			margin: 0 auto;
 		}
 
 		#whyJoin {
-				grid-template-columns: 1fr 1fr;
-				grid-template-rows: auto auto auto;
-				padding: 1.5rem;
-			}
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto auto auto;
+			padding: 1.5rem;
+		}
 
-			#label {
-				grid-column: 1 / -1;
-				grid-row: 1;
-			}
+		#label { grid-column: 1 / -1; }
 
-			#networking { grid-column: 1; grid-row: 2; }
-			#learn      { grid-column: 2; grid-row: 2; }
-			#explore    { grid-column: 1; grid-row: 3; }
-			#engage     { grid-column: 2; grid-row: 3; }
+		#networking { grid-column: 1; }
+		#learn      { grid-column: 2; }
+		#explore    { grid-column: 1; }
+		#engage     { grid-column: 2; }
 	}
 
 	@media (max-width: 767px) {
-		/* HERO SECTION */
+
+		/* =======================
+		HERO SECTION 
+		=======================*/
 		#intro {
 			margin-top: 50px;
 			position: relative;
-			height: 50vh; /* shorter hero */
+			height: auto;
 			overflow: hidden;
 			padding: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;   /* center vertically */
+			align-items: center;       /* center horizontally */
+			text-align: center;
 		}
 
 		#myVideo {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%; /* fill container */
+			position: relative;
+			width: 80%;
+			height: auto;
 			object-fit: cover;
+			margin: 0 auto 1rem auto;
 			z-index: 0;
+			display: block;
 		}
 
 		#introInfo {
-			position: absolute; /* keep text centered */
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			text-align: center;
+			position: relative;
 			width: 90%;
+			margin: 0 auto;
+			text-align: center;
+			padding: 15px;
 			z-index: 1;
-			margin: 0;
-			padding: 15px; /* Add this line */
+			display: flex;
+			flex-direction: column;
+			align-items: center;   /* center everything inside */
+			justify-content: center;
 		}
 
-
-		#introInfo h1 { font-size: 2rem; padding-top: 20px;}
+		#introInfo h1 { font-size: 2rem; padding-top: 20px; }
 		#introInfo h2 { font-size: 1.2rem; }
 		#introInfo p  { font-size: 0.9rem; }
 
 		#introInfo ul {
+			display: flex;
 			flex-direction: column;
+			align-items: center;   /* center list items */
+			justify-content: center;
 			gap: 0.5rem;
 			margin-top: 1rem;
-			padding: 0;
-			align-items: center;
-			padding-bottom: 20px ;
+			padding: 0 0 20px 0;
+			list-style: none;
 		}
 
 		#introInfo ul li a {
 			display: block;
-			font-size: 0.75rem;
 			text-align: center;
+			font-size: 0.75rem;
 			width: fit-content;
+			margin: 0 auto;
 		}
-		 #whyJoin {
-			display: grid;
-			grid-template-columns: 1fr; /* single column */
-			grid-template-rows: auto;   /* rows adjust to content */
-			gap: 1rem;                  /* space between each row */
+
+		/* =======================
+		WHY JOIN SECTION
+		=======================*/
+		#whyJoin {	
+			gap: 1rem;
 			padding: 1rem;
+			justify-items: center;
+			text-align: center;
+			display: flex;
+    		flex-direction: column;
 		}
 		#whyJoin h2{
 			font-size: 1.25rem;
-		}
-		#whyJoin p{
-			font-size: 0.75rem;
-		}
-		#whyJoin > div {
-			grid-column: 1 / -1;        /* full width */
-			min-height: auto;            /* auto height based on content */
-			padding: 1.5rem;             /* consistent padding */
-			box-sizing: border-box;      /* include padding in width */
 			text-align: center;
-			font-size: 90%;
 		}
-		#whyJoin ul li a,
-		#learnMoreButton{
+		#whyJoin p {
 			font-size: 0.75rem;
 		}
-		#label { grid-column: 1; grid-row: 1; }
-		#networking { grid-column: 1; grid-row: 2; }
-		#learn      { grid-column: 1; grid-row: 3; }
-		#explore    { grid-column: 1; grid-row: 4; }
-		#engage     { grid-column: 1; grid-row: 5; }
-		#label {
-			padding-bottom: 1rem;
+
+		#whyJoin > div {
+			width: 90%;
+			display: flex;
+			flex-direction: column;
+			padding: 1.5rem;
+			margin: 0 auto;
+			box-sizing: border-box;
+			/* RESET the desktop grid placement */
+			grid-column: auto !important;
+			grid-row: auto !important;
 		}
-		/* SPEAKER CARDS ONE COLUMN */
+
+		#label       { grid-row: 1; }
+		#networking  { grid-row: 2; }
+		#learn       { grid-row: 3; }
+		#explore     { grid-row: 4; }
+		#engage      { grid-row: 5; }
+
+		 #label {
+			width: 90% !important;
+			margin: 0 auto;
+			}	
+
+		#learnMoreButton,
+		#whyJoin ul li a {
+			font-size: 0.75rem;
+			text-align: center;
+			margin: 0 auto;
+		}
+
+		/* =======================
+		SPEAKERS
+		=======================*/
 		.speakerCards {
-			display: grid;
-			grid-template-columns: 1fr; /* single column */
+			display: flex;
+			flex-direction: column;
+			align-items: center;   /* center cards */
 			gap: 1rem;
 			padding: 0 1rem;
 		}
 
 		.speakerCard {
-			margin: 0 auto; /* center card */
+			width: 90%;
+			max-width: 400px;
+			margin: 0 auto;
+			text-align: center;
 		}
 
-		/* SPONSORS */
+		/* =======================
+		SPONSORS
+		=======================*/
+		.sponsors {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			text-align: center;
+		}
+		.sponsors h2{
+			font-size: 1.25rem;
+			text-align: center;
+		}
+		.sponsors a {
+			font-size: 0.75rem;
+		}
+
 		.sponsors img {
 			width: 70%;
+			margin: 0 auto;
+			display: block;
 		}
 	}
+
 
 	</style>
 
@@ -399,9 +521,7 @@
 			</video>
 			<!--overlay text-->
 			<div id="introInfo">
-				<h1>Uniting for Good</h1>
-				<p>The Power of Partnership in</p>
-				<h2>Philanthropy</h2>
+				
 				<p>Wednesday, April 9, 2025 • 8:30 AM - 6:30 PM • UTA</p>
 				<p>Arlington Campus, Central Library</p>
 				<ul>
