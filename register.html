@@ -6,28 +6,11 @@
     <title>About</title>
     <link rel="stylesheet" href="styles.css">
 	<style>
-        #whyRegister {
-            text-align: center;
-        }
-        #reasonContainer{
-            display: flex;
-            flex-wrap: wrap;
-            width: 60%;
-            margin: auto;
-            justify-content: center;
-        }
-        .registerReasonBox {
-            background-color: grey;
-            padding: 1rem;
-            border-radius: 1rem;
-            width: 20%;
-            margin: 2%;
-        }    .registration {
+    .registration {
         padding: 60px 0;
         background: #f7f7f7;
         font-family: Arial, sans-serif;
     }
-
     .registration .container {
         max-width: 600px;
         margin: auto;
@@ -35,15 +18,8 @@
         padding: 30px;
         border-radius: 12px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        align-items: center;
-        align-content: center;
     }
-
-    .field {
-        margin-bottom: 15px;
-        position: relative;
-    }
-
+    .field { margin-bottom: 15px; position: relative; }
     .registration input {
         width: 100%;
         padding: 12px;
@@ -51,8 +27,6 @@
         border-radius: 6px;
         font-size: 16px;
     }
-
-    /* Error message (hidden by default) */
     .error {
         display: none;
         color: #b30000;
@@ -60,41 +34,71 @@
         margin-top: 5px;
         padding-left: 2px;
     }
-
-    /* Show error when field invalid after user interaction */
     input:invalid:focus + .error,
     input:invalid.submitted + .error {
         display: block;
     }
-
     .registration .btn {
         width: 100%;
         padding: 14px;
-        background: #0064B1;
+        background: #007bff;
         color: white;
         border: none;
         border-radius: 6px;
         font-size: 17px;
         cursor: pointer;
-        transition: 0.2s;
-        width: fit-content ;
+        transition: 0.2s ease;
     }
-
     .registration .btn:hover {
-        background: #007bff;
+        background: #0056b3;
+    }
+    .thankyou {
+        background: #d4edda;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 10px;
+        color: #155724;
+        border: 1px solid #c3e6cb;
     }
 </style>
 <script>
-    // Show errors on submit if fields are empty
-    document.querySelector("form").addEventListener("submit", function(e) {
-        const inputs = this.querySelectorAll("input");
+    const form = document.getElementById("regForm");
+    const thankYou = document.getElementById("thankYouMessage");
+    const title = document.getElementById("title");
+    const subtitle = document.getElementById("subtitle");
 
+    form.addEventListener("submit", function(e) {
+        e.preventDefault(); // prevent page refresh
+
+        const inputs = form.querySelectorAll("input[required]");
+        let valid = true;
+
+        // Check required fields
         inputs.forEach(input => {
             if (!input.checkValidity()) {
                 input.classList.add("submitted");
-                e.preventDefault(); // stop form if errors exist
+                valid = false;
             }
         });
+
+        if (!valid) return;
+
+        // Optionally, you could collect data here
+        const formData = {
+            firstName: form.first_name.value,
+            lastName: form.last_name.value,
+            phone: form.phone.value,
+            email: form.email.value,
+            preferences: form.preferences.value
+        };
+
+        console.log("Form submitted:", formData); // for testing
+
+        // Hide form + show thank you
+        form.style.display = "none";
+        title.style.display = "none";
+        subtitle.style.display = "none";
+        thankYou.style.display = "block";
     });
 </script>
 </head>
@@ -130,12 +134,19 @@
             </div>
             
         </section>
-       <section class="registration">
+        <section class="registration">
     <div class="container">
-        <h2>Conference Registration</h2>
-        <p>Fill out the form below to secure your spot.</p>
 
-        <form novalidate>
+        <h2 id="title">Conference Registration</h2>
+        <p id="subtitle">Fill out the form below to secure your spot.</p>
+
+        <!-- Thank You Message -->
+        <div id="thankYouMessage" class="thankyou" style="display: none;">
+            <h3>Thank you for registering!</h3>
+            <p>We have received your information and will be in touch soon.</p>
+        </div>
+
+        <form id="regForm" novalidate>
             <div class="field">
                 <input type="text" name="first_name" placeholder="First Name" required>
                 <span class="error">Please enter your first name.</span>
@@ -147,17 +158,22 @@
             </div>
 
             <div class="field">
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <span class="error">Please enter your phone number.</span>
+            </div>
+
+            <div class="field">
                 <input type="email" name="email" placeholder="Email Address" required>
                 <span class="error">Please enter a valid email address.</span>
             </div>
 
             <div class="field">
-                <input type="tel" name="phone" placeholder="Phone Number" required>
-                <span class="error">Please enter a phone number.</span>
+                <input type="text" name="preferences" placeholder="Dietary Preferences / Accommodations">
             </div>
 
             <button type="submit" class="btn">Register</button>
         </form>
+
     </div>
 </section>
     </main>
