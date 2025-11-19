@@ -57,6 +57,7 @@
 		}
 		.introSection img {
 			width: 95%;
+			border-radius: 0.5rem;
 		}
 		#textInfo{
 			align-items: center;
@@ -132,8 +133,6 @@
 			background-color: rgba(245, 128, 37, 0.1);
 			box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 		}
-
-
 		.attendees p {
 			margin-top: 0.5rem;
 			font-size: 0.9rem;
@@ -190,23 +189,16 @@
 			color: white;
 			border-radius: 0.5rem;
 			padding: 1rem;
-			flex: 1 1 28%;      /* grow/shrink, base width */
-			min-width: 250px;   /* keeps text readable */
-			max-width: 350px;   /* prevents boxes from being too wide */
+			flex: 1 1 28%;
+			min-width: 250px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
 			transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 			cursor: pointer;
+			box-shadow: black;
 		}
-		/* Hover effect */
-		#pastComments .speakerComments:hover {
-			transform: scale(1.05);
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-			background-color: rgba(0, 100, 177, 1);
-		}
-
 		#pastComments .speakerComments img{
 			width: 100%;
 			border-radius: 80%;
@@ -241,15 +233,6 @@
 			text-align: center;
 			transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 			cursor: pointer;
-		}
-
-		/* Hover effect for each comment box */
-		#pastComments #comment1:hover,
-		#pastComments #comment2:hover,
-		#pastComments #comment3:hover {
-			transform: scale(1.05);
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-			background-color: rgba(0, 100, 177, 1);
 		}
 		#comment1{
 			grid-column: 1/2;

@@ -34,12 +34,14 @@ nav ul li a {
     font-weight: 600;
 }
 nav ul li a:hover {
-    text-decoration: none;
     background-color: white;
     padding: 0.4rem;
     color: #0064B1;
     text-transform: uppercase;
-    border-radius: 0.3rem;
+}
+nav ul li a:active {
+    padding: 0.4rem;
+    background-color: rgba(0, 100, 177, 0.1);
 }
 nav ul li #CTA {
     background-color: #C45517;
@@ -48,9 +50,13 @@ nav ul li #CTA {
 }
 nav ul li #CTA:hover {
     text-decoration: underline;
-    background-color: #C45517;
+    border-radius: 0.3rem;
+}
+nav ul li #CTA:active {
+    text-decoration: underline;
     border-radius: 0.3rem;
     transform: scale(1.03);
+    color: #0064B1;
 }
 /*THIS IS FOR THE DROPDOWN----------------------------*/
         /* The dropdown container */
@@ -76,7 +82,7 @@ nav ul li #CTA:hover {
 /* Add a red background color to navbar links on hover */
 .dropdown:hover .dropbtn {
   background-color: white;
-  color:rgba(0, 100, 177)
+  color: #0064B1;
 }
 
 /* Dropdown content (hidden by default) */
@@ -100,7 +106,7 @@ nav ul li #CTA:hover {
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  border-bottom: 3px solid #0064B1;
 }
 
 /* Show the dropdown menu on hover */
