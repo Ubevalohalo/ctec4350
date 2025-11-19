@@ -30,10 +30,27 @@ nav ul li a {
     text-decoration: none;
     color: white;
     padding: 0.4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+nav ul li a:hover {
+    text-decoration: none;
+    background-color: white;
+    padding: 0.4rem;
+    color: #0064B1;
+    text-transform: uppercase;
+    border-radius: 0.3rem;
 }
 nav ul li #CTA {
     background-color: #C45517;
     border-radius: 0.3rem;
+    color: white;
+}
+nav ul li #CTA:hover {
+    text-decoration: underline;
+    background-color: #C45517;
+    border-radius: 0.3rem;
+    transform: scale(1.03);
 }
 /*THIS IS FOR THE DROPDOWN----------------------------*/
         /* The dropdown container */
@@ -57,8 +74,9 @@ nav ul li #CTA {
 }
 
 /* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red; /*DO WE WANT THIS TO BE COLORED ON HOVER??? FOR ANH THX*/
+.dropdown:hover .dropbtn {
+  background-color: white;
+  color:rgba(0, 100, 177)
 }
 
 /* Dropdown content (hidden by default) */
