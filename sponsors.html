@@ -164,6 +164,7 @@
         text-transform: uppercase;
         margin-top: 0;
         text-align: center;
+        align-self: center;
     }
     .textLeft div a:hover,
     .textRight div a:hover {
@@ -203,20 +204,44 @@
         }
     }
     @media (max-width: 767px) {
-         .textLeft,
-        .textRight {
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        #introSection form {
+            flex-direction: row;       /* keep input and button side by side */
+            width: 90%;                /* scale form width to screen */
+            padding: 0.3rem;
         }
 
-        .textLeft div,
-        .textRight div {
-            padding: 2rem;
+        #introSection #email {
+            width: calc(100% - 3rem);  /* take remaining width minus button width */
+            min-width: auto;           /* remove fixed desktop min-width */
+            border-radius: 0.3rem 0 0 0.3rem;
+        }
+
+        #introSection #submitEmail {
+            width: 3rem;               /* small button width, adjust as needed */
+            border-radius: 0 0.3rem 0.3rem 0;
+        }
+        .textLeft,
+        .textRight {
+            display: grid;
+            grid-template-columns: 1fr;  /* only one column */
+            grid-template-rows: auto auto; /* first image, then text */
+            gap: 1rem;  /* space between image and text */
         }
 
         .textLeft img,
         .textRight img {
+            grid-column: 1;
+            grid-row: 1;
+            width: 100%;
             height: auto;
+        }
+
+        .textLeft div,
+        .textRight div {
+            grid-column: 1;
+            grid-row: 2;
+            padding: 1.5rem;
+            text-align: center;
         }
     }
 
