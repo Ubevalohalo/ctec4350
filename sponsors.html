@@ -6,67 +6,226 @@
     <title>Sponsors</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        #sponsorsContainer img {
-            width: 100%;
-        }
-        #introSection {
-            text-align: center;
-        }
-        #introSection bform {
-            1border-radius: 1rem;
-            border: solid 1px red;
-            background-color: grey;
-            width: fit-content;
-            margin: auto;
-            padding: 0rem;
-        }
-        form {
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            margin-bottom: 5rem;
-        }
-        #introSection #email {
-            height: 100%;
-            min-width: 10rem;
-            width: 30rem;
-            font-size: 100%;
-            padding: 0.15rem;
-        }
-        #introSection #submitEmail {
-            height: 100%;
-            font-size: 100%;
-        }
-        #sponsorsContainer {
-            margin: auto;
-        }
-        .textRight, .textLeft {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr;
-        }
-        .textLeft img ,.textRight div{
-            grid-row: 1/2;
-            grid-column: 1/2;
-        }
-        .textRight img ,.textLeft div{
-            grid-row: 1/2;
-            grid-column: 2/3;
+        /* INTRO SECTION */
+    #introSection {
+        text-align: center;
+        padding: 4rem 1rem;
+        margin-bottom: 4rem;
+    }
 
+    #introSection h1 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #0064B1;
+        margin-bottom: 1rem;
+    }
+
+    #introSection h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: #3f3f3f;;
+    }
+
+    /* EMAIL FORM */
+    #introSection form {
+        display: flex;
+        justify-content: center;
+        background: #e9f4ff;
+        border: 2px solid #0064B1;
+        border-radius: 0.5rem;
+        width: fit-content;
+        padding: 0.3rem;
+        margin: auto;
+    }
+
+    #introSection #email {
+        min-width: 12rem;
+        width: 25rem;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: none;
+        outline: none;
+        border-radius: 0.3rem 0 0 0.3rem;
+    }
+
+    #introSection #submitEmail {
+        padding: 0 1rem;
+        background-color: #0064B1;
+        color: white;
+        font-weight: 700;
+        border: none;
+        border-radius: 0 0.3rem 0.3rem 0;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    #introSection #submitEmail:hover {
+        background-color: #004c8c;
+    }
+
+    /* SPONSOR CONTAINER (THE SECTION) */
+    #sponsorsContainer {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        border-radius: 0.3rem;
+    }
+
+    /* SPONSOR BOX LAYOUT */
+    .textLeft,
+    .textRight {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 3rem 0;
+        background: #f8fbff;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        align-items: stretch; /* ensures both columns stretch to content */
+    }
+
+    /* IMAGE FIX */
+    .textLeft img,
+    .textRight img {
+        width: 100%;
+        height: auto;      /* don't stretch height */
+        object-fit: cover; /* keep aspect ratio */
+    }
+        /* TEXT BOX */
+    .textLeft div,
+    .textRight div {
+        padding: 2.5rem 3rem; /* enough spacing inside text */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;           /* spacing between h2, p, button */
+    }
+    /* ALTERNATING LAYOUT */
+    .textLeft {
+        grid-template-areas: "img text";
+    }
+    .textLeft img {
+        grid-area: img;
+    }
+    .textLeft div {
+        grid-area: text;
+    }
+
+    .textRight {
+        grid-template-areas: "text img";
+    }
+    .textRight img {
+        grid-area: img;
+    }
+    .textRight div {
+        grid-area: text;
+    }
+
+    /* Center text vertically */
+    .textLeft div,
+    .textRight div {
+        padding: 2.5rem 3rem; /* more padding on all sides */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* vertically center text */
+        gap: 1rem;
+    }
+    .textLeft div h2,
+    .textRight div h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #0064B1;
+        margin:0 ;
+    }
+
+    .textLeft div p,
+    .textRight div p {
+        font-size: 1rem;
+        color: #3f3f3f;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    /* CTA BUTTON */
+    .textLeft div a,
+    .textRight div a {
+        display: inline-block;
+        width: fit-content;
+        padding: 0.5rem 1.5rem;
+        background: #0064B1;
+        color: white;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 700;
+        border-radius: 0.3rem;
+        transition: 0.2s ease;
+        text-transform: uppercase;
+        margin-top: 0;
+        text-align: center;
+    }
+    .textLeft div a:hover,
+    .textRight div a:hover {
+        background: #004c8c;
+    }
+
+    /* ALTERNATING LAYOUTS */
+    .textLeft img {
+        grid-column: 1 / 2;
+    }
+    .textLeft div {
+        grid-column: 2 / 3;
+    }
+
+    .textRight img {
+        grid-column: 2 / 3;
+    }
+    .textRight div {
+        grid-column: 1 / 2;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+         .textLeft,
+        .textRight {
+            grid-template-columns: 1fr 1fr; /* keep two columns but allow more flexibility */
+            gap: 1rem;
         }
-        .textLeft, .textRight {
-            margin: 2rem 0rem;
+
+        .textLeft div,
+        .textRight div {
+            padding: 2rem;
         }
-        .textLeft div, .textRight div {
-            padding: 1rem;
-            text-align: center;
+
+        .textLeft img,
+        .textRight img {
+            height: auto;
         }
+    }
+    @media (max-width: 767px) {
+         .textLeft,
+        .textRight {
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .textLeft div,
+        .textRight div {
+            padding: 2rem;
+        }
+
+        .textLeft img,
+        .textRight img {
+            height: auto;
+        }
+    }
+
     </style>
 </head>
 <body>
     <main>
         <section id="introSection">
-            <h1>Gain valuable exposure for your brand and help us ensure the success of our upcoming conference by becoming a sponsor or exhibitor!</h1>
+            <h1>Gain valuable exposure for your brand and help us ensure the success of our upcoming conference by becoming a sponsor!</h1>
             <h2>Interested in becoming a sponsor? Leave us an email!</h2>
             <form action="<>" method="POST"> <!--put php script link in action-->
                 <label for="email"></label><br>
@@ -75,7 +234,7 @@
             </form>
         </section>
         <section id="sponsorsContainer">
-            <div class="textRight" class="sponsorBox">
+            <div class="textRight sponsorBox">
                 <img src="speakerPlaceholder.jpg">
                 <div>
                     <h2>Sponsor Name</h2>
@@ -83,7 +242,7 @@
                     <a href="***">See More</a>
                 </div>
             </div>
-           <div class="textLeft" class="sponsorBox">
+           <div class="textLeft sponsorBox">
                 <img src="speakerPlaceholder.jpg">
                 <div>
                     <h2>Sponsor Name</h2>
@@ -91,7 +250,7 @@
                     <a href="***">See More</a>
                 </div>
             </div>
-            <div class="textRight" class="sponsorBox">
+            <div class="textRight sponsorBox">
                 <img src="speakerPlaceholder.jpg">
                 <div>
                     <h2>Sponsor Name</h2>
@@ -99,7 +258,7 @@
                     <a href="***">See More</a>
                 </div>
             </div>
-            <div class="textLeft" class="sponsorBox">
+            <div class="textLeft sponsorBox">
                 <img src="speakerPlaceholder.jpg">
                 <div>
                     <h2>Sponsor Name</h2>
