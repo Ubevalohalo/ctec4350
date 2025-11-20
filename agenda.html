@@ -102,14 +102,15 @@
         .twoEventsRow {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             gap: 1.5rem;
             margin: 0 5rem 1.5rem 5rem; 
         }
 
         .twoEventsRow .individualEvent {
-            flex: none;
-            width: 100%;
-            margin: 1rem;
+            flex: 1 1 calc(50% - 1.5rem);
+            min-width: 250px;
+            margin: 0;
         }
 
         .individualEvent {
@@ -144,42 +145,88 @@
 
         /*TABLET DISPLAY*/
 		@media (min-width: 768px) and (max-width: 1024px) {
-            #text h1{
-              font-size: 1.5rem;  
-            }
-            .individualEvent img {
-                width: 50%;
-                height: auto;
-        }
-		}
-/*PHONE DISPLAY*/
-		@media (max-width: 767px) {
-            #text h1{
-              font-size: 1.25rem;  
-            }
-            .timeslot{
-                margin-left: 1rem;
-            }
-            .individualEvent {
-                flex-direction: column;
-                margin: 1rem 1rem;
-                text-align: left;
-                padding: 1.2rem;
+            .twoEventsRow .individualEvent {
+                flex: 1 1 calc(50% - 1rem);
+                min-width: 200px;
             }
 
             .individualEvent img {
-                width: 100%;
+                width: 40%;
                 height: auto;
-                max-height: 15rem;
-                object-fit: cover;
+            }
+
+            #text h1 {
+                font-size: 1.25rem;  
+                flex-wrap: wrap;
+            }
+            #text p {
+                font-size: 1rem;  
+            }
+		}
+        /*PHONE DISPLAY*/
+		@media (max-width: 767px) {
+            /* Two events row full width */
+            .oneEventContainer,
+            .twoEventsRow {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* center horizontally */
+                justify-content: flex-start;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                gap: 1.5rem;
+            }
+
+            /* Timeslot alignment */
+            .timeslot {
+                margin: 0;
+                width: fit-content;
+                text-align: center;
+                border-radius: 0.3rem 0.3rem 0 0;
+                margin-bottom: -1.5rem;
+            }
+            .timeslot p {
+                font-size: 60%;
+                
+            }
+
+            /* Individual events (both single and in twoEventsRow) */
+            .twoEventsRow .individualEvent,
+            .oneEventContainer .individualEvent {
+                width: 90%;
+                max-width: 400px;
+                margin: 0 0 1.5rem 0;
+                min-height: 250px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                box-sizing: border-box;
+                text-align: center;
+                padding: 1rem;
                 border-radius: 0.5rem;
             }
+            .twoEventsRow .individualEvent {
+            margin-bottom: 2rem;
+        }
 
+            /* Images inside events */
+            .individualEvent img {
+                width: 100%;
+                height: 150px; /* consistent height */
+                object-fit: cover;
+                border-radius: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Event text */
             .individualEvent .eventText {
                 width: 100%;
                 text-align: center;
+                flex-grow: 1;
             }
         }
+
     </style>
 </head>
 <body>
