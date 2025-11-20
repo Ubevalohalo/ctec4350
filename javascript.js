@@ -80,11 +80,25 @@ function createFooter() {
                 <p><a href="tel:+4733378901">+47 333 78 901</a></p>
                 <p><a href="mailto:someone@example.com">someEmail@gmail.com</a></p>
                 <h2>Social Media</h2>
+
+
+
+
                 <div class="footerSocials">
                     <a href=""><img src="Linkedin.png"></a>
                     <a href=""><img src="facebook.png"></a>
                     <a href=""><img src="Insta.png"></a>
                 </div>
+
+
+
+
+
+
+
+
+
+                
             </section>
         </footer>
     `;
