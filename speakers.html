@@ -6,43 +6,159 @@
     <title>Sponsors</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+
+        #introSection {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #cfe9fc 0%, #0064B1 100%);
+            color: white;
+            border-radius: 0.5rem;
+            margin-bottom: 3rem;
+        }
+
+        #introSection h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        #introSection h2 a {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.3rem;
+            transition: all 0.2s ease;
+        }
+
+        #introSection h2 a:hover {
+            background-color: white;
+            color: #0064B1;
+        }
        .speakerIndividual img {
             width: 10rem;
         }
 
 
-        #speakers {
+       #introSection {
             text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #cfe9fc 0%, #0064B1 100%);
+            color: white;
+            border-radius: 0.5rem;
+            margin-bottom: 3rem;
+        }
+
+        #introSection h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        #introSection h2 a {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.3rem;
+            transition: all 0.2s ease;
+        }
+
+        #introSection h2 a:hover {
+            background-color: white;
+            color: #0064B1;
         }
         #speakersContainer {
-            text-align: center;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* space between cards */
+}
 
-        }
-        .speakerIndividual {
-            width: 25%;
-            margin: 2%;
-        }
-        .speakerIndividual img {
-            width: 100%;
-        }
-        .speakerIndividual p {
-            text-align: left;
-        }
-        .speakerSocials {
-            background-color: gray;
-            display: flex;
-            justify-content: space-around;
+       .speakerIndividual {
+    background-color: #0064B1;
+    color: white;
+    width: 300px; /* consistent size */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
-        }
-        .speakerSocials a {
-            width: 10%;
+.speakerIndividual:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
 
-            
-        }
+.speakerIndividual img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.speakerIndividual h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.speakerIndividual h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.speakerIndividual p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.speakerSocials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.speakerSocials a img {
+    width: 30px;
+    transition: transform 0.2s ease;
+}
+
+.speakerSocials a img:hover {
+    transform: scale(1.2);
+}
+
+.speakerIndividual a {
+    display: inline-block;
+    background-color: white;
+    color: #0064B1;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.speakerIndividual a:hover {
+    background-color: #004C8C;
+    color: white;
+}
     </style>
 </head>
 <body>
