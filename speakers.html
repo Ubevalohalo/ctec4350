@@ -8,6 +8,7 @@
     <style>
 
         #introSection {
+            margin-top: 2rem;
             text-align: center;
             padding: 4rem 1rem;
             background: linear-gradient(135deg, #cfe9fc 0%, #0064B1 100%);
@@ -24,7 +25,7 @@
         }
 
         #introSection h2 a {
-            font-size: 1.25rem;
+            font-size: 1rem;
             font-weight: 700;
             text-transform: uppercase;
             color: white;
@@ -114,26 +115,25 @@
     .speakerIndividual img {
         width: 100%;
         border-radius: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .speakerIndividual h4 {
-        font-size: 1.25rem;
-        font-weight: 700;
         margin-bottom: 0.5rem;
     }
 
-    .speakerIndividual h5 {
-        font-size: 1rem;
-        font-weight: 400;
-        margin-bottom: 1rem;
+    .speakerIndividual h4 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        margin: 0.25rem 0;
     }
 
-    .speakerIndividual p {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        margin-bottom: 1rem;
+    .speakerIndividual h5 {
         text-align: center;
+        text-transform: uppercase;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+    .speakerIndividual p{
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
     }
 
     .speakerSocials {
@@ -159,14 +159,29 @@
         font-weight: 700;
         padding: 0.5rem 1rem;
         border-radius: 0.3rem;
+        font-size: 0.65rem;
         text-decoration: none;
-        text-transform: uppercase;
         transition: all 0.2s ease;
     }
 
     .speakerIndividual a:hover {
         background-color: #004C8C;
         color: white;
+    }
+
+    @media (max-width: 767px) {
+
+            #introSection h1 {
+                font-size: 1rem
+            }
+
+            #introSection h2 a {
+                font-size: 0.75rem;
+            }
+            .speakerSocials a img {
+                width: 80%;
+                transition: transform 0.2s ease;
+            }
     }
     </style>
 </head>
@@ -187,9 +202,12 @@
                     <h5>Speaker Title</h5>
                     <p>Lorem ipsum dolor sit amet consectetur. Quis eleifend tempus arcu cum eleifend. Velit turpis aliquet elit quis feugiat feugiat est augue velit. Sit posuere sit tortor euismod sit ut. Sed blandit morbi laoreet in.</p>
                     <div class="speakerSocials">
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
+                        <a href="mailto:someone@gmail.com">
+                            <img src="social-icons/gmail-icon.png" alt="Gmail">
+                        </a>
+                        <a href="https://www.linkedin.com/in/username" target="_blank">
+                            <img src="social-icons/linkedin-icon.png" alt="LinkedIn">
+                        </a>
                     </div>
                     <a href="***">See more</a>
                 </div>
@@ -199,9 +217,28 @@
                     <h5>Speaker Title</h5>
                     <p>Lorem ipsum dolor sit amet consectetur. Quis eleifend tempus arcu cum eleifend. Velit turpis aliquet elit quis feugiat feugiat est augue velit. Sit posuere sit tortor euismod sit ut. Sed blandit morbi laoreet in.</p>
                     <div class="speakerSocials">
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
+                        <a href="mailto:someone@gmail.com">
+                            <img src="social-icons/gmail-icon.png" alt="Gmail">
+                        </a>
+                        <a href="https://www.linkedin.com/in/username" target="_blank">
+                            <img src="social-icons/linkedin-icon.png" alt="LinkedIn">
+                        </a>
+                    </div>
+
+                    <a href="***">See more</a>
+                </div>
+                <div class="speakerIndividual">
+                    <img src="speakerPlaceholder.jpg">
+                    <h4>Speaker Name</h4>
+                    <h5>Speaker Title</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur. Quis eleifend tempus arcu cum eleifend. Velit turpis aliquet elit quis feugiat feugiat est augue velit. Sit posuere sit tortor euismod sit ut. Sed blandit morbi laoreet in.</p>
+                     <div class="speakerSocials">
+                        <a href="mailto:someone@gmail.com">
+                            <img src="social-icons/gmail-icon.png" alt="Gmail">
+                        </a>
+                        <a href="https://www.linkedin.com/in/username" target="_blank">
+                            <img src="social-icons/linkedin-icon.png" alt="LinkedIn">
+                        </a>
                     </div>
                     <a href="***">See more</a>
                 </div>
@@ -211,9 +248,12 @@
                     <h5>Speaker Title</h5>
                     <p>Lorem ipsum dolor sit amet consectetur. Quis eleifend tempus arcu cum eleifend. Velit turpis aliquet elit quis feugiat feugiat est augue velit. Sit posuere sit tortor euismod sit ut. Sed blandit morbi laoreet in.</p>
                     <div class="speakerSocials">
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
+                        <a href="mailto:someone@gmail.com">
+                            <img src="social-icons/gmail-icon.png" alt="Gmail">
+                        </a>
+                        <a href="https://www.linkedin.com/in/username" target="_blank">
+                            <img src="social-icons/linkedin-icon.png" alt="LinkedIn">
+                        </a>
                     </div>
                     <a href="***">See more</a>
                 </div>
@@ -223,9 +263,12 @@
                     <h5>Speaker Title</h5>
                     <p>Lorem ipsum dolor sit amet consectetur. Quis eleifend tempus arcu cum eleifend. Velit turpis aliquet elit quis feugiat feugiat est augue velit. Sit posuere sit tortor euismod sit ut. Sed blandit morbi laoreet in.</p>
                     <div class="speakerSocials">
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
+                        <a href="mailto:someone@gmail.com">
+                            <img src="social-icons/gmail-icon.png" alt="Gmail">
+                        </a>
+                        <a href="https://www.linkedin.com/in/username" target="_blank">
+                            <img src="social-icons/linkedin-icon.png" alt="LinkedIn">
+                        </a>
                     </div>
                     <a href="***">See more</a>
                 </div>
@@ -235,21 +278,12 @@
                     <h5>Speaker Title</h5>
                     <p>Lorem ipsum dolor sit amet consectetur. Quis eleifend tempus arcu cum eleifend. Velit turpis aliquet elit quis feugiat feugiat est augue velit. Sit posuere sit tortor euismod sit ut. Sed blandit morbi laoreet in.</p>
                     <div class="speakerSocials">
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
-                    </div>
-                    <a href="***">See more</a>
-                </div>
-                <div class="speakerIndividual">
-                    <img src="speakerPlaceholder.jpg">
-                    <h4>Speaker Name</h4>
-                    <h5>Speaker Title</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur. Quis eleifend tempus arcu cum eleifend. Velit turpis aliquet elit quis feugiat feugiat est augue velit. Sit posuere sit tortor euismod sit ut. Sed blandit morbi laoreet in.</p>
-                    <div class="speakerSocials">
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
-                        <a href="***"><img src="icon.png"></a>
+                        <a href="mailto:someone@gmail.com">
+                            <img src="social-icons/gmail-icon.png" alt="Gmail">
+                        </a>
+                        <a href="https://www.linkedin.com/in/username" target="_blank">
+                            <img src="social-icons/linkedin-icon.png" alt="LinkedIn">
+                        </a>
                     </div>
                     <a href="***">See more</a>
                 </div>

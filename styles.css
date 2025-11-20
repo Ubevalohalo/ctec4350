@@ -194,9 +194,9 @@ main {
     font-size: 1.25rem;
 }
 .speakers h4{
-    text-align: center;
-    font-weight: lighter;
-    font-size: 1rem;
+     text-align: center;
+    text-transform: uppercase;
+    font-size: 1.25rem;
 }
 .speakers a {
     background-color: #0064B1;
@@ -220,7 +220,35 @@ main {
     color: #00529C;
     background-color: rgba(0, 100, 177, 0.5);
 }
+.speakerSocials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; /* smaller spacing */
+    margin: 0.5rem 0 1rem 0; /* tighten spacing above/below */
+}
 
+.speakerSocials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.speakerSocials a img {
+    width: 24px; /* slightly smaller icons */
+    height: 24px;
+    object-fit: contain;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none; /* ensures NO background */
+    box-shadow: none; /* ensures NO shadow */
+    transition: transform 0.2s ease;
+}
+
+.speakerSocials a img:hover {
+    transform: scale(1.15);
+}
 footer {
     background-color: #0064B1;
     margin: 5rem 0rem 0rem 0rem;
