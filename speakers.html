@@ -92,6 +92,7 @@
             text-align: center;
         }
         #speakersContainer {
+            grid-template-columns: repeat(3, 1fr);
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -101,7 +102,7 @@
         .speakerIndividual {
         background-color: #0064B1;
         color: white;
-        width: 300px; /* consistent size */
+        max-width: 300px;
         padding: 1.5rem;
         border-radius: 0.5rem;
         text-align: center;
@@ -110,10 +111,26 @@
         align-items: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+         position: relative;
+    }
+    .keynoteBadge {
+        background-color: #F58025;
+        color: white;
+        font-size: 0.75rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        margin-bottom: 1.5rem;
     }
 
     .speakerIndividual img {
         width: 100%;
+        height: 300px;
+        object-fit: cover;  
         border-radius: 0.5rem;
         margin-bottom: 0.5rem;
     }
@@ -121,19 +138,22 @@
     .speakerIndividual h4 {
         text-align: center;
         text-transform: uppercase;
-        font-size: 1.25rem;
+        font-size: 1.1rem;
         margin: 0.25rem 0;
+        min-height: 2.5rem;   
     }
 
     .speakerIndividual h5 {
         text-align: center;
-        text-transform: uppercase;
-        font-size: 1rem;
+        font-size: 0.85rem;
         margin: 0.5rem 0;
+        min-height: 3rem;   
     }
     .speakerIndividual p{
-        font-size: 0.75rem;
+        font-size: 0.65rem;
         margin-top: 0.5rem;
+        text-align: left; 
+        min-height: 7.5rem;   
     }
 
     .speakerSocials {
@@ -197,6 +217,7 @@
             <div id="speakersContainer">
 
                 <div class="speakerIndividual">
+                    <div class="keynoteBadge">Keynote Speaker</div>
                     <img src="speaker1.png">
                     <h4>Reynaldo Vichareli Casas</h4>
                     <h5>Senior Director of Community Impact </h5>
@@ -212,6 +233,7 @@
                     <a href="***">See more</a>
                 </div>
                 <div class="speakerIndividual">
+                    <div class="keynoteBadge">Keynote Speaker</div>
                    <img src="speaker2.png">
                     <h4>Dr. Charla Markham Shaw</h4>
                     <h5>Professor & Chairman in Communications Department at UTA</h5>

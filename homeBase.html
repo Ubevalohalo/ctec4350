@@ -159,7 +159,60 @@
 	#countdown p {
 		font-size: 150%;
 	}
+	
+	#homeAgenda {
+		background-color: rgba(0, 100, 177, 0.1);
+		color: white;
+		padding: 2rem 1rem;
+		text-align: center;
+		border-radius: 0.5rem;
+		margin: 2rem auto;
+	}
 
+	#homeAgenda h2 {
+		font-size: 2rem;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+		color:  #0064B1;
+	}
+
+	.agendaPreview {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.agendaItem {
+		color: black;
+		padding: 0.75rem 1rem;
+		border-radius: 0.5rem;
+		cursor: pointer;
+		transition: transform 0.2s ease, background-color 0.2s ease;
+	}
+
+	.agendaItem p {
+		margin: 0;
+		font-size: 0.95rem;
+	}
+
+	#agendaNote a {
+        display: inline-block;
+        background-color: white;
+        color: #0064B1;
+        font-weight: 700;
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+        font-size: 0.65rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    #agendaNote a:hover {
+        background-color: #004C8C;
+        color: white;
+    }
 	#whyJoin {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
@@ -184,15 +237,8 @@
 		padding: 1.5rem;
 		min-height: 160px;
 		text-align: center;
-		transition: transform 0.3s ease, background-color 0.3s ease;
 	}
 
-	/* Hover */
-	#whyJoin > div:not(#label):hover {
-		transform: scale(1.05);
-		background-color: rgba(245, 128, 37, 0.1);
-		box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-	}
 	#networking { grid-column: 2; grid-row: 1; }
 	#learn      { grid-column: 3; grid-row: 1; }
 	#explore    { grid-column: 2; grid-row: 2; }
@@ -252,12 +298,6 @@
 		transition: transform 0.3s ease, background-color 0.3s ease; 
 		cursor: pointer;
 		text-align: center;
-	}
-
-	#networking:hover, #learn:hover, #explore:hover, #engage:hover {
-		transform: scale(1.05); /* slightly expand */
-		background-color: rgba(245, 128, 37, 0.1);
-		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 	}
 	/* Second row reason boxes */
 	#explore {
@@ -337,15 +377,22 @@
 		#whyJoin {
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: auto auto auto;
-			padding: 1.5rem;
+			gap: 1.25rem;
+			padding: 2rem 1.5rem;
+			text-align: center;
+
 		}
 
-		#label { grid-column: 1 / -1; }
+		 #label {
+			grid-column: 1 / 3;
+			grid-row: 1;
+			padding-bottom: 1rem;
+		}
 
-		#networking { grid-column: 1; }
-		#learn      { grid-column: 2; }
-		#explore    { grid-column: 1; }
-		#engage     { grid-column: 2; }
+		#networking { grid-column: 1; grid-row: 2; }
+		#learn      { grid-column: 2; grid-row: 2; }
+		#explore    { grid-column: 1; grid-row: 3; }
+		#engage     { grid-column: 2; grid-row: 3; }
 	}
 
 	@media (max-width: 767px) {
@@ -445,7 +492,6 @@
 			padding: 1.5rem;
 			margin: 0 auto;
 			box-sizing: border-box;
-			/* RESET the desktop grid placement */
 			grid-column: auto !important;
 			grid-row: auto !important;
 		}
@@ -545,6 +591,27 @@
 			<h2 id="countdownTimer"></h2>
 			<p>Until the Event</p>
 		</section>
+
+		<section id="homeAgenda">
+		<h2>Event Highlights</h2>
+		<div class="agendaPreview">
+			<div class="agendaItem">
+				<p><b>9:00 AM:</b> Check in & Breakfast</p>
+			</div>
+			<div class="agendaItem">
+				<p><b>9:30 AM:</b> Introduction & Opening Remarks</p>
+			</div>
+			<div class="agendaItem">
+				<p><b>10:00 AM:</b> Keynote: Reynaldo Vichareli Casas</p>
+			</div>
+			<div class="agendaItem">
+				<p><b>11:00 AM:</b> Workshops A & B</p>
+			</div>
+		</div>
+		<a href="agenda.html" id="agendaNote">Full Agenda<a>
+	</section>
+
+
 		<section id="whyJoin">
 			<div id="label">
 				<h2>Why join the conference?</h2>
