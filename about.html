@@ -290,18 +290,18 @@
 		}
 
 		#pastComments .speakerComments {
-			margin-top: 0.5rem;
-			border-color: rgba(0, 100, 177);
-			color: white;
-			border-radius: 0.5rem;
-			padding: 1rem;
-			flex: 1 1 28%;
+			flex: 1 1 300px;
+			max-width: 350px;
 			min-width: 250px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
-			box-shadow: black;
+			border: 3px solid #0064B1;
+			border-radius: 0.5rem;
+			padding: 1.5rem;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
 		}
 		#pastComments h2 {
 			text-align: center;
@@ -321,7 +321,7 @@
 			height: 300px;
 			object-fit: cover;  
 			border-radius: 0.5rem;
-			margin-bottom: 0.5rem;
+			margin-bottom: 0.25rem;
 		}
 		#pastComments .speakerComments {
 			border: 3px solid #0064B1;
@@ -329,8 +329,8 @@
 			border-radius: 0.5rem;
 			padding: 1.5rem;
 			text-align: center;
-			width: 300px; /* fixed width for consistency */
-			flex: 1 1 300px; /* allow some flexibility */
+			width: 300px;
+			flex: 1 1 calc(33.33% - 1rem);
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -339,6 +339,11 @@
 		}
 		#pastComments .speakerComments h3{
 			text-align: center;
+			  margin-bottom: 0.25rem;
+		}
+		#pastComments .speakerComments h5{
+			color: #3f3f3f;
+			margin-bottom: 0.25rem;
 		}
 		#pastComments h2 {
 			text-align: center;
@@ -464,24 +469,8 @@
 				display: block;
 				border-radius: 0.5rem;
 			}
-			
-			 .conferenceBox {
-				flex-direction: column;
-				height: auto;
-			}
-
-			.conferenceContent {
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				gap: 1rem;
-				height: auto;
-			}
-
-			.conferenceText {
-				font-size: 0.95rem;
-				text-align: center;
-				padding: 1rem;
+			#pastComments .speakerComments {
+				flex: 1 1 calc(50% - 1rem); /* 2 per row */
 			}
 
 			.attendeesGrid {
@@ -598,7 +587,10 @@
 				padding: 0.5rem 1rem;
 				text-align: center;
 			}
-
+			 #pastComments .speakerComments {
+				flex: 1 1 100%; /* 1 per row */
+				max-width: 100%;
+			}
 			.attendeesGrid {
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: auto auto;
@@ -718,7 +710,7 @@
 			<p>By fostering collaboration across sectors, the event helps spark new partnerships and equips participants with resources to better address community challenges.</p>
 			<a href="register.html" id="ctaRegister">Tickets are now on sale!</a>
 		</section>
-		<section id="pastConferences">
+		<!--<section id="pastConferences">
 			<div class="conferenceBox">
 			<div class="conferenceContent">
 				<div class="conferenceText">
@@ -731,7 +723,7 @@
 					<div class="attendeeBox">No. of connections/attendeess</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 
 		</section>
 			<section id="pastComments">
@@ -740,16 +732,19 @@
 					<div class="speakerComments" id="comment1">
 						<img src="ShirleyGladbach.png">
 						<h3>Shirley Gladbach</h3>
+						<h5>Title/ Organization</h5>
 						<p>“This Opportunity has allowed me to learn so much and enjoyed all the collaborations“</p>
 					</div>
 					<div class="speakerComments" id="comment2">
 						<img src="MendiSchultz.png">
 						<h3>Mendi Schultz</h3>
+						<h5>Title/ Organization</h5>
 						<p>“The event exceeded my expectations and really loved the break out sessions being able to connect in smaller groups “</p>
 					</div>
 					<div class="speakerComments" id="comment3">
 						<img src="KristinBradfield.png">
 						<h3>Kristin Bradfield</h3>
+						<h5>Title/ Organization</h5>
 						<p>“ Loved to be apart of the confrence! Being able to see how people are interacting with their communities.“</p>
 					</div>
 				</div>

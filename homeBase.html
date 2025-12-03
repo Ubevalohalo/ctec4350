@@ -14,14 +14,11 @@
 		min-width: 100%;
 	}
 	#intro {
-		  	position: relative;
 			width: 100%;
-			height: auto; /* let the video define height */
+			height: auto;
 			overflow: hidden;
 			text-align: center;
 			margin-bottom: 1rem;
-			justify-content: center;
-			align-items: center;
 	}
 
 	#intro video {
@@ -32,18 +29,12 @@
 	}
 
 	#introInfo {
-		/*position: absolute; 
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%); 
-		z-index: 1;
-		display: none;
-		*/
-		position: static; 
 		text-align: center;
 		margin: 0;
 		width: auto;
 		max-width: 90%;
+		align-items: center;
+		
 	}
 
 	#intro img {
@@ -74,7 +65,18 @@
 		color: #3f3f3f;
 		font-size: 1.25rem;
 	}
-
+	#introInfo .eventAudience {
+		 font-size: 1.1rem;
+			color: #0064B1; /* matches your theme */
+			background-color: rgba(0, 100, 177, 0.1); /* light blue highlight */
+			padding: 1rem 1rem;
+			border-left: 5px solid #C45517;
+			border-radius: 0.5rem;
+			margin: 1rem 0;
+			font-weight: 600;
+			text-align: center;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	}
 	#introInfo ul {
 		display: flex;
 		justify-content: center;
@@ -345,15 +347,15 @@
 	}
 	.speakerCard img {
         width: 100%;
-        height: 300px;
-        object-fit: cover;  
-        border-radius: 0.5rem;
-        margin-bottom: 0.5rem;
+		max-width: 400px; /* optional: control max width */
+		height: auto; /* maintain aspect ratio */
+		object-fit: cover;
+		border-radius: 0.5rem;
+		margin-bottom: 0.5rem;
     }
 
     .speakerCard h4 {
         text-align: center;
-        text-transform: uppercase;
         font-size: 1.1rem;
         margin: 0.25rem 0;
         min-height: 2.5rem;   
@@ -673,6 +675,9 @@
 				
 				<p>Wednesday, April 8, 2026 • 9:30 AM - 3:00 PM • UTA</p>
 				<p>Arlington Campus, Central Library 6th floor</p>
+				<!--<p class="eventAudience">
+					This event is designed for nonprofit leaders and professionals responsible for fundraising efforts.
+				</p>-->
 				<ul>
 					<li><a href="about.html" id="aboutButton">ABOUT</a></li>
 					<li><a href="register.html" id="registerButton">REGISTER</a></li>

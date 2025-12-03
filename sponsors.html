@@ -18,7 +18,7 @@
         font-size: 1.75rem;
         font-weight: 800;
         text-transform: uppercase;
-        color: #0064B1;
+        color: #C45517;
         margin-bottom: 1rem;
     }
 
@@ -67,6 +67,14 @@
     }
 
     /* SPONSOR CONTAINER (THE SECTION) */
+    #sponsorsContainer h3{
+        font-size: 2rem;
+        color: #0064B1;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
     #sponsorsContainer {
         width: 100%;
         max-width: 1200px;
@@ -186,6 +194,75 @@
     .textRight div {
         grid-column: 1 / 2;
     }
+    /* SPONSOR PERKS SECTION */
+    #sponsorPerks {
+        margin: 5rem auto;
+        text-align: center;
+        max-width: 800px;
+        padding: 0 1rem;
+    }
+
+    #sponsorPerks h2 {
+        font-size: 2rem;
+        color: #0064B1;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+
+    #sponsorPerks .perkSubtitle {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Grid Layout */
+    .perkGrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1600px;
+        margin: 0 1rem;
+    }
+
+    /* Cards */
+    .perkCard {
+        background: #f8fbff;
+        border-left: 5px solid #0064B1;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transition: 0.2s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* Titles + Price */
+    .perkCard h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #0064B1;
+        margin-bottom: 0.8rem;
+    }
+
+    .perkCard .price {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 1.2rem;
+        color: #C45517;
+    }
+
+    /* Perk list */
+    .perkCard ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .perkCard ul li {
+        margin: 0.5rem 0;
+        color: #333;
+        font-size: 0.95rem;
+    }
+
 
     @media (min-width: 768px) and (max-width: 1024px) {
          .textLeft,
@@ -202,6 +279,9 @@
         .textLeft img,
         .textRight img {
             height: auto;
+        }
+         .perkGrid {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
     @media (max-width: 767px) {
@@ -263,22 +343,20 @@
             padding: 1.5rem;
             text-align: center;
         }
+        .perkCard h3 {
+        font-size: 1rem;
+        }
+        .perkGrid {
+            grid-template-columns: 1fr;
+        }
     }
 
     </style>
 </head>
 <body>
     <main>
-        <section id="introSection">
-            <h1>Gain valuable exposure for your brand and help us ensure the success of our upcoming conference by becoming a sponsor!</h1>
-            <h2>Interested in becoming a sponsor? Leave us an email!</h2>
-            <form action="<>" method="POST"> <!--put php script link in action-->
-                <label for="email"></label><br>
-                <input type="email" id="email" name="email" placeholder="Your email" required id="emailTextBox">
-                <input type="submit" value="▶" id="submitEmail">
-            </form>
-        </section>
         <section id="sponsorsContainer">
+            <h3>Our Sponsors</h3>
             <div class="textRight sponsorBox">
                 <img src="mainsponsor.png">
                 <div>
@@ -312,6 +390,64 @@
                 </div>
             </div>
         </section>
+        <section id="introSection">
+            <h1>Gain valuable exposure for your brand and help us ensure the success of our upcoming conference</h1>
+            <h2>Interested in becoming a sponsor? Leave us an email!</h2>
+            <form action="<>" method="POST"> <!--put php script link in action-->
+                <label for="email"></label><br>
+                <input type="email" id="email" name="email" placeholder="Your email" required id="emailTextBox">
+                <input type="submit" value="▶" id="submitEmail">
+            </form>
+        </section>
+        <section id="sponsorPerks">
+            <h2>Sponsorship Benefits</h2>
+            <p class="perkSubtitle">Support the conference and gain valuable exposure for your organization.</p>
+
+            <div class="perkGrid">
+
+                <div class="perkCard">
+                    <h3>Bronze Sponsor</h3>
+                    <p class="price">$250</p>
+                    <ul>
+                        <li>Logo displayed on website</li>
+                        <li>Logo in printed event program</li>
+                        <li>Social media shoutout</li>
+                    </ul>
+                </div>
+
+                <div class="perkCard">
+                    <h3>Silver Sponsor</h3>
+                    <p class="price">$500</p>
+                    <ul>
+                        <li>Everything in Bronze</li>
+                        <li>Medium-size logo on event banner</li>
+                        <li>Two free event registrations</li>
+                    </ul>
+                </div>
+
+                <div class="perkCard">
+                    <h3>Gold Sponsor</h3>
+                    <p class="price">$1,000</p>
+                    <ul>
+                        <li>Everything in Silver</li>
+                        <li>Large logo on all event marketing</li>
+                        <li>Named recognition during opening remarks</li>
+                    </ul>
+                </div>
+
+                <div class="perkCard">
+                    <h3>Platinum Sponsor</h3>
+                    <p class="price">$2,000</p>
+                    <ul>
+                        <li>Everything in Gold</li>
+                        <li>VIP table at the event</li>
+                        <li>Opportunity to speak for 1 minute on stage</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        
     </main>
     <script src="javascript.js"></script>
 </body>
