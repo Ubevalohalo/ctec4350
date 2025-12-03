@@ -70,31 +70,37 @@ nav ul li .CTA:active ,  #footerNav ul li .CTA:active{
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  border: none;
-  outline: none;
-  color: white;
-  background-color: inherit;
-  margin: 0; /* Important for vertical align on mobile phones */
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    margin: 0;
     padding: 0.4rem;
     text-decoration: none;
     padding: 0.4rem;
     list-style: none;
     align-self: self-start;
+    transition: all 0.2s ease;
 }
 
-/* Add a red background color to navbar links on hover */
+
 .dropdown:hover .dropbtn {
-  background-color: white;
-  color: #0064B1;
+    background-color: white;
+    color: #0064B1;
+    border: 3px solid #C45517;
+    border-radius: 0.3rem;
+    transform: scale(1.03);
 }
 
-/* Dropdown content (hidden by default) */
+
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
   z-index: 1;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
 /* Links inside the dropdown */
@@ -109,7 +115,9 @@ nav ul li .CTA:active ,  #footerNav ul li .CTA:active{
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  border-bottom: 3px solid #0064B1;
+  background-color: #0064B1;
+  color: white;
+  border-left: 4px solid #C45517;
 }
 
 /* Show the dropdown menu on hover */
@@ -147,9 +155,8 @@ footer #footerNav ul li {
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
-/* Make dropdown behave like a normal li without double spacing */
 footer #footerNav .dropdown {
-    margin: 1rem;   /* same as li */
+    margin: 1rem;
     display: block;
     padding: 0;
 }
@@ -157,6 +164,7 @@ footer #footerNav .dropdown {
 footer #footerNav .dropdown .dropbtn {
     padding: 0;
     margin: 0;
+    
 }
 /*END DROPDOWN----------------------------*/
 
@@ -403,7 +411,6 @@ footer #contacts a {
                 align-items: center;
                 gap: 0.5rem;
             }
-
             .footerSocials img {
                 width: 150px;
                 height: 150px;
