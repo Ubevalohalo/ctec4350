@@ -143,17 +143,22 @@
 		text-decoration: none;
 		color: white;
 		border-radius: 0.3rem;
-		font-size: 1.5rem;
+		font-size: 1rem;
 		font-weight: 700;
+	}
+	.speakers .viewAllBtns{
+		font-size: 1rem;
 	}
 
 	#countdown {
 		text-align: center;
-		background-color: rgba(0, 100, 177, 0.2);
+		background-color: #C45517;
+		color: white;
 		padding: 2rem 10rem;
 		width: max-content;
 		margin: 1.5rem auto .5rem auto;
 		border-radius: 0.5rem;
+		text-transform: uppercase;
 	}
 
 	#countdown p {
@@ -171,20 +176,24 @@
 
 	#homeAgenda h2 {
 		font-size: 2rem;
+		font-weight: 800;
 		text-transform: uppercase;
 		margin-bottom: 1rem;
 		color:  #0064B1;
 	}
 
 	.agendaPreview {
+		width: 80%;;
 		display: flex;
 		flex-direction: column;
 		gap: 0.75rem;
 		max-width: 700px;
 		margin: 0 auto;
+		text-align: center;
 	}
 
 	.agendaItem {
+		text-align: left;
 		color: black;
 		padding: 0.75rem 1rem;
 		border-radius: 0.5rem;
@@ -197,30 +206,40 @@
 		font-size: 0.95rem;
 	}
 
-	#agendaNote a {
-        display: inline-block;
-        background-color: white;
-        color: #0064B1;
-        font-weight: 700;
-        padding: 0.5rem 1rem;
-        border-radius: 0.3rem;
-        font-size: 0.65rem;
-        text-decoration: none;
-        transition: all 0.2s ease;
-    }
 
-    #agendaNote a:hover {
-        background-color: #004C8C;
-        color: white;
-    }
+	#agendaNote {
+       background-color: #0064B1;
+		border-radius: 0.3rem;
+		font-size: 1rem;
+		font-weight: 700;
+		transition: all 0.2s ease;
+	}
+
+	#homeAgenda ul li a{
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		font-size: 1rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		color: white;
+		padding: 0.5rem;
+		text-transform: uppercase;
+	}
+	#agendaNote:hover {
+		border: 3px solid #0064B1;;
+		color: #0064B1;
+		background-color: white;
+	}
+	#agendaNote:active {
+		border: 3px solid #0064B1;;
+		color: #0064B1;
+		background-color: rgba(0, 100, 177, 0.5);
+	}
 	#whyJoin {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 1.5rem;
 		padding: 2rem;
-	}
-	#whyJoin h2{
-		font-weight: 700;
 	}
 
 	/* Left label area */
@@ -465,7 +484,13 @@
 			width: fit-content;
 			margin: 0 auto;
 		}
-
+		#homeAgenda ul li a {
+			display: block;
+			text-align: center;
+			font-size: 0.75rem;
+			width: fit-content;
+			margin: 0 auto;
+		}
 		/* =======================
 		WHY JOIN SECTION
 		=======================*/
@@ -517,6 +542,10 @@
 		/* =======================
 		SPEAKERS
 		=======================*/
+		.speakers .viewAllBtns{
+			font-size: 0.75rem;
+		}
+
 		.speakerCards {
 			display: flex;
 			flex-direction: column;
@@ -608,7 +637,11 @@
 				<p><b>11:00 AM:</b> Workshops A & B</p>
 			</div>
 		</div>
-		<a href="agenda.html" id="agendaNote">Full Agenda<a>
+		<ul>
+			<li><a href="agenda.html" id="agendaNote">Full Agenda</a></li>
+		</ul>
+		
+
 	</section>
 
 
@@ -644,8 +677,8 @@
 			<section class="speakerCards">
 				<div class="speakerCard">
 					<img src="speaker1.png">
-					<h3>Reynaldo Vichareli Casas</h3>
-					<h4>Senior Director of Community Impact</h4>
+					<h4>Reynaldo Vichareli Casas</h3>
+					<h5>Senior Director of Community Impact</h4>
 					<p>Public and government relations profrssional has spent over 28 years working with and for major corperations and non-profit organizations.</p>
 				</div>
 				<div class="speakerCard">
