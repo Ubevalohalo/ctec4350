@@ -340,6 +340,69 @@
 	#networking p, #learn p , #explore p, #engage {
 		font-size: 1rem;
 	}
+	.speakerCards{
+		height: auto;
+	}
+	.speakerCard img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;  
+        border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .speakerCard h4 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        margin: 0.25rem 0;
+        min-height: 2.5rem;   
+    }
+
+   .speakerCard h5 {
+        text-align: center;
+        font-size: 0.85rem;
+        margin: 0.5rem 0;
+        min-height: 3rem;   
+    }
+    .speakerCard p{
+        font-size: 0.65rem;
+        margin-top: 0.5rem;
+        text-align: left; 
+        min-height: 7.5rem;   
+    }
+	 .speakerSocials {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .speakerSocials a img {
+        width: 30px;
+        transition: transform 0.2s ease;
+    }
+
+    .speakerSocials a img:hover {
+        transform: scale(1.2);
+    }
+
+    .speakerCard a {
+        display: inline-block;
+        background-color: white;
+        color: #0064B1;
+        font-weight: 700;
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+        font-size: 0.65rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .speakerCard a:hover {
+        background-color: #004C8C;
+        color: white;
+    }
 	.sponsors h2{
 		text-transform: uppercase;
 		color: #C45517;
@@ -680,13 +743,32 @@
 					<h4>Reynaldo Vichareli Casas</h3>
 					<h5>Senior Director of Community Impact</h4>
 					<p>Public and government relations profrssional has spent over 28 years working with and for major corperations and non-profit organizations.</p>
+				<div class="speakerSocials">
+                        <a href="mailto:someone@gmail.com">
+                            <img src="social-icons/gmail-icon.png" alt="Gmail">
+                        </a>
+                        <a href="https://www.linkedin.com/in/username" target="_blank">
+                            <img src="social-icons/linkedin-icon.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                    <a href="***">See more</a>
 				</div>
 				<div class="speakerCard">
 					<img src="speaker2.png">
                     <h4>Dr. Charla Markham Shaw</h4>
                     <h5>Professor & Chairman in Communications Department at UTA</h5>
                     <p> Dr. Charla Markham Shaw researches narrative, self-conceptions, and health communication, particularly health disparities and identity. She has received multiple teaching awards and holds a PHD in speech communication from Louisiana State university.</p>
+				<div class="speakerSocials">
+                        <a href="mailto:someone@gmail.com">
+                            <img src="social-icons/gmail-icon.png" alt="Gmail">
+                        </a>
+                        <a href="https://www.linkedin.com/in/username" target="_blank">
+                            <img src="social-icons/linkedin-icon.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                    <a href="***">See more</a>
 				</div>
+				
 			</section>
 			<a href="speakers.html" class="viewAllBtns">View All</a>
 		</section>
