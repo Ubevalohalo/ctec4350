@@ -131,49 +131,8 @@
         }
     }
 
-    
-
 </style>
-<script>
-    const form = document.getElementById("regForm");
-    const thankYou = document.getElementById("thankYouMessage");
-    const title = document.getElementById("title");
-    const subtitle = document.getElementById("subtitle");
 
-    form.addEventListener("submit", function(e) {
-        e.preventDefault(); // prevent page refresh
-
-        const inputs = form.querySelectorAll("input[required]");
-        let valid = true;
-
-        // Check required fields
-        inputs.forEach(input => {
-            if (!input.checkValidity()) {
-                input.classList.add("submitted");
-                valid = false;
-            }
-        });
-
-        if (!valid) return;
-
-        // Optionally, you could collect data here
-        const formData = {
-            firstName: form.first_name.value,
-            lastName: form.last_name.value,
-            phone: form.phone.value,
-            email: form.email.value,
-            preferences: form.preferences.value
-        };
-
-        console.log("Form submitted:", formData); // for testing
-
-        // Hide form + show thank you
-        form.style.display = "none";
-        title.style.display = "none";
-        subtitle.style.display = "none";
-        thankYou.style.display = "block";
-    });
-</script>
 </head>
 <body>
 	<main>
@@ -242,6 +201,42 @@
             </div>
         </section>
     </main>
-	<script src="javascript.js"></script>
+
+<script src="javascript.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("regForm");
+    const thankYou = document.getElementById("thankYouMessage");
+    const title = document.getElementById("title");
+    const subtitle = document.getElementById("subtitle");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const inputs = form.querySelectorAll("input[required]");
+        let valid = true;
+
+        inputs.forEach(input => {
+            if (!input.checkValidity()) {
+                input.classList.add("submitted");
+                valid = false;
+            } else {
+                input.classList.remove("submitted");
+            }
+        });
+
+        if (!valid) return;
+
+        console.log("Form submitted!");
+
+        form.style.display = "none";
+        title.style.display = "none";
+        subtitle.style.display = "none";
+        thankYou.style.display = "block";
+    });
+});
+</script>
+
 </body>
 </html>
