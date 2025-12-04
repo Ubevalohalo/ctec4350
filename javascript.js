@@ -81,25 +81,25 @@ function createFooter() {
                 <p><a href="mailto:someone@example.com">someEmail@gmail.com</a></p>
                 <h2>Social Media</h2>
 
-
-
-
                 <div class="footerSocials">
                     <a href=""><img src="Linkedin.png"></a>
                     <a href=""><img src="facebook.png"></a>
                     <a href=""><img src="Insta.png"></a>
                 </div>
-
-
-
-
-
-
-
-
-
-                
             </section>
+
+              <div class="footer-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.357844052924!2d-97.11547092488027!3d32.7296874864041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e7d6d6a4b6b2b%3A0xdbd71496fed44d8e!2sCentral%20Library!5e0!3m2!1sen!2sus!4v1764809770648!5m2!1sen!2sus"
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3424.328178280812!2d-97.108065!3d32.735687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e7cb7fb0e6b2f%3A0x26822849136b0f5d!2sArlington%20Convention%20Center!5e0!3m2!1sen!2sus!4v1733270123456"
+                width="100%"
+                height="250"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </footer>
     `;
     document.body.insertAdjacentHTML('beforeend', footerHTML);

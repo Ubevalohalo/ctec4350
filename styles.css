@@ -322,6 +322,24 @@ footer #contacts a {
 .footerSocials img {
     margin-right: 1rem ;
 }
+.footer-map {
+  width: 100%;
+  margin-top: 20px;
+}
+.footerSocials a img {
+    width: 2rem;
+    margin: 0rem;
+}
+#footerNav ul .dropdown {
+    margin-top: 1.5rem;
+}
+.dropdown-content a {
+    color: black;
+}
+.footer-map iframe {
+  width: 100%;
+  border-radius: 10px;
+}
 /*TABLET DISPLAY*/
 		@media (min-width: 768px) and (max-width: 1024px) {
 			/*adjust footer and nav*/
